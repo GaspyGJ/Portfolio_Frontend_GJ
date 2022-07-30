@@ -1,0 +1,42 @@
+#Seccion-Habilidades {
+    margin-top: 8%;
+    height: 40%;
+}
+
+#list-skills {
+    background-color: #a7a4a146;
+    margin-top: 2em;
+    padding: 1em 0 1em 0;
+
+    list-style: none;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    overflow: visible;
+}
+
+#list-skills li {
+    width: 5em;
+    height: 5em;
+
+    transition: transform 1s;
+}
+
+#list-skills li:hover {
+    width: 5em;
+    height: 5em;
+    transform: scale(1.6);
+}
+
+@media only screen and (max-width: 600px) {
+    #list-skills {
+        display: flex;
+        align-items: center;
+        align-items: end;
+        padding: 0;
+        overflow: visible;
+        padding: 1em 0 1em 0;
+    }
+}

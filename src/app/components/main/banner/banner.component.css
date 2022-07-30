@@ -1,0 +1,49 @@
+/*********** MAIN-BANNER *****************/
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.Info-Creador {
+    grid-column: 7/10;
+    grid-row: 3/6;
+    color: #EDCB54;
+}
+
+.main h3 {
+    font-family: 'Montserrat', 'sans-serif';
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+
+.main h1 {
+    margin: 0px;
+    font-size: 4em;
+    color: #cf08c5;
+    animation-name: color-blanco-rosa;
+    animation-duration: 6s;
+}
+
+.main p {
+    font-family: 'Montserrat', 'sans-serif';
+    font-weight: bold;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .main {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(4, 5em);
+    }
+    
+    .Info-Creador {
+        grid-column: 4/10;
+        grid-row: 1/4;
+        color: #EDCB54;
+    }
+}

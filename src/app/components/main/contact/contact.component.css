@@ -1,0 +1,48 @@
+#Seccion-Contacto {
+    margin-left: 3em;
+    margin-right: 3em;
+
+    border-top: 1px solid white;
+
+    margin-top:10%;
+    padding-top: 5em;
+
+    padding-bottom: 8em;
+}
+
+#Seccion-Contacto h3 {
+    background-color: transparent;
+}
+
+#form-Seccion-Contacto {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+
+    border: 1px solid rgb(80, 80, 80);
+    border-radius: 8px;
+
+    gap: 0.5em;
+
+    width: 40%;
+
+    margin: 0 auto;
+    /*par centrarlo*/
+}
+
+#form-Seccion-Contacto #email{
+    height: 2em;
+}
+
+#form-Seccion-Contacto * {
+    background-color: rgb(235, 225, 225);
+    padding: 0.4em;
+    border: none;
+}
+
+
+@media only screen and (max-width: 600px) {
+    #form-Seccion-Contacto {
+        width: 100%;
+    }
+}

@@ -1,0 +1,38 @@
+footer {
+    position:fixed;
+    bottom: 0;
+
+    padding-top: 6px;
+    border-top: 1px solid white;
+    width: 100%;
+    background-color: black;
+    animation-name: color-blanco-rosa;
+    animation-duration: 6s;
+}
+
+.ContactMe {
+    color: #EDCB54;
+    background-color: #a7a4a1cb;
+}
+
+.RedesSociales {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.RedesSociales li {
+    color: #cf08c5;
+
+}
+
+.RedesSociales a {
+    color: #cf08c5;
+}
+
+
+h3 {
+    font-size: 1.4em;
+    color: #cf08c5;
+    margin : 0;
+}

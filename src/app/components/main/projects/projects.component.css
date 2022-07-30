@@ -1,0 +1,42 @@
+#Seccion-Proyectos {
+    color: #EDCB54;
+    line-height: 1.8em;
+    padding-top: 5%;
+    margin: 0 4em 0 4em;
+    border-top: 1px solid white;
+}
+
+#list-Proyectos {
+    text-align: center;
+    list-style: none;
+}
+
+.container-fotos-proyectos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em;
+}
+
+#list-Proyectos div img {
+    margin-top: 2em;
+    width: 25em;
+    height: 42em;
+}
+
+#Seccion-Proyectos a {
+    color: #cf08c5;
+    Text-decoration: none;
+}
+
+#Seccion-Proyectos a:visited {
+    color: #cf08c5;
+}
+
+@media only screen and (max-width: 600px) {
+    #list-Proyectos div img {
+        display: none;
+    }
+    
+}
+
