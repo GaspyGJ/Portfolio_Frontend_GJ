@@ -1,0 +1,26 @@
+/*********** MAIN-BANNER *****************/
+
+#foto-perfil-about-me{
+    padding-bottom: 10em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(black,#2596be);
+    gap:10px;
+}
+#Foto-Perfil img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+#about-me p{
+    font-family: 'Montserrat', 'sans-serif';
+    font-weight: bold;
+    color:white;
+}
+#about-me h3{
+    font-family: 'Montserrat', 'sans-serif';
+    font-size: 2em;
+    color:white;
+}

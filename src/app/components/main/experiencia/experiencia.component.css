@@ -1,0 +1,26 @@
+#Seccion-Experiencia{
+    background-image: linear-gradient( #2596be,black);
+
+    border-top: 1px solid white;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+h3{
+    padding-bottom: 1em;
+}
+
+.list-group{
+    display: flex;
+    direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-group-item{
+    padding-left: 10%;
+    padding-right: 10%;
+    border-left: none;
+    border-right: none;
+    background-color: transparent;
+    color:white;
+}

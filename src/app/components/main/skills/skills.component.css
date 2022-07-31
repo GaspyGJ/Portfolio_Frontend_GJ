@@ -1,10 +1,12 @@
 #Seccion-Habilidades {
-    margin-top: 8%;
     height: 40%;
-}
+    background-image: linear-gradient(#2596be, black);
 
-#list-skills {
-    background-color: #a7a4a146;
+    border-top: 1px solid white;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+#list-hard-skills {
     margin-top: 2em;
     padding: 1em 0 1em 0;
 
@@ -14,29 +16,33 @@
     justify-content: space-around;
     align-items: center;
 
-    overflow: visible;
+    flex-wrap: wrap;
+}
+#list-soft-skills {
+    margin-top: 2em;
+    padding: 1em 0 1em 0;
+
+    list-style: none;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    flex-wrap: wrap;
+}
+#list-soft-skills p{
+    color:white;
 }
 
-#list-skills li {
-    width: 5em;
-    height: 5em;
-
+ li {
     transition: transform 1s;
 }
 
-#list-skills li:hover {
-    width: 5em;
-    height: 5em;
-    transform: scale(1.6);
+li p{
+    color:white;
+    text-align: center;
 }
 
-@media only screen and (max-width: 600px) {
-    #list-skills {
-        display: flex;
-        align-items: center;
-        align-items: end;
-        padding: 0;
-        overflow: visible;
-        padding: 1em 0 1em 0;
-    }
+li:hover {
+    transform: scale(1.2);
 }

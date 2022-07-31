@@ -1,7 +1,12 @@
-footer {
+footer p{
+    padding-bottom: 4em;
+    font-size: 0.8em;
+    color: white;
+    text-align: center;
+}
+ul {
     position:fixed;
-    bottom: 0;
-
+    bottom: -1em;
     padding-top: 6px;
     border-top: 1px solid white;
     width: 100%;
@@ -9,12 +14,6 @@ footer {
     animation-name: color-blanco-rosa;
     animation-duration: 6s;
 }
-
-.ContactMe {
-    color: #EDCB54;
-    background-color: #a7a4a1cb;
-}
-
 .RedesSociales {
     display: flex;
     justify-content: space-around;
@@ -22,17 +21,16 @@ footer {
 }
 
 .RedesSociales li {
-    color: #cf08c5;
+    color: #2596be;
 
 }
 
 .RedesSociales a {
-    color: #cf08c5;
+    color: #2596be;
 }
-
 
 h3 {
     font-size: 1.4em;
-    color: #cf08c5;
+    color: #2596be;
     margin : 0;
 }

@@ -40,7 +40,7 @@ export class AppComponent {
     interactivity: {
       events: {
         onClick: {
-          enable: true,
+          enable: false,
           mode: ClickMode.push
         },
         onHover: {

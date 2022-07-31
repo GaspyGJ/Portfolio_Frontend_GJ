@@ -1,9 +1,12 @@
 #Seccion-Proyectos {
-    color: #EDCB54;
+    color: white;
     line-height: 1.8em;
-    padding-top: 5%;
-    margin: 0 4em 0 4em;
+    
+    background-image: linear-gradient(black,#2596be);
+
     border-top: 1px solid white;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 
 #list-Proyectos {
@@ -33,7 +36,7 @@
     color: #cf08c5;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 680px) {
     #list-Proyectos div img {
         display: none;
     }

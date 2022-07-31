@@ -13,6 +13,10 @@ import { ExperienciaComponent } from './components/main/experiencia/experiencia.
 import { EducationComponent } from './components/main/education/education.component';
 
 import { NgParticlesModule } from "ng-particles";
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { AboutMeComponent } from './components/main/about-me/about-me.component';
+
+
 
 @NgModule({
   declarations: [
@@ -25,11 +29,13 @@ import { NgParticlesModule } from "ng-particles";
     FooterComponent,
     ExperienciaComponent,
     EducationComponent,
+    AboutMeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgParticlesModule
+    NgParticlesModule,
+    NgCircleProgressModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]

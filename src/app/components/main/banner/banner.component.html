@@ -1,10 +1,12 @@
-<div class="main">
-    <div class="Info-Creador">
-        <h3>Programador</h3>
-        <h1>Gaspar <br> Jullier</h1>
-        <p>Estudiante de Ing.Sistemas y <br>
-            autodidacta en desarrollo web y <br> otras tegnologias
-        </p>
-        <!-- <button id="BotonReadMore" class="BotonReadMore">Ver Mas</button> -->
+
+<div id="pantalla-particulas">
+    
+    <div id="particulas">
+        <ng-particles [id]="id" [options]="particlesOptions" [particlesInit]="particlesInit"
+            (particlesLoaded)="particlesLoaded($event)"></ng-particles>  
     </div>
+
+    <div id="repulse-div" class="repulse-div"><h1>WELCOME</h1></div>
+    
+
 </div>
