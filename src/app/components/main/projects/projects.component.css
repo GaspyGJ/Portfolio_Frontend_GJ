@@ -1,45 +1,48 @@
 #Seccion-Proyectos {
-    color: white;
     line-height: 1.8em;
-    
     background-image: linear-gradient(black,#2596be);
-
     border-top: 1px solid white;
     padding-top: 5%;
     padding-bottom: 5%;
 }
 
 #list-Proyectos {
+    display: flex;
+    justify-content: space-around;
+    gap:1em;
+    flex-wrap: wrap;
+}
+
+/*Card de cada Proyecto*/
+.card{
     text-align: center;
-    list-style: none;
+    color:white;
+    background-image: linear-gradient(black,#2596be);
+    box-shadow: 6px 6px 15px black;
+    max-width: 500px;
 }
 
 .container-fotos-proyectos {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 1em;
+    gap:5px; 
+    max-height: 30em;
+ }
+
+ .container-fotos-proyectos img{
+    overflow:auto;/*nose q hace pero funciona para q no se agrande la imagen mas alla de su conteiner*/
 }
 
-#list-Proyectos div img {
-    margin-top: 2em;
-    width: 25em;
-    height: 42em;
+a{
+    color:black;
 }
 
-#Seccion-Proyectos a {
-    color: #cf08c5;
-    Text-decoration: none;
-}
+/************************* With LogIn *****************************************/
 
-#Seccion-Proyectos a:visited {
-    color: #cf08c5;
+.btn-container{
+    text-align: center;
 }
-
-@media only screen and (max-width: 680px) {
-    #list-Proyectos div img {
-        display: none;
-    }
-    
+.btn-edit{
+    border: 1px solid rgb(0, 0, 0);
+    background-color: #69e07d;
 }
-

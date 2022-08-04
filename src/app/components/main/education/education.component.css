@@ -3,6 +3,9 @@
     border-top: 1px solid white;
     padding-top: 5%;
     padding-bottom: 5%;
+
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 h3{
@@ -19,9 +22,23 @@ h3{
 .list-group-item{
     padding-left: 10%;
     padding-right: 10%;
-    border-left: none;
-    border-right: none;
     background-color: transparent;
     color:white;
+    text-align: center;
+    width: 70%;
+    border:none;
 }
 
+small{
+    color:rgb(173, 173, 173);
+}
+
+/************************* With LogIn *****************************************/
+
+.btn-container{
+    text-align: center;
+}
+.btn-edit{
+    border: 1px solid rgb(0, 0, 0);
+    background-color: #69e07d;
+}

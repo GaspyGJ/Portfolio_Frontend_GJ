@@ -46,3 +46,14 @@ li p{
 li:hover {
     transform: scale(1.2);
 }
+
+
+/************************* With LogIn *****************************************/
+
+.btn-container{
+    text-align: center;
+}
+.btn-edit{
+    border: 1px solid rgb(0, 0, 0);
+    background-color: #69e07d;
+}

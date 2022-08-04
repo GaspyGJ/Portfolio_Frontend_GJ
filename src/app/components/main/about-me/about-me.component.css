@@ -9,6 +9,7 @@
     background-image: linear-gradient(black,#2596be);
     gap:10px;
 }
+
 #Foto-Perfil img{
     width: 150px;
     height: 150px;
@@ -23,4 +24,21 @@
     font-family: 'Montserrat', 'sans-serif';
     font-size: 2em;
     color:white;
+}
+
+
+
+/************************* With LogIn *****************************************/
+
+.btn-edit{
+    border: 1px solid rgb(0, 0, 0);
+    background-color: #69e07d;
+}
+
+#Foto-Perfil .btn-edit{
+    display: block;
+    margin: 0 auto;
+
+    position: relative;
+    top:-5.6em
 }
