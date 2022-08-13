@@ -1,0 +1,59 @@
+
+a{
+  position:absolute;
+  top:1em;
+  left:1em;
+  background-color: rgb(235, 225, 225);
+  padding: 0.4em;
+  border-radius: 0.5em;
+
+  text-decoration: none;
+  color:black
+
+}
+#Seccion-LogIn {
+  border-top: 1px solid white;
+  background-image: linear-gradient(#2596be,black);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#Seccion-LogIn h3 {
+  background-color: transparent;
+}
+
+#form-Seccion-LogIn {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+  border: 1px solid rgb(36, 39, 39);
+  border-radius: 0.5em;
+  gap: 2em;
+  width: 40%;
+  
+  padding: 2em;
+  padding-bottom: 3em;
+}
+
+#form-Seccion-LogIn #name{
+  height: 2em;
+}
+
+#form-Seccion-LogIn #password{
+  height: 2em;
+}
+
+#form-Seccion-LogIn * {
+  background-color: rgb(235, 225, 225);
+  padding: 0.4em;
+  border-radius: 0.5em;
+}
+
+@media only screen and (max-width: 600px) {
+  #form-Seccion-LogIn {
+      width: 100%;
+  }
+}

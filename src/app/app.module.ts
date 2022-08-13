@@ -16,6 +16,15 @@ import { NgParticlesModule } from "ng-particles";
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { AboutMeComponent } from './components/main/about-me/about-me.component';
 
+import {HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './components/login/login.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
+import { EditAboutMeComponent } from './components/edits/edit-about-me/edit-about-me.component';
+import { EditHardSkillComponent } from './components/edits/edit-hard-skill/edit-hard-skill.component';
+import { EditSoftSkillComponent } from './components/edits/edit-soft-skill/edit-soft-skill.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AddHardSkillComponent } from './components/adds/add-hard-skill/add-hard-skill.component';
+import { AddSoftSkillComponent } from './components/adds/add-soft-skill/add-soft-skill.component';
 
 
 @NgModule({
@@ -29,13 +38,22 @@ import { AboutMeComponent } from './components/main/about-me/about-me.component'
     FooterComponent,
     ExperienciaComponent,
     EducationComponent,
-    AboutMeComponent
+    AboutMeComponent,
+    LoginComponent,
+    MainPageComponent,
+    EditAboutMeComponent,
+    EditHardSkillComponent,
+    EditSoftSkillComponent,
+    AddHardSkillComponent,
+    AddSoftSkillComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgParticlesModule,
-    NgCircleProgressModule.forRoot({})
+    NgCircleProgressModule.forRoot({}),
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

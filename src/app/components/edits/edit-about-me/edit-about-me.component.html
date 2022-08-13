@@ -1,0 +1,28 @@
+<div *ngFor="let persona of personas">
+
+    <div id="Seccion-Edit" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1200">
+        <a href="">Volver</a>
+        <form id="form-Seccion-Edit">
+            <h3>Editar Persona:</h3>
+            <p>Escribe sobre el/los atributo/s que deseas cambiar - Los atributos que no se editen quedaran como estan</p>
+            <input type="text"  #nombre value={{persona.nombre}} placeholder="ingresar nombre">
+            <input type="text" #apellido value={{persona.apellido}} placeholder="ingresar apellido">
+            <input type="text" #nombrePuesto value={{persona.nombrePuesto}} placeholder="ingresar nombre puesto">
+            <input type="text" #descripcion value={{persona.descripcion}} placeholder="ingresar descripcion">
+            <input type="text" #domicilio value={{persona.domicilio}} placeholder="ingresar domicilio">
+            <input type="number" #edad value={{persona.edad}} placeholder="ingresar edad">
+            <input type="text" #urlFoto value={{persona.urlFoto}} placeholder="ingresar url Foto">
+            <button type="submit" 
+            (click)="actualizarPersona(nombre.value,apellido.value,edad.value,domicilio.value,nombrePuesto.value,urlFoto.value,descripcion.value)">
+            Guardar Cambios</button>
+        </form>
+    </div>
+
+    <form>
+
+    </form>
+
+</div>
+
+
+

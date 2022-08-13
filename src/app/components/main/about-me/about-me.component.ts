@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { Persona } from 'src/app/entitys/persona';
+import { PersonaService } from 'src/app/service/persona.service';
+
 
 @Component({
   selector: 'app-about-me',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutMeComponent implements OnInit {
 
-  constructor() { }
+  constructor( private personaService:PersonaService) { }
+  
+  personas:Persona[];
 
   ngOnInit(): void {
+    this.obtenerPersona();
   }
 
-}
+  private obtenerPersona(){
+    this.personaService.getPersona().subscribe(dato=>{
+      this.personas = dato;
+      console.log("El nombre de la  persona creada es = "+this.personas[0].nombre);
+    })
+  }
+
+  }

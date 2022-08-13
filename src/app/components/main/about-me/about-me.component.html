@@ -1,16 +1,20 @@
-<div id="foto-perfil-about-me">
+<div id="foto-perfil-about-me" *ngFor="let persona of personas">
     <div id="Foto-Perfil">
-        <img src="../../../../assets/imagenes/RATA.png">
-        <button class="tagForLogIn" class="btn-edit" id="btn-edit-foto">Edit</button>
-    </div>
-    <div id="about-me">
         
-        <h3>Gaspar Jullier</h3>
-        <h3>Programador Full Stack Jr</h3>
-        <p>Estudiante de Ing.Sistemas UTN FRSF</p>
-        <p>Argentina - Santa Fe - Santo Tome</p>
-        <p>21 años</p>
-        <button class="tagForLogIn" class="btn-edit">Edit</button>
+        <!--<img src="../../../../assets/imagenes/RATA.png">-->
+        <img src={{persona.urlFoto}}>
+
+        <!-- <button class="tagForLogIn" class="btn-edit" id="btn-edit-foto">Edit</button> -->
+
+    </div>
+    <div id="about-me" >
+        
+        <h3>{{persona.nombre}} {{persona.apellido}}</h3>
+        <h3>{{persona.nombrePuesto}}</h3>
+        <p>{{persona.descripcion}}</p>
+        <p>{{persona.domicilio}}</p>
+        <p>{{persona.edad}} años</p>
+        <a href="edit/about/me" class="tagForLogIn" class="btn-edit">Edit</a>
 
     </div>
 </div>
