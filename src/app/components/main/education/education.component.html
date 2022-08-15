@@ -1,45 +1,29 @@
 <div id="Seccion-Educacion">
   <h3 class="titulo-de-seccion-Blanco"> Education:</h3>
   <div class="tagForLogIn" class="btn-container">
-    <button  class="btn-edit">Add</button>
-</div>
+    <button class="btn-edit" mat-icon-button (click)="addEducacion()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
   <!--lista usando bootstrap-->
   <div class="list-group">
-    <div href="#" class="list-group-item">
+    <div *ngFor=" let educacion of educaciones" id={{educacion.idEducacion}} class="list-group-item">
       <hr>
-      <h5>Titulo Secundario</h5>
-      <p>Bachiller en Ciencias Sociales</p>
-      <small>Terminado 2018</small>
+      <h5>{{educacion.titulo}}</h5>
+      <p>{{educacion.descripcion}}</p>
+      <small>{{educacion.anioStart}} - {{educacion.anioEnd}}</small>
+      <br>
+      <small>{{educacion.estadoActual}}</small>
 
       <div class="tagForLogIn" class="btn-container">
-        <button class="btn-edit">Edit</button>
-        <button class="btn-edit">Drop</button>
-      </div>
-      <hr>
-    </div>
-    <div href="#" class="list-group-item">
-      <h5>Titulo Universitario</h5>
-      <p>Estudiante Ingenieria en Sistemas de Informacion (UTN)</p>
-      <small>2018 - Actualidad (3er año)</small>
+        <button mat-icon-button class="btn-edit" (click)="editEducacion(educacion.idEducacion)">
+          <mat-icon color="red">edit</mat-icon>
+        </button>
 
-      <div class="tagForLogIn" class="btn-container">
-        <button class="btn-edit">Edit</button>
-        <button class="btn-edit">Drop</button>
+        <button mat-icon-button class="btn-drop" (click)="dropEducacion(educacion.idEducacion)">
+          <mat-icon>delete</mat-icon>
+        </button>
       </div>
-      <hr>
     </div>
-    
-    <div href="#" class="list-group-item">
-      <h5>Curso Argentina Programa</h5>
-      <p>Se Programar , Yo Programo</p>
-      <small>2021- actualidad</small>
 
-      <div class="tagForLogIn" class="btn-container">
-        <button class="btn-edit">Edit</button>
-        <button class="btn-edit">Drop</button>
-      </div>
-      <hr>
-    </div>
   </div>
-
-</div>

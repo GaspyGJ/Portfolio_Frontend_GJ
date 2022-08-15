@@ -47,19 +47,21 @@ li:hover {
     transform: scale(1.2);
 }
 
-
 /************************* With LogIn *****************************************/
-
 .btn-container{
     text-align: center;
-
+    display: flex;
+    gap:0.5em;
+    justify-content: center;
 }
 .btn-edit{
     border: 1px solid rgb(0, 0, 0);
-    background-color: #69e07d;
-    text-decoration: none;
-    color:black;
-    padding-left: 5px;
-    padding-right: 5px;
-    margin: 5px;
+
+    background-color: rgb(36, 170, 36);
 }
+.btn-drop{
+    border: 1px solid rgb(0, 0, 0);
+
+    background-color: rgb(194, 72, 72);
+}
+

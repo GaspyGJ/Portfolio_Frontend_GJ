@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { SoftSkill } from 'src/app/entitys/soft_skills';
 import { SoftSkillService } from 'src/app/service/soft-skill.service';
 
@@ -12,7 +13,7 @@ export class AddSoftSkillComponent implements OnInit {
   softSkill:SoftSkill;
   default_softSkill:SoftSkill;
 
-  constructor(private softSkillService:SoftSkillService) { 
+  constructor(private softSkillService:SoftSkillService,private referencia: MatDialogRef<AddSoftSkillComponent>) { 
 
     this.default_softSkill= new SoftSkill(100,'15','Responsabilidad');
   }
@@ -25,9 +26,10 @@ export class AddSoftSkillComponent implements OnInit {
    
     this.softSkill = new SoftSkill(Number(porcentaje),fontSize,titulo);
 
-    this.softSkillService.saveSoftSkill(this.softSkill).subscribe(dato=>{
+    this.softSkillService.saveSoftSkill(this.softSkill).subscribe(dato=>{})
 
-    })
+    this.referencia.close("Cerrando");
+
   }
   
 

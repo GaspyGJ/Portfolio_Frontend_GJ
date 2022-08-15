@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { HardSkill } from 'src/app/entitys/hard_skill';
 import { HardSkillService } from 'src/app/service/hard-skill.service';
 
@@ -12,7 +13,7 @@ export class AddHardSkillComponent implements OnInit {
   hardSkill:HardSkill;
   default_hardSkill:HardSkill;
 
-  constructor(private hardSkillService:HardSkillService) { 
+  constructor(private hardSkillService:HardSkillService , private referencia: MatDialogRef<AddHardSkillComponent>) { 
 
     this.default_hardSkill = new HardSkill(100,15,15,'../../../../assets/imagenes/Skills/c++.png');
   }
@@ -26,6 +27,8 @@ export class AddHardSkillComponent implements OnInit {
     this.hardSkill = new HardSkill(Number(porcentaje),Number(alto),Number(ancho),urlFoto);
 
     this.hardSkillService.saveHardSkill(this.hardSkill).subscribe(dato=>{})
+
+    this.referencia.close("Cerrando");
   }
   
 

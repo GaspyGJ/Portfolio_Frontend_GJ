@@ -2,45 +2,30 @@
   <h3 class="titulo-de-seccion-Blanco"> Experience:</h3>
 
   <div class="tagForLogIn" class="btn-container">
-    <button class="btn-edit">Add</button>
+    <button class="btn-edit" mat-icon-button (click)="addExperiencia()">
+      <mat-icon>add</mat-icon>
+    </button>
   </div>
   <!--lista usando bootstrap-->
   <div class="list-group">
-    <div class="list-group-item  flex-column align-items-start">
+
+    <div *ngFor=" let experiencia of experiencias" id={{experiencia.idExperiencia}} class="list-group-item">
       <hr>
-      <h5>Sistema Interno Fabrica de Hielo y Agua</h5>
-      <p>Gestion de stock, clientes y ventas para una Fabrica
-        de hielo y agua "San Cayetano" de la ciudad Santo Tome, Santa Fe
-      </p>
-      <p>Tecnologias utilizadas: C++ ( QT ), SQL (SQLITE)</p>
-
-      <small>2022-Actualidad</small>
-
-      <p><a href="#">Ver Proyecto</a></p>
+      <h5>{{experiencia.titulo}}</h5>
+      <p>{{experiencia.descripcion}}</p>
+      <p>Tipo de Experiencia :  {{experiencia.tipoExperiencia}}</p>
+      <p>Tegnologias Utilizadas :  {{experiencia.tegnologiasUtilizadas}}</p>
+      <small>{{experiencia.anioStart}} - {{experiencia.anioEnd}}</small>
+      <p *ngIf="experiencia.linkProyectos!=''"><a href={{experiencia.linkProyectos}}>Ver Proyecto</a></p>
 
       <div class="tagForLogIn" class="btn-container">
-        <button class="btn-edit">Edit</button>
-        <button class="btn-edit">Drop</button>
+        <button mat-icon-button class="btn-edit" (click)="editExperiencia(experiencia.idExperiencia)">
+          <mat-icon color="red">edit</mat-icon>
+        </button>
+
+        <button mat-icon-button class="btn-drop" (click)="dropExperiencia(experiencia.idExperiencia)">
+          <mat-icon>delete</mat-icon>
+        </button>
       </div>
-      <hr>
-    </div>
-
-    <div class="list-group-item  flex-column align-items-start">
-
-      <h5>Pagina Web Fabrica de Hielo y Agua</h5>
-      <p>Web personalizada para visualizacion de precio de productos con
-        conexion a Base de Datos</p>
-      <p>Tecnologias utilizadas: HTML, CSS, JS, SQL (MySQL)</p>
-
-      <small>2022-Actualidad</small>
-
-      <p><a href="#">Ver Proyecto</a></p>
-
-      <div class="tagForLogIn" class="btn-container">
-        <button class="btn-edit">Edit</button>
-        <button class="btn-edit">Drop</button>
-      </div>
-
     </div>
   </div>
-</div>

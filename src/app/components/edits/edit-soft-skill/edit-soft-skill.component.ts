@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { SoftSkill } from 'src/app/entitys/soft_skills';
 import { SoftSkillService } from 'src/app/service/soft-skill.service';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { EditHardSkillComponent } from '../edit-hard-skill/edit-hard-skill.component';
+
+
 
 @Component({
   selector: 'app-edit-soft-skill',
@@ -10,23 +14,22 @@ import { SoftSkillService } from 'src/app/service/soft-skill.service';
 })
 export class EditSoftSkillComponent implements OnInit {
 
-  constructor(private softSkillService: SoftSkillService, private rutaActiva: ActivatedRoute) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public params:any, private referencia:MatDialogRef<EditSoftSkillComponent>, private softSkillService: SoftSkillService, private rutaActiva: ActivatedRoute) { }
 
   softSkill: SoftSkill;
 
   id: number;
 
   ngOnInit(): void {
-    let id_softSkill = this.rutaActiva.paramMap.subscribe(params => {
-      this.id = Number(params.get('param_ID_softSkill'));
+    /*let id_softSkill = this.rutaActiva.paramMap.subscribe(params => {
+      this.id = Number(params.get('param_ID_softSkill'));*/
 
-      
-    console.log("Pase por aca");
+      this.id= Number(this.params.id);
 
       this.softSkillService.getSoftSkill_byID(this.id).subscribe(dato => {
         this.softSkill = dato;
       })
-    })
+    //})
   }
 
   protected actualizar_soft_skill(porcentaje:string,titulo:string,fontSize:string) {
@@ -36,6 +39,8 @@ export class EditSoftSkillComponent implements OnInit {
     softSkill_Updated.idSoftSkill = this.softSkill.idSoftSkill;
 
     this.softSkillService.saveSoftSkill(softSkill_Updated).subscribe(dato => { })
+
+    this.referencia.close("Cerrando");
 
   }
 

@@ -11,20 +11,34 @@ import { SkillsComponent } from './components/main/skills/skills.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ExperienciaComponent } from './components/main/experiencia/experiencia.component';
 import { EducationComponent } from './components/main/education/education.component';
+import { LoginComponent } from './components/login/login.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
+import { EditAboutMeComponent } from './components/edits/edit-about-me/edit-about-me.component';
+import { EditHardSkillComponent } from './components/edits/edit-hard-skill/edit-hard-skill.component';
+import { EditSoftSkillComponent } from './components/edits/edit-soft-skill/edit-soft-skill.component';
+import { EditEducacionComponent } from './components/edits/edit-educacion/edit-educacion.component';
+import { EditExperienciaComponent } from './components/edits/edit-experiencia/edit-experiencia.component';
+import { AddEducacionComponent } from './components/adds/add-educacion/add-educacion.component';
+import { AddExperienciaComponent } from './components/adds/add-experiencia/add-experiencia.component';
+
 
 import { NgParticlesModule } from "ng-particles";
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { AboutMeComponent } from './components/main/about-me/about-me.component';
 
 import {HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './components/login/login.component';
-import { MainPageComponent } from './components/main-page/main-page.component';
-import { EditAboutMeComponent } from './components/edits/edit-about-me/edit-about-me.component';
-import { EditHardSkillComponent } from './components/edits/edit-hard-skill/edit-hard-skill.component';
-import { EditSoftSkillComponent } from './components/edits/edit-soft-skill/edit-soft-skill.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddHardSkillComponent } from './components/adds/add-hard-skill/add-hard-skill.component';
 import { AddSoftSkillComponent } from './components/adds/add-soft-skill/add-soft-skill.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import {MatInputModule} from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AddProyectoComponent } from './components/adds/add-proyecto/add-proyecto.component';
+import { EditProyectoComponent } from './components/edits/edit-proyecto/edit-proyecto.component';
 
 
 @NgModule({
@@ -46,6 +60,23 @@ import { AddSoftSkillComponent } from './components/adds/add-soft-skill/add-soft
     EditSoftSkillComponent,
     AddHardSkillComponent,
     AddSoftSkillComponent,
+    EditExperienciaComponent,
+    AddExperienciaComponent,
+    AddEducacionComponent,
+    EditEducacionComponent,
+    AddProyectoComponent,
+    EditProyectoComponent
+  ],
+  entryComponents:[
+    EditHardSkillComponent,
+    EditSoftSkillComponent,
+    AddHardSkillComponent,
+    AddSoftSkillComponent,
+    LoginComponent,
+    EditExperienciaComponent,
+    EditEducacionComponent,
+    AddProyectoComponent,
+    EditProyectoComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +84,13 @@ import { AddSoftSkillComponent } from './components/adds/add-soft-skill/add-soft
     NgParticlesModule,
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatIconModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

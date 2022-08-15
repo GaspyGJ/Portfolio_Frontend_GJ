@@ -1,0 +1,47 @@
+<div>
+
+    <div id="Seccion-Edit" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1200">
+        <a mat-dialog-close>Volver</a>
+        <form id="form-Seccion-Edit">
+            <h3>Agregar Hard Skill:</h3>
+            <p>Escribe sobre el/los atributo/s que deseas cambiar - Los atributos que no se editen quedaran como estan
+            </p>
+            <div class="div-p-input">
+                <p>Titulo :</p>
+                <input type="text" #titulo value={{default_proyecto.titulo}} placeholder="ingresar titulo">
+            </div>
+            <div class="div-p-input">
+                <p>Descripcion :</p>
+                <input type="text" #descripcion value={{default_proyecto.descripcion}}
+                    placeholder="ingresar descripcion">
+            </div>
+            <div class="div-p-input">
+                <p>urlGitHub :</p>
+                <input type="text" #urlGitHub value={{default_proyecto.urlGitHub}} placeholder="ingresar url de github">
+            </div>
+            <div class="div-p-input">
+                <p>urlAppWeb :</p>
+                <input type="text" #urlAppWeb value={{default_proyecto.urlAppWeb}}
+                    placeholder="ingresar url de app Web">
+            </div>
+
+            <div class="div-p-input">
+                <p>Url Fotos :</p>
+                <input type="text" #urlFoto value={{default_proyecto.urlAppWeb}}
+                    placeholder="ingresar url de app Web">
+                <button type="button" (click)="addFoto(urlFoto.value)"> Agregar Url Foto</button>
+
+                <ul *ngFor="let urlFoto of urlFotos">
+                    <li>{{urlFoto}}</li>
+                </ul>
+            </div>
+
+            <button type="button"
+                (click)="saveProyecto(titulo.value, descripcion.value , urlGitHub.value , urlAppWeb.value)">
+                Guardar Proyecto</button>
+        </form>
+    </div>
+
+    <form>
+
+    </form>

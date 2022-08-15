@@ -1,8 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
-/* lo de arriba es porque importe algunas fuentes de letra*/
-
 /****************Declaraciones de KeyFrames que se utilizan en los componentes**************************/
 
 @keyframes color-negro-blanco{
@@ -40,12 +37,42 @@
   }
 }
 
+/**** PARA LOS DIALOGS ****/
+mat-dialog-container {
+  background-color:black !important;
+  border-radius: 2em !important;
+  margin:0 !important;
+  padding: 0 !important;
+  box-shadow: -5px 5px 20px #2596be !important;
+}
+/**** FIN PARA LOS DIALOGS ****/
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color:black; /*Nose porq este no funciona pueso aqui , pero puesto en la etiqueta si (? */
+    font-family: sans-serif;
+    background-color:black !important; /*Nose porq este no funciona pueso aqui , pero puesto en la etiqueta si (? */
 }
+  /*Scroll bar*/
+  /* width */
+  ::-webkit-scrollbar {
+    width: 0.5em;
+    height: 90px;
 
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #000000;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 /****************Estilos Generales para todos los componentes***************************/
 
 .titulo-de-seccion-Blanco{
@@ -63,3 +90,5 @@ body {
   animation-name: color-blanco-negro;
   animation-duration: 6s;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: sans-serif; }

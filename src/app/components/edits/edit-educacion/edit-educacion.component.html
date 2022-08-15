@@ -1,0 +1,29 @@
+<div id="Seccion-Edit" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1200">
+    <a mat-dialog-close >Volver</a>
+    <form  id="form-Seccion-Edit">
+        <h3 >Editar Educacion:</h3>
+        <p>Escribe sobre el/los atributo/s que deseas cambiar - Los atributos que no se editen quedaran como estan</p>
+        <div class="div-p-input">
+            <p>Titulo :</p>
+            <input type="text" #titulo value={{educacion.titulo}} placeholder="ingresar Titulo">
+        </div>
+        <div class="div-p-input">
+            <p>Descripcion :</p>
+            <input type="text" #descripcion value={{educacion.descripcion}} placeholder="ingresar descripcion">
+        </div>
+        <div class="div-p-input">
+            <p>Año de Ingreso :</p>
+            <input type="text" #anioStar value={{educacion.anioStart}} placeholder="ingresar año de ingreso">
+        </div>
+        <div class="div-p-input">
+            <p>Año de Egreso :</p>
+            <input type="text" #anioEnd value={{educacion.anioEnd}} placeholder="ingresar año de egreso">
+        </div>
+        <div class="div-p-input">
+            <p>Estado Actual :</p>
+            <input type="text" #estadoActual value={{educacion.estadoActual}} placeholder="ingresar estado actual">
+        </div>
+        <button type="button" (click)="actualizar_Educacion(titulo.value,descripcion.value,anioStar.value,anioEnd.value,estadoActual.value)">
+            Guardar Educacion</button>
+        </form>
+</div>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
+import { LoginService } from 'src/app/service/login.service';
 
 //import { FormBuilder , FormGroup , Validators } from '@angular/forms';
 
@@ -9,17 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  loginStatus:boolean;
-
-  constructor() {}
+  constructor(private loginService:LoginService) { }
 
   ngOnInit(): void {
   }
 
-  protected verificateUser(nombre:String , password:String){
-
+  public userLogin(nombre: string, password: string){
+   this.loginService.verificateUser(nombre,password);
   }
 
-
+ 
 
 }

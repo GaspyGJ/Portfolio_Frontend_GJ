@@ -14,7 +14,8 @@
         <p>{{persona.descripcion}}</p>
         <p>{{persona.domicilio}}</p>
         <p>{{persona.edad}} años</p>
-        <a href="edit/about/me" class="tagForLogIn" class="btn-edit">Edit</a>
-
+        <button  class="tagForLogIn" class="btn-edit" mat-icon-button (click)="editAboutMe()">
+            <mat-icon>edit</mat-icon>
+        </button>
     </div>
 </div>

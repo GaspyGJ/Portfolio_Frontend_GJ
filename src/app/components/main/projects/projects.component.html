@@ -1,87 +1,50 @@
 <div id="Seccion-Proyectos">
 
     <h3 class="titulo-de-seccion-Blanco">Personal Projects:</h3>
+
     <div class="tagForLogIn" class="btn-container">
-        <button  class="btn-edit">Add</button>
-    </div>
+        <button class="btn-edit" mat-icon-button (click)="addProyecto()">
+            <mat-icon>add</mat-icon>
+        </button>
+      </div>
+      
     <br>
-    <!--
-      <ul id="list-Proyectos">
-        <li>
-
-            <div class="container-fotos-proyectos">
-                <div><img src="../../../../assets/imagenes/Proyectos/Compras1.png"></div>
-                <div><img src="../../../../assets/imagenes/Proyectos/Compras2.png"></div>
-            </div>
-            <h5>App Web para gestionar lista de compras del SuperMercado</h5>
-            <p>Programacion Web Con <span>Angular</span></p>
-            <p></p>
-            <p>Ir al GitHub del Proyecto <a target="_blanck"
-                    href="https://github.com/GaspyGJ/OrganizadorCompras_Angular">CLICK AQUI</a></p>
-            <p>Probar App Web <a target="_blanck" href="https://comprassupermarket.000webhostapp.com/">CLICK
-                    AQUI</a></p>
-
-        </li>
-
-    </ul>
--->
     <div id="list-Proyectos">
-        <div class="card">
-            <div class="container-fotos-proyectos">
-                <img src="../../../../assets/imagenes/Proyectos/Compras1.png">
-                <img src="../../../../assets/imagenes/Proyectos/Compras2.png">
+        <div class="card" *ngFor="let proyecto of proyectos">
+            <div class="container-fluid">
+                <ngb-carousel>
+                    <ng-template ngbSlide *ngFor="let Urlfoto of proyecto.urlFotos">
+                        <div class="wrapper">
+                            <img src={{Urlfoto}}>
+                        </div>
+                    </ng-template>
+                </ngb-carousel>
             </div>
             <div class="card-body">
-                <h5 class="card-title">Compras-Super</h5>
-                <p class="card-text">App Web para gestionar lista de compras del SuperMercado</p>
-                <a target="_blanck" href="https://github.com/GaspyGJ/OrganizadorCompras_Angular">GitHub del Proyecto </a>
-                <a target="_blanck" href="https://comprassupermarket.000webhostapp.com/">||  Probar App Web</a>
+                <h5 class="card-title">{{proyecto.titulo}}</h5>
+                <div class="descripcion">
+                    <p class="card-text" >{{proyecto.descripcion}}</p>
+                </div>
+
+                <a target="_blanck" href={{proyecto.urlGitHub}}>GitHub del Proyecto</a>
+                <a target="_blanck" *ngIf=" proyecto.urlAppWeb!='' " href={{proyecto.urlAppWeb}}>|| Probar App Web</a>
+                <!--
+                <a target="_blanck" href="https://github.com/GaspyGJ/OrganizadorCompras_Angular">GitHub del Proyecto
+                </a>
+                <a target="_blanck" href="https://comprassupermarket.000webhostapp.com/">|| Probar App Web</a>
+                -->
             </div>
 
             <div class="tagForLogIn" class="btn-container">
-                <button class="btn-edit">Edit</button>
-                <button class="btn-edit">Drop</button>
+                <button mat-icon-button class="btn-edit" (click)="editProyecto(proyecto.idProyecto)">
+                    <mat-icon color="red">edit</mat-icon>
+                </button>
+
+                <button mat-icon-button class="btn-drop" (click)="dropProyecto(proyecto.idProyecto)">
+                    <mat-icon>delete</mat-icon>
+                </button>
             </div>
 
-        </div>
-        <div class="card">
-            <div class="container-fotos-proyectos">
-                <img src="../../../../assets/imagenes/Proyectos/Compras1.png">
-                <img src="../../../../assets/imagenes/Proyectos/Compras2.png">
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Compras-Super</h5>
-                <p class="card-text">App Web para gestionar lista de compras del SuperMercado</p>
-                <a target="_blanck" href="https://github.com/GaspyGJ/OrganizadorCompras_Angular">GitHub del Proyecto </a>
-                 
-                <a target="_blanck" href="https://comprassupermarket.000webhostapp.com/">||  Probar App Web</a>
-            </div>
-
-            <div class="tagForLogIn" class="btn-container">
-                <button class="btn-edit">Edit</button>
-                <button class="btn-edit">Drop</button>
-            </div>
-
-        </div>
-
-        <div class="card">
-            <div class="container-fotos-proyectos">
-                <img src="../../../../assets/imagenes/Proyectos/Compras1.png">
-                <img src="../../../../assets/imagenes/Proyectos/Compras2.png">
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Compras-Super</h5>
-                <p class="card-text">App Web para gestionar lista de compras del SuperMercado</p>
-                <a target="_blanck" href="https://github.com/GaspyGJ/OrganizadorCompras_Angular">GitHub del Proyecto </a>
-                <a target="_blanck" href="https://comprassupermarket.000webhostapp.com/">||  Probar App Web</a>
-            </div>
-
-            <div class="tagForLogIn" class="btn-container">
-                <button class="btn-edit">Edit</button>
-                <button class="btn-edit">Drop</button>
-            </div>
-        
         </div>
 
     </div>
-</div>

@@ -2,126 +2,62 @@
 
     <h3 class="titulo-de-seccion-Negro">Hard Skills:</h3>
     <div class="tagForLogIn" class="btn-container">
-        <a href="/add/hard/skills" class="btn-edit">Add</a>
+        <!--<a href="/add/hard/skills" class="btn-edit">Add</a>-->
+        <button class="btn-edit" mat-icon-button (click)="addHardSkill()">
+            <mat-icon>add</mat-icon>
+        </button>
     </div>
 
-    <ul id="list-hard-skills" >
-        <li *ngFor=" let hardSkill of hardSkills" id={{hardSkill.idHardSkill}} >
+    <ul id="list-hard-skills">
+        <li *ngFor=" let hardSkill of hardSkills" id={{hardSkill.idHardSkill}}>
 
-                <circle-progress [percent]="hardSkill.porcentaje" [radius]="60" [innerStrokeWidth]="0" [outerStrokeWidth]="5"
-                [outerStrokeColor]="'#79f083'" [animation]="true" [animationDuration]="1500"
+            <circle-progress [percent]="hardSkill.porcentaje" [radius]="60" [innerStrokeWidth]="0"
+                [outerStrokeWidth]="5" [outerStrokeColor]="'#79f083'" [animation]="true" [animationDuration]="1500"
                 [imageSrc]="hardSkill.urlFoto" [imageHeight]=hardSkill.alto [imageWidth]=hardSkill.ancho
                 [showImage]="true"></circle-progress>
-                <div class="tagForLogIn" class="btn-container">
-                    <button  class="btn-edit" (click)="editHardSkill(hardSkill.idHardSkill)">Edit</button>
-                    <button  class="btn-edit" (click)="dropHardSkill(hardSkill.idHardSkill)">Drop</button>
-                </div>
-                
+            <div class="tagForLogIn" class="btn-container">
+
+                <button mat-icon-button class="btn-edit" (click)="editHardSkill(hardSkill.idHardSkill)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+
+                <button mat-icon-button class="btn-drop" (click)="dropHardSkill(hardSkill.idHardSkill)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+
+            </div>
+
         </li>
-    </ul>   
-   
+    </ul>
+
     <br><br>
     <h3 class="titulo-de-seccion-Blanco">Soft Skills:</h3>
     <div class="tagForLogIn" class="btn-container">
-        <a href="add/soft/skills"  class="btn-edit">Add</a>
+        <!--<a href="add/soft/skills"  class="btn-edit">Add</a>-->
+        <button class="btn-edit" mat-icon-button (click)="addSoftSkill()">
+            <mat-icon>add</mat-icon>
+        </button>
     </div>
     <ul id="list-soft-skills">
         <li *ngFor=" let softSkill of softSkills" id={{softSkill.idSoftSkill}}>
-           <circle-progress [percent]="softSkill.porcentaje" [radius]="70" [innerStrokeWidth]="0" [outerStrokeWidth]="5"
-                [outerStrokeColor]="'#79f083'" [animation]="true" [animationDuration]="1500"
+            <circle-progress [percent]="softSkill.porcentaje" [radius]="70" [innerStrokeWidth]="0"
+                [outerStrokeWidth]="5" [outerStrokeColor]="'#79f083'" [animation]="true" [animationDuration]="1500"
                 [title]="softSkill.titulo" [showTitle]="true" [showUnits]="false" [showSubtitle]="false"
                 [titleFontSize]="softSkill.fontSize" [titleColor]="'#FFFFFF'">
             </circle-progress>
 
-                <div class="tagForLogIn" class="btn-container">
-                    <button  class="btn-edit" (click)="editSoftSkill(softSkill.idSoftSkill)">Edit</button>
-                    <button  class="btn-edit" (click)="dropSoftSkill(softSkill.idSoftSkill)">Drop</button>
-                </div>
-                
+            <div class="tagForLogIn" class="btn-container">
+                <button mat-icon-button class="btn-edit" (click)="editSoftSkill(softSkill.idSoftSkill)">
+                    <mat-icon color="red">edit</mat-icon>
+                </button>
+
+                <button mat-icon-button class="btn-drop" (click)="dropSoftSkill(softSkill.idSoftSkill)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+            
+
         </li>
     </ul>
-
-        <!--
-
-        <li>
-            <circle-progress [percent]="100" [radius]="70" [innerStrokeWidth]="0" [outerStrokeWidth]="5"
-                [outerStrokeColor]="'#79f083'" [animation]="true" [animationDuration]="1500"
-                [title]="'Responsabilidad'" [showTitle]="true" [showUnits]="false" [showSubtitle]="false"
-                [titleFontSize]="'15'" [titleColor]="'#FFFFFF'">
-        
-            </circle-progress>
-                <p>100%</p>
-                
-                <div class="tagForLogIn" class="btn-container">
-                    <button  class="btn-edit">Edit</button>
-                    <button  class="btn-edit">Drop</button>
-                </div>
-                
-        </li>
-        <li>
-            <circle-progress [percent]="80" [radius]="70" [innerStrokeWidth]="0" [outerStrokeWidth]="5"
-                [outerStrokeColor]="'#79f083'" [animation]="true" [animationDuration]="1500"
-                [title]="'Trabajo en equipo'" [showTitle]="true" [showUnits]="false" [showSubtitle]="false"
-                [titleFontSize]="'15'" [titleColor]="'#FFFFFF'">
-        
-            </circle-progress>
-                <p>80%</p>
-                
-                <div class="tagForLogIn" class="btn-container">
-                    <button  class="btn-edit">Edit</button>
-                    <button  class="btn-edit">Drop</button>
-                </div>
-                
-        </li>
-        <li>
-            <circle-progress [percent]="95" [radius]="70" [innerStrokeWidth]="0" [outerStrokeWidth]="5"
-                [outerStrokeColor]="'#79f083'" [animation]="true" [animationDuration]="1500"
-                [title]="'Pensamiento Critico'" [showTitle]="true" [showUnits]="false" [showSubtitle]="false"
-                [titleFontSize]="'14'" [titleColor]="'#FFFFFF'">
-        
-            </circle-progress>
-                <p>95%</p>
-                
-                <div class="tagForLogIn" class="btn-container">
-                    <button  class="btn-edit">Edit</button>
-                    <button  class="btn-edit">Drop</button>
-                </div>
-                
-        </li>
-
-        <li>
-            <circle-progress [percent]="80" [radius]="70" [innerStrokeWidth]="0" [outerStrokeWidth]="5"
-                [outerStrokeColor]="'#79f083'" [animation]="true" [animationDuration]="1500"
-                [title]="'Creatividad'" [showTitle]="true" [showUnits]="false" [showSubtitle]="false"
-                [titleFontSize]="'15'" [titleColor]="'#FFFFFF'">
-        
-            </circle-progress>
-                <p>80%</p>
-                
-                <div class="tagForLogIn" class="btn-container">
-                    <button  class="btn-edit">Edit</button>
-                    <button  class="btn-edit">Drop</button>
-                </div>
-                
-        </li>
-
-        <li>
-            <circle-progress [percent]="50" [radius]="70" [innerStrokeWidth]="0" [outerStrokeWidth]="5"
-                [outerStrokeColor]="'#79f083'" [animation]="true" [animationDuration]="1500"
-                [title]="'Ingles'" [showTitle]="true" [showUnits]="false" [showSubtitle]="false"
-                [titleFontSize]="'15'" [titleColor]="'#FFFFFF'">
-        
-            </circle-progress>
-                <p>50%</p>
-
-                <div class="tagForLogIn" class="btn-container">
-                    <button  class="btn-edit">Edit</button>
-                    <button  class="btn-edit">Drop</button>
-                </div>
-                
-        </li>
-    
-        -->
-
 
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 import { Persona } from 'src/app/entitys/persona';
 import { PersonaService } from 'src/app/service/persona.service';
 
@@ -9,7 +10,7 @@ import { PersonaService } from 'src/app/service/persona.service';
 })
 export class EditAboutMeComponent implements OnInit {
 
-  constructor( private personaService:PersonaService) { }
+  constructor( private referencia: MatDialogRef<EditAboutMeComponent>,private personaService:PersonaService) { }
   
   personas:Persona[];
 
@@ -54,6 +55,8 @@ export class EditAboutMeComponent implements OnInit {
     this.personaService.savePersona(this.personas[0]).subscribe(dato=>{
       console.log("La persona se guardo correctamente");
     })
+
+    this.referencia.close("Cerrando");
     
   }
 

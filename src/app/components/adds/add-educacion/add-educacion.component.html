@@ -1,0 +1,29 @@
+<div id="Seccion-Edit" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1200">
+    <a mat-dialog-close >Volver</a>
+    <form  id="form-Seccion-Edit">
+        <h3 >Agregar Educacion:</h3>
+        <p>Escribe sobre el/los atributo/s que deseas cambiar - Los atributos que no se editen quedaran como estan</p>
+        <div class="div-p-input">
+            <p>Titulo :</p>
+            <input type="text" #titulo value={{default_Educacion.titulo}} placeholder="ingresar Titulo">
+        </div>
+        <div class="div-p-input">
+            <p>Descripcion :</p>
+            <input type="text" #descripcion value={{default_Educacion.descripcion}} placeholder="ingresar descripcion">
+        </div>
+        <div class="div-p-input">
+            <p>Año de Ingreso :</p>
+            <input type="number" min="1990" max="2022" #anioStar value={{default_Educacion.anioStart}} placeholder="ingresar año de ingreso">
+        </div>
+        <div class="div-p-input">
+            <p>Año de Egreso :</p>
+            <input type="number" min="1990" max="2022" #anioEnd value={{default_Educacion.anioEnd}} placeholder="ingresar año de egreso">
+        </div>
+        <div class="div-p-input">
+            <p>Estado Actual :</p>
+            <input type="text" #estadoActual value={{default_Educacion.estadoActual}} placeholder="ingresar estado actual">
+        </div>
+        <button type="button" (click)="saveEducacion(titulo.value,descripcion.value,anioStar.value,anioEnd.value,estadoActual.value)">
+            Guardar Educacion</button>
+        </form>
+</div>
