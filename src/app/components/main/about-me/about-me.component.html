@@ -14,7 +14,7 @@
         <p>{{persona.descripcion}}</p>
         <p>{{persona.domicilio}}</p>
         <p>{{persona.edad}} años</p>
-        <button  class="tagForLogIn" class="btn-edit" mat-icon-button (click)="editAboutMe()">
+        <button *ngIf="isLogged" class="tagForLogIn" class="btn-edit" mat-icon-button (click)="editAboutMe()">
             <mat-icon>edit</mat-icon>
         </button>
     </div>

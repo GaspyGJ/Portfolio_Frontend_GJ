@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { HardSkill } from 'src/app/entitys/hard_skill';
 import { SoftSkill } from 'src/app/entitys/soft_skills';
 import { HardSkillService } from 'src/app/service/hard-skill.service';
+import { TokenService } from 'src/app/service/JWT/token-service.service';
 import { SoftSkillService } from 'src/app/service/soft-skill.service';
 import { AddHardSkillComponent } from '../../adds/add-hard-skill/add-hard-skill.component';
 import { AddSoftSkillComponent } from '../../adds/add-soft-skill/add-soft-skill.component';
@@ -17,7 +18,9 @@ import { EditSoftSkillComponent } from '../../edits/edit-soft-skill/edit-soft-sk
 })
 export class SkillsComponent implements OnInit {
 
-  constructor( private matDialog:MatDialog ,private router:Router ,private hardSkillService:HardSkillService , private softSkillService:SoftSkillService) { }
+  isLogged = false;
+
+  constructor( private tokenService: TokenService,private matDialog:MatDialog ,private router:Router ,private hardSkillService:HardSkillService , private softSkillService:SoftSkillService) { }
 
   hardSkills: HardSkill[];
   softSkills: SoftSkill[];
@@ -25,6 +28,11 @@ export class SkillsComponent implements OnInit {
   ngOnInit(): void {
     this.obtenerHardSkills();
     this.obtenerSoftSkills();
+
+    if(this.tokenService.getToken()){
+      //esta logeado
+      this.isLogged=true;
+    }
   }
 
   public obtenerHardSkills(){

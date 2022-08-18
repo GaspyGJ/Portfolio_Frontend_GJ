@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Educacion } from 'src/app/entitys/educacion';
 import { EducacionService } from 'src/app/service/educacion.service';
+import { TokenService } from 'src/app/service/JWT/token-service.service';
 import { AddEducacionComponent } from '../../adds/add-educacion/add-educacion.component';
 import { EditEducacionComponent } from '../../edits/edit-educacion/edit-educacion.component';
 
@@ -12,12 +13,20 @@ import { EditEducacionComponent } from '../../edits/edit-educacion/edit-educacio
 })
 export class EducationComponent implements OnInit {
 
-  constructor(private matDialog: MatDialog, private educacionService: EducacionService) { }
+  isLogged=false;
+
+  constructor(private tokenService: TokenService, private matDialog: MatDialog, private educacionService: EducacionService) { }
 
   educaciones: Educacion[]
 
   ngOnInit(): void {
     this.obtenerEducaciones();
+
+    if(this.tokenService.getToken()){
+      //esta logeado
+      this.isLogged=true;
+    }
+
   }
 
   public obtenerEducaciones() {

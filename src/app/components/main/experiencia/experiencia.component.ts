@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Experiencia } from 'src/app/entitys/experiencia';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
+import { TokenService } from 'src/app/service/JWT/token-service.service';
 import { AddExperienciaComponent } from '../../adds/add-experiencia/add-experiencia.component';
 import { EditExperienciaComponent } from '../../edits/edit-experiencia/edit-experiencia.component';
 
@@ -12,12 +13,18 @@ import { EditExperienciaComponent } from '../../edits/edit-experiencia/edit-expe
 })
 export class ExperienciaComponent implements OnInit {
 
-  constructor(private matDialog: MatDialog, private experienciaService: ExperienciaService) { }
+  isLogged = false;
+
+  constructor(private tokenService: TokenService,private matDialog: MatDialog, private experienciaService: ExperienciaService) { }
 
   experiencias: Experiencia[]
 
   ngOnInit(): void {
     this.obtenerExperiencias();
+    if(this.tokenService.getToken()){
+      //esta logeado
+      this.isLogged=true;
+    }
   }
 
   public obtenerExperiencias() {

@@ -9,7 +9,7 @@ import { Proyecto } from '../entitys/proyecto';
 export class ProyectoService {
 
   URL_Base_request_To_Backend = 'http://localhost:8080';
-  //URL_Base_request_To_Backend = 'https://portfoliobackendgasparjullier.herokuapp.com';
+  //URL_Base_request_To_Backend = 'https://gjbackend.herokuapp.com';
 
   constructor(private http: HttpClient) { }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { TokenService } from 'src/app/service/JWT/token-service.service';
 import { LoginComponent } from '../login/login.component';
 
 @Component({
@@ -9,10 +10,21 @@ import { LoginComponent } from '../login/login.component';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private matDialog:MatDialog) { }
 
+  isLogged:boolean;
 
-  ngOnInit(): void{}
+  constructor(private matDialog:MatDialog , private tokenService:TokenService) { }
+
+  ngOnInit(): void{
+    if(this.tokenService.getToken()){
+      this.isLogged=true;
+      console.log("logeado")
+    }
+    else{
+      this.isLogged=false;
+      console.log("no logeado")
+    }
+  }
 
 
   enterLogin(){
@@ -24,6 +36,11 @@ export class HeaderComponent implements OnInit {
     popup.afterClosed().subscribe(i=>{
       //hacer algo
     })
+  }
+  
+  onLogout(): void {
+    this.tokenService.logOut();
+    window.location.reload();
   }
 
 

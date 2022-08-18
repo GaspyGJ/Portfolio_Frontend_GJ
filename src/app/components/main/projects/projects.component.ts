@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Proyecto } from 'src/app/entitys/proyecto';
+import { TokenService } from 'src/app/service/JWT/token-service.service';
 import { ProyectoService } from 'src/app/service/proyecto.service';
 import { AddProyectoComponent } from '../../adds/add-proyecto/add-proyecto.component';
 import { EditProyectoComponent } from '../../edits/edit-proyecto/edit-proyecto.component';
@@ -12,13 +13,18 @@ import { EditProyectoComponent } from '../../edits/edit-proyecto/edit-proyecto.c
 })
 export class ProjectsComponent implements OnInit {
 
+  isLogged = false ;
 
-  constructor(private matDialog: MatDialog, private proyectoService: ProyectoService) { }
+  constructor(private tokenService: TokenService,private matDialog: MatDialog, private proyectoService: ProyectoService) { }
 
   proyectos: Proyecto[]
 
   ngOnInit(): void {
     this.obtenerProyectos();
+    if(this.tokenService.getToken()){
+      //esta logeado
+      this.isLogged=true;
+    }
   }
 
   public obtenerProyectos() {

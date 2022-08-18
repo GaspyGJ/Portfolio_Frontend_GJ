@@ -2,7 +2,7 @@
 
     <h3 class="titulo-de-seccion-Blanco">Personal Projects:</h3>
 
-    <div class="tagForLogIn" class="btn-container">
+    <div class="tagForLogIn btn-container"  *ngIf="isLogged">
         <button class="btn-edit" mat-icon-button (click)="addProyecto()">
             <mat-icon>add</mat-icon>
         </button>
@@ -35,7 +35,7 @@
                 -->
             </div>
 
-            <div class="tagForLogIn" class="btn-container">
+            <div class="tagForLogIn btn-container" *ngIf="isLogged">
                 <button mat-icon-button class="btn-edit" (click)="editProyecto(proyecto.idProyecto)">
                     <mat-icon color="red">edit</mat-icon>
                 </button>

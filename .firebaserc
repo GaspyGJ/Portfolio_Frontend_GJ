@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "portfolio-gasparjullier"
-  }
+    "gaspar-jullier-portfolio": "gaspar-jullier-portfolio",
+    "default": "gaspar-jullier-portfolio"
+  },
+  "targets": {},
+  "etags": {}
 }

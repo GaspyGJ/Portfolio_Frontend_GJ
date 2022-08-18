@@ -1,6 +1,6 @@
 <div id="Seccion-Educacion">
   <h3 class="titulo-de-seccion-Blanco"> Education:</h3>
-  <div class="tagForLogIn" class="btn-container">
+  <div class="tagForLogIn btn-container"  *ngIf="isLogged">
     <button class="btn-edit" mat-icon-button (click)="addEducacion()">
       <mat-icon>add</mat-icon>
     </button>
@@ -15,7 +15,7 @@
       <br>
       <small>{{educacion.estadoActual}}</small>
 
-      <div class="tagForLogIn" class="btn-container">
+      <div class="tagForLogIn" *ngIf="isLogged" class="btn-container">
         <button mat-icon-button class="btn-edit" (click)="editEducacion(educacion.idEducacion)">
           <mat-icon color="red">edit</mat-icon>
         </button>

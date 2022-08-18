@@ -1,8 +1,7 @@
 <div id="Seccion-Habilidades">
 
     <h3 class="titulo-de-seccion-Negro">Hard Skills:</h3>
-    <div class="tagForLogIn" class="btn-container">
-        <!--<a href="/add/hard/skills" class="btn-edit">Add</a>-->
+    <div class="tagForLogIn btn-container"  *ngIf="isLogged">
         <button class="btn-edit" mat-icon-button (click)="addHardSkill()">
             <mat-icon>add</mat-icon>
         </button>
@@ -15,7 +14,7 @@
                 [outerStrokeWidth]="5" [outerStrokeColor]="'#79f083'" [animation]="true" [animationDuration]="1500"
                 [imageSrc]="hardSkill.urlFoto" [imageHeight]=hardSkill.alto [imageWidth]=hardSkill.ancho
                 [showImage]="true"></circle-progress>
-            <div class="tagForLogIn" class="btn-container">
+            <div class="tagForLogIn btn-container" *ngIf="isLogged">
 
                 <button mat-icon-button class="btn-edit" (click)="editHardSkill(hardSkill.idHardSkill)">
                     <mat-icon>edit</mat-icon>
@@ -32,8 +31,7 @@
 
     <br><br>
     <h3 class="titulo-de-seccion-Blanco">Soft Skills:</h3>
-    <div class="tagForLogIn" class="btn-container">
-        <!--<a href="add/soft/skills"  class="btn-edit">Add</a>-->
+    <div class="tagForLogIn btn-container"  *ngIf="isLogged">
         <button class="btn-edit" mat-icon-button (click)="addSoftSkill()">
             <mat-icon>add</mat-icon>
         </button>
@@ -46,7 +44,7 @@
                 [titleFontSize]="softSkill.fontSize" [titleColor]="'#FFFFFF'">
             </circle-progress>
 
-            <div class="tagForLogIn" class="btn-container">
+            <div class="tagForLogIn btn-container" *ngIf="isLogged">
                 <button mat-icon-button class="btn-edit" (click)="editSoftSkill(softSkill.idSoftSkill)">
                     <mat-icon color="red">edit</mat-icon>
                 </button>

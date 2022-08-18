@@ -1,7 +1,7 @@
 <div id="Seccion-Experiencia">
   <h3 class="titulo-de-seccion-Blanco"> Experience:</h3>
 
-  <div class="tagForLogIn" class="btn-container">
+  <div class="tagForLogIn btn-container"  *ngIf="isLogged">
     <button class="btn-edit" mat-icon-button (click)="addExperiencia()">
       <mat-icon>add</mat-icon>
     </button>
@@ -18,7 +18,7 @@
       <small>{{experiencia.anioStart}} - {{experiencia.anioEnd}}</small>
       <p *ngIf="experiencia.linkProyectos!=''"><a href={{experiencia.linkProyectos}}>Ver Proyecto</a></p>
 
-      <div class="tagForLogIn" class="btn-container">
+      <div class="tagForLogIn btn-container"  *ngIf="isLogged">
         <button mat-icon-button class="btn-edit" (click)="editExperiencia(experiencia.idExperiencia)">
           <mat-icon color="red">edit</mat-icon>
         </button>
