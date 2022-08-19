@@ -13,9 +13,9 @@ import { JwtDTO } from '../../entitys/JWT/jwt-dto';
 export class AuthServiceService {
   /* Se conceta con el backend me diantes consultas HTTP POST para el servicio de logeo  y creacion de usuario*/
 
-  //URL_Base_request_To_Backend = 'https://gjbackend.herokuapp.com/auth';
-  URL_Base_request_To_Backend = 'http://localhost:8080/auth';
-
+  //URL_Base_request_To_Backend = 'http://localhost:8080/auth';
+  URL_Base_request_To_Backend = 'https://gjbackend.herokuapp.com/auth';
+ 
   constructor(private httpClient: HttpClient) { }
 
   //para crear un nuevo usuario (no utilizado en el portfolio)
