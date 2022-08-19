@@ -1,14 +1,9 @@
-<div id="Seccion-Contacto">
-    <!--mail = 9e3dfb4a0207a49264f593141b297a96
-    https://gaspygj.github.io/PortFolio-GJ/#Seccion-Contacto-->
-    <form id="form-Seccion-Contacto" action="https://formsubmit.co/gaspygj@gmail.com" method="POST">
-        <h3 class="titulo-de-seccion-Negro">Contact:</h3>
-        <input id="email" type="email" name="email" placeholder="Enter your e-mail" required="">
-        <!--rows="10" cols="50" -->
-        <textarea id="text-area" placeholder="Type e-mail" name="contenido" rows="10" style="resize: none;"></textarea>
-        <input id="submit" type="submit" value="Send e-mail">
-        <input type="hidden" name="_next" value="https://gaspygj.github.io/PortFolio-GJ/#Seccion-Contacto">
-        <input type="hidden" name="_captcha" value="false">
+<div id="Seccion-Contacto" (submit)="onSubmit(email.value,body.value,subject.value)">
+    <form id="form-Seccion-Contacto" ngNativeValidate>
+        <h3 class="titulo-de-seccion-Negro">Contact me:</h3>
+        <input #email id="email" type="email" name="email" placeholder="Enter your e-mail" required/>
+        <input #subject id="subject" type="text" name="subject" placeholder="Enter subject" required/>
+        <textarea #body id="text-area" placeholder="Type e-mail" name="contenido" rows="10" style="resize: none;" required></textarea>
+        <input id="submit" type="submit" value="Send e-mail"> 
     </form>
-
 </div>

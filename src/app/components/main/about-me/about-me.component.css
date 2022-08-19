@@ -6,7 +6,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(black,#2596be);
+    /*background-image: linear-gradient(black,#2596be);*/
+    background-color: #2596be;
     gap:10px;
 }
 
@@ -16,7 +17,6 @@
     border-radius: 50%;
 }
 #about-me p{
-    font-weight: bold;
     color:white;
 }
 #about-me h3{

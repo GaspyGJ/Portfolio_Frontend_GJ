@@ -1,7 +1,9 @@
 
 /*********** HEADER *****************/
 header{
-    background-image: linear-gradient(#2596be, black);
+    /*background-image: linear-gradient(black,#2596be);*/
+    background-color:#2596be;
+    height: 12em;
 }
 .ul-menu {
     display: flex;

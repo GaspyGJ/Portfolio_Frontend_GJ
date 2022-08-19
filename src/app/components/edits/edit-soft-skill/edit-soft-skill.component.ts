@@ -4,6 +4,7 @@ import { SoftSkill } from 'src/app/entitys/soft_skills';
 import { SoftSkillService } from 'src/app/service/soft-skill.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { EditHardSkillComponent } from '../edit-hard-skill/edit-hard-skill.component';
+import Swal from 'sweetalert2';
 
 
 
@@ -38,9 +39,26 @@ export class EditSoftSkillComponent implements OnInit {
 
     softSkill_Updated.idSoftSkill = this.softSkill.idSoftSkill;
 
-    this.softSkillService.saveSoftSkill(softSkill_Updated).subscribe(dato => { })
-
-    this.referencia.close("Cerrando");
+    this.softSkillService.saveSoftSkill(softSkill_Updated).subscribe({
+      next:(dato)=>{
+        Swal.fire({
+          title: 'Actualizado',
+          text: "se actualizo correctamente",
+          icon: 'success',
+          confirmButtonText: "Aceptar",
+        }).then(()=>{
+          this.referencia.close("Cerrando");
+        })
+      },
+      error:(error)=>{
+        Swal.fire({
+          title: 'Error',
+          text: "No se actualizo correctamente",
+          icon: 'error',
+          confirmButtonText: "Aceptar",
+        })
+      }
+    });
 
   }
 

@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Educacion } from 'src/app/entitys/educacion';
 import { EducacionService } from 'src/app/service/educacion.service';
 import { TokenService } from 'src/app/service/JWT/token-service.service';
+import Swal from 'sweetalert2';
 import { AddEducacionComponent } from '../../adds/add-educacion/add-educacion.component';
 import { EditEducacionComponent } from '../../edits/edit-educacion/edit-educacion.component';
 
@@ -69,11 +70,25 @@ export class EducationComponent implements OnInit {
   }
 
   protected dropEducacion(id:number){
-      this.educacionService.deleteEducacion(id).subscribe(dato=>{
-      let index_for_deleting= this.educaciones.findIndex(element => element.idEducacion === id);
- 
-      this.educaciones.splice(index_for_deleting,1);
-   });
+    Swal.fire({
+      title: 'Seguro que desea eliminar?',
+      text: "",
+      icon: 'question',
+      confirmButtonText: "Aceptar",
+    }).then((resultado) => {
+      if (resultado.isConfirmed) {
+        this.educacionService.deleteEducacion(id).subscribe(dato => {
+          let index_for_deleting = this.educaciones.findIndex(element => element.idEducacion === id);
+          this.educaciones.splice(index_for_deleting, 1);
+          Swal.fire({
+            title: 'Eliminado',
+            text: "Eliminado correctamente",
+            icon: 'success',
+            confirmButtonText: "Aceptar",
+          });
+        });
+      }
+    });
   }
 }
 

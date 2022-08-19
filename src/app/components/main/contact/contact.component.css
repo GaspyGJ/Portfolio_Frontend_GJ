@@ -1,7 +1,8 @@
 #Seccion-Contacto {
     border-top: 1px solid white;
-    background-image: linear-gradient(#2596be,black);
-
+    background-color: #2596be;
+    /*background-image: linear-gradient( black,#2596be);*/
+    background-color:#2596be !important;
     padding-top: 5em; 
     padding-bottom: 8em;
 }
@@ -35,6 +36,10 @@
     padding: 0.4em;
     border: none;
 }
+
+.swal-button {
+    background-color: #4962B3;
+    }
 
 @media only screen and (max-width: 600px) {
     #form-Seccion-Contacto {

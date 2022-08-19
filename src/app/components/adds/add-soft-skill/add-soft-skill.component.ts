@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { SoftSkill } from 'src/app/entitys/soft_skills';
 import { SoftSkillService } from 'src/app/service/soft-skill.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-soft-skill',
@@ -26,10 +27,26 @@ export class AddSoftSkillComponent implements OnInit {
    
     this.softSkill = new SoftSkill(Number(porcentaje),fontSize,titulo);
 
-    this.softSkillService.saveSoftSkill(this.softSkill).subscribe(dato=>{})
-
-    this.referencia.close("Cerrando");
-
+    this.softSkillService.saveSoftSkill(this.softSkill).subscribe({
+      next:(dato)=>{
+        Swal.fire({
+          title: 'Agregado',
+          text: "Se agrego correctamente",
+          icon: 'success',
+          confirmButtonText: "Aceptar",
+        }).then(()=>{
+          this.referencia.close("Cerrando");
+        })
+      },
+      error:(error)=>{
+        Swal.fire({
+          title: 'Error',
+          text: "No se agrego correctamente",
+          icon: 'error',
+          confirmButtonText: "Aceptar",
+        })
+      }
+    });
   }
   
 

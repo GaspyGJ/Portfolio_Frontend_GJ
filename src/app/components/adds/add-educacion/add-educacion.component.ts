@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Educacion } from 'src/app/entitys/educacion';
 import { EducacionService } from 'src/app/service/educacion.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-educacion',
@@ -23,9 +24,27 @@ export class AddEducacionComponent implements OnInit {
  
     this.educacion = new Educacion(titulo,descripcion,anioStart,anioEnd,estadoActual);
   
-    this.educacionService.saveEducacion(this.educacion).subscribe(dato=>{})
-  
-    this.referencia.close("Cerrando");
+    this.educacionService.saveEducacion(this.educacion).subscribe({
+      next:(dato)=>{
+        Swal.fire({
+          title: 'Agregado',
+          text: "Se agrego correctamente",
+          icon: 'success',
+          confirmButtonText: "Aceptar",
+        }).then(()=>{
+          this.referencia.close("Cerrando");
+        })
+      },
+      error:(error)=>{
+        Swal.fire({
+          title: 'Error',
+          text: "No se agrego correctamente",
+          icon: 'error',
+          confirmButtonText: "Aceptar",
+        })
+      }
+    });
+
   }
 
 }

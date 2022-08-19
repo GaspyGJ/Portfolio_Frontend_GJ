@@ -1,6 +1,6 @@
 #pantalla-particulas{
-   /* border: 4em solid #2596be;
-    border-top: 0;*/
+
+    border-bottom: 1em;
     height: 30em;
 
     display: flex;

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { TokenService } from 'src/app/service/JWT/token-service.service';
+import Swal from 'sweetalert2';
 import { LoginComponent } from '../login/login.component';
 
 @Component({
@@ -13,34 +15,53 @@ export class HeaderComponent implements OnInit {
 
   isLogged:boolean;
 
-  constructor(private matDialog:MatDialog , private tokenService:TokenService) { }
+  constructor(private router:Router,private matDialog:MatDialog , private tokenService:TokenService) { }
 
   ngOnInit(): void{
     if(this.tokenService.getToken()){
       this.isLogged=true;
-      console.log("logeado")
+      //console.log("logeado")
     }
     else{
       this.isLogged=false;
-      console.log("no logeado")
+      //console.log("no logeado")
     }
   }
 
 
   enterLogin(){
     const popup = this.matDialog.open(LoginComponent, {
-      enterAnimationDuration:'1000ms',
-      exitAnimationDuration:'1000ms',
+      enterAnimationDuration:'800ms',
+      exitAnimationDuration:'800ms'
     });
-  
-    popup.afterClosed().subscribe(i=>{
-      //hacer algo
-    })
   }
   
+
+  public scrollToContact(){
+  var element = document.getElementById("Seccion-Contacto")!;
+    element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
+  public scrollToProjects(){
+    var element = document.getElementById("Seccion-Proyectos")!;
+      element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    }
+
   onLogout(): void {
-    this.tokenService.logOut();
-    window.location.reload();
+    Swal.fire({
+      title: 'Desea cerrar sesion ?',
+      text: "",
+      icon: 'question',
+      confirmButtonText: "Aceptar",
+      showCancelButton: true,
+      cancelButtonText: "Cancelar",
+
+    }).then((resultado)=>{
+      if(resultado.isConfirmed){
+        this.tokenService.logOut();
+        window.location.reload();
+      }
+    });
+    
   }
 
 

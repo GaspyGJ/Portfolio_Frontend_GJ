@@ -12,8 +12,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { interceptorProvider } from './service/JWT/interceptors/pord-interceptor.service';
-
+import { interceptorProvider } from './service/JWT/interceptors/interceptor.service';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';

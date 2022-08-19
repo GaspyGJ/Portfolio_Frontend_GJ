@@ -15,7 +15,7 @@
 
 @keyframes color-blanco-negro{
   from {
-      color: white;
+      color: #2596be;
   }
 
   to {
@@ -36,20 +36,52 @@
       transform: translateY(0);
   }
 }
+/****************Estilos Generales para todos los componentes***************************/
+
+.titulo-de-seccion-Blanco{
+  text-align: center;
+  font-size: 3.5em;
+  color: black;
+  animation-name: color-blanco-negro;
+  animation-duration: 5s;
+  text-shadow: 2px 2px 2px rgb(87, 87, 87);
+}
+
+.titulo-de-seccion-Negro{
+  text-align: center;
+  font-size: 4em;
+  color: black;
+  animation-name: color-blanco-negro;
+  animation-duration: 5s;
+  text-shadow: 2px 2px 2px rgb(87, 87, 87);
+}
+
+
+/**** PARA LOS BOTONES DE LOS SWALS ****/
+.swal2-styled{
+  background-color:#2596be !important ;
+  border: none !important;
+}
 
 /**** PARA LOS DIALOGS ****/
 mat-dialog-container {
   background-color:black !important;
-  border-radius: 2em !important;
+  border-radius: 1em !important;
+  border: 2px solid white;
   margin:0 !important;
   padding: 0 !important;
-  box-shadow: -5px 5px 20px #2596be !important;
 }
 /**** FIN PARA LOS DIALOGS ****/
 
 body {
     font-family: sans-serif;
-    background-color:black !important; /*Nose porq este no funciona pueso aqui , pero puesto en la etiqueta si (? */
+    background-color:#2596be !important;
+    font-family:cursive !important;
+}
+h5{
+  color:black;
+  font-size: 2em;
+  text-shadow: 1px 1px rgb(87, 87, 87);
 }
   /*Scroll bar*/
   /* width */
@@ -73,22 +105,3 @@ body {
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
-/****************Estilos Generales para todos los componentes***************************/
-
-.titulo-de-seccion-Blanco{
-  text-align: center;
-  font-size: 2em;
-  color: rgb(255, 255, 255);
-  animation-name: color-negro-blanco;
-  animation-duration: 6s;
-}
-
-.titulo-de-seccion-Negro{
-  text-align: center;
-  font-size: 2em;
-  color: black;
-  animation-name: color-blanco-negro;
-  animation-duration: 6s;
-}
-html, body { height: 100%; }
-body { margin: 0; font-family: sans-serif; }

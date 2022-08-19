@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Experiencia } from 'src/app/entitys/experiencia';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-experiencia',
@@ -27,9 +28,26 @@ export class AddExperienciaComponent implements OnInit {
    
     this.experiencia = new Experiencia(titulo,descripcion,anioStart,anioEnd,tipoExperiencia,tegnologiasUtilizadas,linkProyectos);
 
-    this.experienciaService.saveExperiencia(this.experiencia).subscribe(dato=>{})
-
-    this.referencia.close("Cerrando");
+    this.experienciaService.saveExperiencia(this.experiencia).subscribe({
+      next:(dato)=>{
+        Swal.fire({
+          title: 'Agregado',
+          text: "Se agrego correctamente",
+          icon: 'success',
+          confirmButtonText: "Aceptar",
+        }).then(()=>{
+          this.referencia.close("Cerrando");
+        })
+      },
+      error:(error)=>{
+        Swal.fire({
+          title: 'Error',
+          text: "No se agrego correctamente",
+          icon: 'error',
+          confirmButtonText: "Aceptar",
+        })
+      }
+    });
   }
   
 

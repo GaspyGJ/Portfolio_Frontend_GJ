@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Experiencia } from 'src/app/entitys/experiencia';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
 import { TokenService } from 'src/app/service/JWT/token-service.service';
+import Swal from 'sweetalert2';
 import { AddExperienciaComponent } from '../../adds/add-experiencia/add-experiencia.component';
 import { EditExperienciaComponent } from '../../edits/edit-experiencia/edit-experiencia.component';
 
@@ -67,10 +68,24 @@ export class ExperienciaComponent implements OnInit {
   }
 
   protected dropExperiencia(id:number){
-      this.experienciaService.deleteExperiencia(id).subscribe(dato=>{
-      let index_for_deleting= this.experiencias.findIndex(element => element.idExperiencia === id);
- 
-      this.experiencias.splice(index_for_deleting,1);
-   });
+    Swal.fire({
+      title: 'Seguro que desea eliminar?',
+      text: "",
+      icon: 'question',
+      confirmButtonText: "Aceptar",
+    }).then((resultado) => {
+      if (resultado.isConfirmed) {
+        this.experienciaService.deleteExperiencia(id).subscribe(dato => {
+          let index_for_deleting = this.experiencias.findIndex(element => element.idExperiencia === id);
+          this.experiencias.splice(index_for_deleting, 1);
+          Swal.fire({
+            title: 'Eliminado',
+            text: "Eliminado correctamente",
+            icon: 'success',
+            confirmButtonText: "Aceptar",
+          });
+        });
+      }
+    });
   }
 }

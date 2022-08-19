@@ -1,7 +1,7 @@
 #Seccion-Habilidades {
     height: 40%;
-    background-image: linear-gradient(#2596be, black);
-
+    background-color: #2596be;
+    /*background-image: linear-gradient( black,#2596be);*/
     border-top: 1px solid white;
     padding-top: 5%;
     padding-bottom: 5%;

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { HardSkill } from 'src/app/entitys/hard_skill';
 import { HardSkillService } from 'src/app/service/hard-skill.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-hard-skill',
@@ -26,9 +27,26 @@ export class AddHardSkillComponent implements OnInit {
    
     this.hardSkill = new HardSkill(Number(porcentaje),Number(alto),Number(ancho),urlFoto);
 
-    this.hardSkillService.saveHardSkill(this.hardSkill).subscribe(dato=>{})
-
-    this.referencia.close("Cerrando");
+    this.hardSkillService.saveHardSkill(this.hardSkill).subscribe({
+      next:(dato)=>{
+        Swal.fire({
+          title: 'Agregado',
+          text: "Se agrego correctamente",
+          icon: 'success',
+          confirmButtonText: "Aceptar",
+        }).then(()=>{
+          this.referencia.close("Cerrando");
+        })
+      },
+      error:(error)=>{
+        Swal.fire({
+          title: 'Error',
+          text: "No se agrego correctamente",
+          icon: 'error',
+          confirmButtonText: "Aceptar",
+        })
+      }
+    });
   }
   
 

@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Experiencia } from 'src/app/entitys/experiencia';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-experiencia',
@@ -36,9 +37,26 @@ export class EditExperienciaComponent implements OnInit {
 
     experiencia_Updated.idExperiencia= this.experiencia.idExperiencia;
 
-    this.experienciaService.saveExperiencia(experiencia_Updated).subscribe(dato => { })
-
-    this.referencia.close("Cerrando");
+    this.experienciaService.saveExperiencia(experiencia_Updated).subscribe({
+      next:(dato)=>{
+        Swal.fire({
+          title: 'Actualizado',
+          text: "se actualizo correctamente",
+          icon: 'success',
+          confirmButtonText: "Aceptar",
+        }).then(()=>{
+          this.referencia.close("Cerrando");
+        })
+      },
+      error:(error)=>{
+        Swal.fire({
+          title: 'Error',
+          text: "No se actualizo correctamente",
+          icon: 'error',
+          confirmButtonText: "Aceptar",
+        })
+      }
+    });
 
   }
 

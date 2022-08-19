@@ -5,7 +5,6 @@ import { TokenService } from 'src/app/service/JWT/token-service.service';
 import { PersonaService } from 'src/app/service/persona.service';
 import { EditAboutMeComponent } from '../../edits/edit-about-me/edit-about-me.component';
 
-
 @Component({
   selector: 'app-about-me',
   templateUrl: './about-me.component.html',
@@ -30,7 +29,6 @@ export class AboutMeComponent implements OnInit {
   private obtenerPersona(){
     this.personaService.getPersona().subscribe(dato=>{
       this.personas = dato;
-      console.log("El nombre de la  persona creada es = "+this.personas[0].nombre);
     })
   }
 
@@ -44,6 +42,5 @@ export class AboutMeComponent implements OnInit {
       this.obtenerPersona();
     })
   }
-
 
   }

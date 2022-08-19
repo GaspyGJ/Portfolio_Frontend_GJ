@@ -10,8 +10,8 @@
         <ul class="ul-menu" id="ul-menu">
            
             <li id="menu-logo"><img src="../../../assets/imagenes/Logo-ArgPrograma.png" class="logo" alt="Gaspar Jullier logo"></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a (click)="scrollToProjects()">Projects</a></li>
+            <li><a (click)="scrollToContact()" >Contact</a></li>
             <li *ngIf="isLogged"><a (click)="onLogout()">Log Out</a></li>
             <li *ngIf="!isLogged"><a (click)="enterLogin()">Log In</a></li>
             

@@ -25,7 +25,7 @@ export class BannerComponent implements OnInit {
   particlesOptions = {
     background: {
       color: {
-        value: "#000000"
+        value: "#2596be"
       }
     },
     fpsLimit: 120,
@@ -63,10 +63,10 @@ export class BannerComponent implements OnInit {
         value: "#2596be"
       },
       links: {
-        color: "#FFFFFF",
+        color: "#000000",
         distance: 200,
         enable: true,
-        opacity: 0.5,
+        opacity: 0.3,
         width: 1
       },
       collisions: {
@@ -102,14 +102,11 @@ export class BannerComponent implements OnInit {
     detectRetina: true
   };
 
-
   particlesLoaded(container: Container): void {
-    console.log(container);
+    //console.log(container);
   }
-
   async particlesInit(engine: Engine): Promise<void> {
-    console.log(engine);
-
+    //console.log(engine);
     // Starting from 1.19.0 you can add custom presets or shape here, using the current tsParticles instance (main)
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
     // starting from v2 you can add only the features you need reducing the bundle size

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { LoginUsuario } from 'src/app/entitys/JWT/login-usuario';
 import { AuthServiceService } from 'src/app/service/JWT/auth-service.service';
 import { TokenService } from 'src/app/service/JWT/token-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -48,13 +49,26 @@ export class LoginComponent implements OnInit {
         this.tokenService.setAuthorities(dato.authorities);
         this.roles = dato.authorities;
         //this.referencia.close("Cerrando");
-        window.location.reload();
+        Swal.fire({
+          title: 'Aceptado',
+          text: "se ingreso correctamente",
+          icon: 'success',
+          confirmButtonText: "Aceptar",
+        }).then(()=>{
+          window.location.reload();
+        })
+        
       },
       error: (e) => {
         this.isLogged = false;
         this.isLoginFails = true;
-        //this.mjsError = e.message;
-        //console.log(e.message);
+        console.log(e.error.message);
+        Swal.fire({
+          title: 'Error',
+          text: "Error al intentar ingresar",
+          icon: 'error',
+          confirmButtonText: "Aceptar",
+        })
       }
 
     });

@@ -3,6 +3,7 @@ import { HardSkill } from 'src/app/entitys/hard_skill';
 import { HardSkillService } from 'src/app/service/hard-skill.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -43,10 +44,26 @@ export class EditHardSkillComponent implements OnInit {
 
     hardSkill_Updated.idHardSkill = this.hardSkill.idHardSkill;
 
-    this.hardSkillService.saveHardSkill(hardSkill_Updated).subscribe(dato => { })
-
-    this.referencia.close("Cerrando");
-
+    this.hardSkillService.saveHardSkill(hardSkill_Updated).subscribe({
+      next:(dato)=>{
+        Swal.fire({
+          title: 'Actualizado',
+          text: "se actualizo correctamente",
+          icon: 'success',
+          confirmButtonText: "Aceptar",
+        }).then(()=>{
+          this.referencia.close("Cerrando");
+        })
+      },
+      error:(error)=>{
+        Swal.fire({
+          title: 'Error',
+          text: "No se actualizo correctamente",
+          icon: 'error',
+          confirmButtonText: "Aceptar",
+        })
+      }
+    });
   }
 
 }

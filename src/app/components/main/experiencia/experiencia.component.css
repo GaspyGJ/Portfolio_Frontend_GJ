@@ -1,6 +1,6 @@
 #Seccion-Experiencia{
-    background-image: linear-gradient( #2596be,black);
-
+    background-color: #2596be;
+    /*background-image: linear-gradient( black,#2596be);*/
     border-top: 1px solid white;
     padding-top: 5%;
     padding-bottom: 5%;
@@ -10,7 +10,9 @@
 h3{
     padding-bottom: 1em;
 }
-
+small{
+    color: rgb(197, 197, 197) !important;
+}
 .list-group{
     display: flex;
     direction: column;

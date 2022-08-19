@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Persona } from 'src/app/entitys/persona';
 import { PersonaService } from 'src/app/service/persona.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-about-me',
@@ -52,11 +53,26 @@ export class EditAboutMeComponent implements OnInit {
         this.personas[0].descripcion=descripcion;
       }
 
-    this.personaService.savePersona(this.personas[0]).subscribe(dato=>{
-      console.log("La persona se guardo correctamente");
-    })
-
-    this.referencia.close("Cerrando");
+    this.personaService.savePersona(this.personas[0]).subscribe({
+      next:(dato)=>{
+        Swal.fire({
+          title: 'Actualizado',
+          text: "se actualizo correctamente",
+          icon: 'success',
+          confirmButtonText: "Aceptar",
+        }).then(()=>{
+          this.referencia.close("Cerrando");
+        })
+      },
+      error:(error)=>{
+        Swal.fire({
+          title: 'Error',
+          text: "No se actualizo correctamente",
+          icon: 'error',
+          confirmButtonText: "Aceptar",
+        })
+      }
+    });
     
   }
 

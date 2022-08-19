@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Proyecto } from 'src/app/entitys/proyecto';
 import { TokenService } from 'src/app/service/JWT/token-service.service';
 import { ProyectoService } from 'src/app/service/proyecto.service';
+import Swal from 'sweetalert2';
 import { AddProyectoComponent } from '../../adds/add-proyecto/add-proyecto.component';
 import { EditProyectoComponent } from '../../edits/edit-proyecto/edit-proyecto.component';
 
@@ -62,11 +63,26 @@ export class ProjectsComponent implements OnInit {
   
   }
   
-
   protected dropProyecto(id:number){
-      this.proyectoService.deleteProyecto(id).subscribe(dato=>{
-      let index_for_deleting= this.proyectos.findIndex(element => element.idProyecto === id);
-      this.proyectos.splice(index_for_deleting,1);
-   });
+    Swal.fire({
+      title: 'Seguro que desea eliminar?',
+      text: "",
+      icon: 'question',
+      confirmButtonText: "Aceptar",
+    }).then((resultado) => {
+      if (resultado.isConfirmed) {
+        this.proyectoService.deleteProyecto(id).subscribe(dato=>{
+          let index_for_deleting= this.proyectos.findIndex(element => element.idProyecto === id);
+          this.proyectos.splice(index_for_deleting,1);
+          Swal.fire({
+            title: 'Eliminado',
+            text: "Eliminado correctamente",
+            icon: 'success',
+            confirmButtonText: "Aceptar",
+          });
+        });
+      }
+    });
+
   }
 }

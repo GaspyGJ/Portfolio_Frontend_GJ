@@ -1,9 +1,22 @@
 
-
   #Seccion-Edit {
-    background-image: linear-gradient(#2596be,black);
+    border-top: 1px solid white;
+    background-color:#2596be;
     display: flex;
     justify-content: center;
+  }
+  #form-Seccion-Edit button {
+    border:2px solid black ;
+    background-image: linear-gradient(#3a3b3b,black);
+    width: 50%;
+    padding: 0.4em;
+    border-radius: 0.5em;
+    margin:0 auto;
+    color:white;
+  }
+  #form-Seccion-Edit button:hover{
+    background-image: linear-gradient(#2596be,#2596be);
+    border:2px solid black ;
   }
 
   a{
@@ -67,14 +80,6 @@
   #form-Seccion-Edit input::placeholder {
 
     color:rgb(151, 151, 151);
-  }
-
-  #form-Seccion-Edit button {
-    background-color: #2596be;
-    width: 50%;
-    padding: 0.4em;
-    border-radius: 0.5em;
-    margin:0 auto;
   }
   
   @media only screen and (max-width: 600px) {
