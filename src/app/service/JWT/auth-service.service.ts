@@ -23,10 +23,11 @@ export class AuthServiceService {
 
   //para crear un nuevo usuario (no utilizado en el portfolio)
   public nuevo(nuevoUsuario: NuevoUsuario): Observable<any> {
-    return this.httpClient.post<any>(this.URL_Base_request_To_Backend + '/nuevo', nuevoUsuario);
+    return this.httpClient.post<any>(this.URL_Base_request_To_Backend + '/auth/nuevo', nuevoUsuario);
   }
 
   public login(loginUsuario: LoginUsuario): Observable<JwtDTO> {
-    return this.httpClient.post<JwtDTO>(this.URL_Base_request_To_Backend + '/login', loginUsuario);
+    return this.httpClient.post<JwtDTO>(this.URL_Base_request_To_Backend + '/auth/login', loginUsuario);
   }
+
 }
