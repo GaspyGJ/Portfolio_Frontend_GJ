@@ -25,9 +25,31 @@
 }
 
 /************************* With LogIn *****************************************/
-
 .btn-edit{
     border: 1px solid rgb(0, 0, 0);
-
     background-color: rgb(36, 170, 36);
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    #foto-perfil-about-me{
+        text-align: center;
+        flex-direction: column-reverse;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+    #Foto-Perfil img{
+        width: 90px;
+        height: 90px;
+    }
+    #about-me p{
+        color:white;
+    }
+    #about-me h3{
+        font-size: 1.5em;
+        color:white;
+    }
+
+
 }

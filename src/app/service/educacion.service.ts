@@ -2,15 +2,18 @@ import { HttpClient, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Educacion } from '../entitys/educacion';
+import { PathServie } from './path/path-servie.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EducacionService {
  //URL_Base_request_To_Backend = 'http://localhost:8080';
- URL_Base_request_To_Backend = 'https://gjbackend.herokuapp.com';
 
-  constructor(private http: HttpClient) { }
+
+  constructor(private http: HttpClient , private URL_Base_request_To_Backend:PathServie){
+          this.URL_Base_request_To_Backend=PathServie.PATH_backend;
+   }
 
   public getEducaciones(): Observable<Educacion[]>{
     return this.http.get<Educacion[]>(this.URL_Base_request_To_Backend+'/get/educaciones');

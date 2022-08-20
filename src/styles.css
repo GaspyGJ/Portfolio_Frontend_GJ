@@ -2,7 +2,7 @@
 
 /****************Declaraciones de KeyFrames que se utilizan en los componentes**************************/
 
-@keyframes color-negro-blanco{
+/*@keyframes color-negro-blanco{
   from {
     color: black;
   }
@@ -12,7 +12,6 @@
       color: white;
   }
 }
-
 @keyframes color-blanco-negro{
   from {
       color: #2596be;
@@ -22,7 +21,6 @@
       color: black;
   }
 }
-
 @keyframes movimiento {
   0% {
       transform: translateY(0);
@@ -36,14 +34,15 @@
       transform: translateY(0);
   }
 }
+*/
 /****************Estilos Generales para todos los componentes***************************/
 
 .titulo-de-seccion-Blanco{
   text-align: center;
   font-size: 3.5em;
   color: black;
-  animation-name: color-blanco-negro;
-  animation-duration: 5s;
+  /* animation-name: color-blanco-negro;
+  animation-duration: 5s; */
   text-shadow: 2px 2px 2px rgb(87, 87, 87);
 }
 
@@ -51,8 +50,8 @@
   text-align: center;
   font-size: 4em;
   color: black;
-  animation-name: color-blanco-negro;
-  animation-duration: 5s;
+  /* animation-name: color-blanco-negro;
+  animation-duration: 5s; */
   text-shadow: 2px 2px 2px rgb(87, 87, 87);
 }
 
@@ -74,34 +73,38 @@ mat-dialog-container {
 /**** FIN PARA LOS DIALOGS ****/
 
 body {
-    font-family: sans-serif;
     background-color:#2596be !important;
-    font-family:cursive !important;
+    font-family: "Comic Sans MS", "Comic Sans", sans-serif !important;
 }
 h5{
   color:black;
   font-size: 2em;
   text-shadow: 1px 1px rgb(87, 87, 87);
 }
+
+@media only screen and (max-width: 600px) {
+  h3{
+    font-size:2em !important;
+  }
+}
+
   /*Scroll bar*/
   /* width */
   ::-webkit-scrollbar {
-    width: 0.5em;
-    height: 90px;
-
+    width: 0.3em;
   }
-  
   /* Track */
   ::-webkit-scrollbar-track {
     background: #000000;
   }
-  
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: #888;
   }
-  
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
+
+
+ 

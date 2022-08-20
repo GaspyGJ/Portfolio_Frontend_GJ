@@ -43,7 +43,7 @@ export class ExperienciaComponent implements OnInit {
     const popup = this.matDialog.open(AddExperienciaComponent, {
       enterAnimationDuration:'1000ms',
       exitAnimationDuration:'1000ms',
-      height:'90%'
+      height:'75%'
     });
   
     popup.afterClosed().subscribe(i=>{
@@ -58,7 +58,7 @@ export class ExperienciaComponent implements OnInit {
       },
       enterAnimationDuration:'1000ms',
       exitAnimationDuration:'1000ms',
-      height:'90%'
+      height:'75%'
     });
   
     popup.afterClosed().subscribe(i=>{

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Proyecto } from '../entitys/proyecto';
+import { PathServie } from './path/path-servie.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +10,12 @@ import { Proyecto } from '../entitys/proyecto';
 export class ProyectoService {
 
   //URL_Base_request_To_Backend = 'http://localhost:8080';
-  URL_Base_request_To_Backend = 'https://gjbackend.herokuapp.com';
+  //URL_Base_request_To_Backend = 'https://gjbackend.herokuapp.com';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private URL_Base_request_To_Backend:PathServie){
+    this.URL_Base_request_To_Backend=PathServie.PATH_backend;
+}
+
 
   public getProyecto(): Observable<Proyecto[]>{
     return this.http.get<Proyecto[]>(this.URL_Base_request_To_Backend+'/get/proyectos');

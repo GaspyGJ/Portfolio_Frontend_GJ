@@ -117,3 +117,19 @@ small{
 
     background-color: rgb(194, 72, 72);
 }
+
+
+
+@media only screen and (max-width: 600px) {
+
+    #list-Proyectos{
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+    .descripcion{
+        width: auto;
+        margin: 0 auto;
+    
+    }
+
+}

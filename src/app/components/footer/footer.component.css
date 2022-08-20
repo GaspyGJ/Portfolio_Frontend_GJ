@@ -35,3 +35,10 @@ h3 {
     color: #2596be;
     margin : 0;
 }
+
+@media only screen and (max-width: 600px) {
+    #h3-not-showing{
+        display: none;
+    }
+}
+

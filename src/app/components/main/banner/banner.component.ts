@@ -28,11 +28,11 @@ export class BannerComponent implements OnInit {
         value: "#2596be"
       }
     },
-    fpsLimit: 120,
+    fpsLimit: 60,
     interactivity: {
       events: {
         onClick: {
-          enable: true,
+          enable: false,
           mode: ClickMode.push
         },
         onHover: {
@@ -46,31 +46,24 @@ export class BannerComponent implements OnInit {
           quantity: 4
         },
         repulse: {
-          distance: 80,
-          duration: 0.4
+          distance: 100,
+          duration: 1
         }
-      },
-      onDiv: {
-            selectors: "#repulse-div",
-            enable: true,
-            mode: "repulse",
-            type:	"circle"
-          }
-
+      }
     },
     particles: {
       color: {
-        value: "#2596be"
+        value: "#000000"
       },
       links: {
-        color: "#000000",
-        distance: 200,
+        color: "#FFFFFF",
+        distance: 150,
         enable: true,
         opacity: 0.3,
         width: 1
       },
       collisions: {
-        enable: true
+        enable: false
       },
       move: {
         direction: MoveDirection.none,
@@ -96,7 +89,7 @@ export class BannerComponent implements OnInit {
         type: "circle"
       },
       size: {
-        value: { min: 0, max: 0 },
+        value: { min: 1, max: 2 },
       }
     },
     detectRetina: true

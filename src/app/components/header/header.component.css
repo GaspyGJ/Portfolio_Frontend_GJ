@@ -3,7 +3,6 @@
 header{
     /*background-image: linear-gradient(black,#2596be);*/
     background-color:#2596be;
-    height: 12em;
 }
 .ul-menu {
     display: flex;
@@ -30,56 +29,31 @@ nav .logo {
 
 .ul-menu li a {
     padding: 10px;
+    padding-top:0;
     text-decoration: none;
     color: white;
     font-size: 1.5em;
-
-    animation-name: color-negro-blanco;
-    animation-duration: 6s;
+    /* animation-name: color-negro-blanco;
+    animation-duration: 6s; */
 }
-
 .ul-menu li a:hover {
     border-bottom: 4px solid white;
-    transition: border-bottom 0.15s;
+    /* transition: border-bottom 0.15s; */
 }
 
-/*********** FIN HEADER *****************/
 
 /*********** Media Query ****************/
-
 @media only screen and (max-width: 600px) {
-
-    nav .logo {
-        width: 5em;
-        height: 5em;
-    }
-
     .ul-menu {
-        display: flex;
-        flex-direction: column;
-        align-items: baseline;
-        height: 0%;
-        width: 100%;
-    
-        background-color: rgb(30, 27, 49);
-        border-radius: 1em;
-      
-        position: absolute;
-        z-index: 40;
-        overflow: hidden;
-        transition: height 1s;    
+       display: none;  
     }   
-    
-    #menu-sandwich{
-    position:relative;
-    z-index: 30;
-    }
-    
-    #menu-logo {
-    display: none;
+    #menu-Desplegable{
+        text-align: center;
+        background-color: white;
+        width: 100%;
     }
     #menu-sandwich{
-    display: inline;
+    display:block;
     }
     #menu-sandwich svg{
     fill: black;

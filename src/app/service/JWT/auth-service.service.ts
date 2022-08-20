@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { LoginUsuario } from '../../entitys/JWT/login-usuario';
 import { NuevoUsuario } from '../../entitys/JWT/nuevo-usuario';
 import { JwtDTO } from '../../entitys/JWT/jwt-dto';
+import { PathServie } from '../path/path-servie.service';
 
 
 @Injectable({
@@ -14,9 +15,11 @@ export class AuthServiceService {
   /* Se conceta con el backend me diantes consultas HTTP POST para el servicio de logeo  y creacion de usuario*/
 
   //URL_Base_request_To_Backend = 'http://localhost:8080/auth';
-  URL_Base_request_To_Backend = 'https://gjbackend.herokuapp.com/auth';
+  //URL_Base_request_To_Backend = 'https://gjbackend.herokuapp.com/auth';
  
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private URL_Base_request_To_Backend:PathServie){
+    this.URL_Base_request_To_Backend=PathServie.PATH_backend;
+}
 
   //para crear un nuevo usuario (no utilizado en el portfolio)
   public nuevo(nuevoUsuario: NuevoUsuario): Observable<any> {

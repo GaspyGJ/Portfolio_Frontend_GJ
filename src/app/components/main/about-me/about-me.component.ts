@@ -36,6 +36,7 @@ export class AboutMeComponent implements OnInit {
     const popup =this.matDialog.open(EditAboutMeComponent, {
       enterAnimationDuration:'1000ms',
       exitAnimationDuration:'1000ms',
+      height:'75%'
     });
   
     popup.afterClosed().subscribe(i=>{

@@ -39,7 +39,7 @@ export class ProjectsComponent implements OnInit {
     const popup = this.matDialog.open(AddProyectoComponent, {
       enterAnimationDuration:'1000ms',
       exitAnimationDuration:'1000ms',
-      height:'90%'
+      height:'75%'
     });
   
     popup.afterClosed().subscribe(i=>{
@@ -54,7 +54,7 @@ export class ProjectsComponent implements OnInit {
       },
       enterAnimationDuration:'1000ms',
       exitAnimationDuration:'1000ms',
-      height:'90%'
+      height:'75%'
     });
   
     popup.afterClosed().subscribe(i=>{

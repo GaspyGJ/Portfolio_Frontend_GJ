@@ -1,35 +1,46 @@
+
 #pantalla-particulas{
-
     border-bottom: 1em;
-    height: 30em;
-
+    height: 15em;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 #particulas{
     position: relative;
-    z-index: -40;
+    z-index: -1; 
+    /* El z-index es para q se vea el welcome con las particulas, sino no se ve. */
 }
 h1{
     font-size: 8em;
-
     color: #FFFFFF;
-
-    text-shadow: 5px 0 2px #2596be;
+    text-shadow: 5px 0 2px #242627;
 }
 
 @media only screen and (max-width: 680px) {
+    #particulas{
+        display: none;
+    }
     h1{
-        font-size: 6em;
+        font-size: 4em;
         color: #FFFFFF;
-        text-shadow: 5px 0 2px #2596be;
+        text-shadow: 5px 0 2px #242627;
+        position: relative;
+        z-index: 1; 
+
     }
 }
 @media only screen and (max-width: 500px) {
+    #particulas{
+        display: none;
+    }
     h1{
-        font-size: 3em;
+        font-size: 4em;
         color: #FFFFFF;
-        text-shadow: 5px 0 2px #2596be;
+        text-shadow: 5px 0 2px #242627;
+        position: relative;
+        z-index: 1; 
+
     }
 }
+

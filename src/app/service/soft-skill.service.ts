@@ -2,6 +2,7 @@ import { HttpClient, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { SoftSkill } from '../entitys/soft_skills';
+import { PathServie } from './path/path-servie.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +10,12 @@ import { SoftSkill } from '../entitys/soft_skills';
 export class SoftSkillService {
 
   //URL_Base_request_To_Backend = 'http://localhost:8080';
-  URL_Base_request_To_Backend = 'https://gjbackend.herokuapp.com';
+  //URL_Base_request_To_Backend = 'https://gjbackend.herokuapp.com';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private URL_Base_request_To_Backend:PathServie){
+    this.URL_Base_request_To_Backend=PathServie.PATH_backend;
+}
+
 
   public getHardSkill(): Observable<SoftSkill[]>{
     return this.http.get<SoftSkill[]>(this.URL_Base_request_To_Backend+'/get/soft/skills');
