@@ -1,10 +1,12 @@
 
 #pantalla-particulas{
     border-bottom: 1em;
-    height: 15em;
+    margin-bottom: 2em;
+    height: 75vh;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 #particulas{
     position: relative;

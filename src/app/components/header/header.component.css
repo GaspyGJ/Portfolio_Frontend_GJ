@@ -3,6 +3,7 @@
 header{
     /*background-image: linear-gradient(black,#2596be);*/
     background-color:#2596be;
+    height: 15vh;
 }
 .ul-menu {
     display: flex;
@@ -10,12 +11,14 @@ header{
     align-items: center;
     /*Centra verticalmente el menu*/
     justify-content: space-around;
-    
+    align-items: center;
 }
 
 nav .logo {
-    width: 8em;
-    height: 8em;
+   height: 15vh;
+}
+.container-logo{
+    overflow: auto;
 }
 
 #menu-sandwich{

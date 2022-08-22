@@ -12,14 +12,10 @@ import { loadFull } from "tsparticles";
 })
 export class AppComponent {
 
-
-  title = 'Mi_PortFolio_TP_Final_Yo_Programo';
-
   ngOnInit() {
     AOS.init();
     window.addEventListener('load', AOS.refresh);
   }
-
 
   /****************************** Para las Particulas *************************************/
 
@@ -28,15 +24,15 @@ export class AppComponent {
   /* Starting from 1.19.0 you can use a remote url (AJAX request) to a JSON with the configuration */
   particlesUrl = "http://foo.bar/particles.json";
 
-  
   /* or the classic JavaScript object */
   particlesOptions = {
     background: {
       color: {
-        value: "#000000"
+        //value: "#2596be"
+        value:"transparent"
       }
     },
-    fpsLimit: 120,
+    fpsLimit: 60,
     interactivity: {
       events: {
         onClick: {
@@ -44,7 +40,7 @@ export class AppComponent {
           mode: ClickMode.push
         },
         onHover: {
-          enable: false,
+          enable: true,
           mode: HoverMode.repulse
         },
         resize: true
@@ -54,24 +50,24 @@ export class AppComponent {
           quantity: 4
         },
         repulse: {
-          distance: 200,
-          duration: 0.4
+          distance: 100,
+          duration: 1
         }
       }
     },
     particles: {
       color: {
-        value: "#cf08c5"
+        value: "#000000"
       },
       links: {
-        color: "#ffffff",
+        color: "#FFFFFF",
         distance: 150,
         enable: true,
-        opacity: 0.2,
+        opacity: 0.3,
         width: 1
       },
       collisions: {
-        enable: true
+        enable: false
       },
       move: {
         direction: MoveDirection.none,
@@ -80,7 +76,7 @@ export class AppComponent {
           default: OutMode.bounce
         },
         random: false,
-        speed: 4,
+        speed: 3,
         straight: false
       },
       number: {
@@ -88,7 +84,7 @@ export class AppComponent {
           enable: true,
           area: 800
         },
-        value: 40
+        value: 100
       },
       opacity: {
         value: 0.5
@@ -97,20 +93,17 @@ export class AppComponent {
         type: "circle"
       },
       size: {
-        value: { min: 2, max: 1 },
+        value: { min: 1, max: 2 },
       }
     },
     detectRetina: true
   };
 
-
   particlesLoaded(container: Container): void {
-    console.log(container);
+    //console.log(container);
   }
-
   async particlesInit(engine: Engine): Promise<void> {
-    console.log(engine);
-
+    //console.log(engine);
     // Starting from 1.19.0 you can add custom presets or shape here, using the current tsParticles instance (main)
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
     // starting from v2 you can add only the features you need reducing the bundle size
@@ -118,6 +111,8 @@ export class AppComponent {
   }
 
   /********************************Fin de las Particulas *****************************************************/
+
+
 }
 
 

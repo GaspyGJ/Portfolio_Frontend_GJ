@@ -3,15 +3,16 @@ footer p{
     font-size: 0.8em;
     color: white;
     text-align: center;
-    background-color: #2596be;
+    /* background-color: #2596be; */
 }
 ul {
     position:fixed;
     bottom: -1em;
-    padding-top: 6px;
+    height: 6vh;
+    background-color: black;
     border-top: 1px solid white;
     width: 100%;
-    background-color: black;
+    padding-left: 0 ;
     animation-name: color-blanco-rosa;
     animation-duration: 6s;
 }
@@ -19,6 +20,7 @@ ul {
     display: flex;
     justify-content: space-around;
     list-style: none;
+    align-items: center;
 }
 
 .RedesSociales li {
@@ -28,17 +30,5 @@ ul {
 
 .RedesSociales a {
     color: #2596be;
-}
-
-h3 {
-    font-size: 1.4em;
-    color: #2596be;
-    margin : 0;
-}
-
-@media only screen and (max-width: 600px) {
-    #h3-not-showing{
-        display: none;
-    }
 }
 

@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     /*background-image: linear-gradient(black,#2596be);*/
-    background-color: #2596be;
+    /* background-color: #2596be; */
     gap:10px;
 }
 
@@ -20,8 +20,7 @@
     color:white;
 }
 #about-me h3{
-    font-size: 2em;
-    color:white;
+    font-size: 3em;
 }
 
 /************************* With LogIn *****************************************/

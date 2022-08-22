@@ -6,7 +6,7 @@
                 <path fill-rule="evenodd"
                     d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
             </svg>
-            <div id="menu-Desplegable"  ngbDropdownMenu aria-labelledby="dropdownBasic1" >
+            <div id="menu-Desplegable" ngbDropdownMenu aria-labelledby="dropdownBasic1">
                 <li ngbDropdownItem><a (click)="scrollToProjects()">Projects</a></li>
                 <li ngbDropdownItem><a (click)="scrollToContact()">Contact</a></li>
                 <li ngbDropdownItem *ngIf="!isLogged"><a (click)="enterLogin()">Log In</a></li>
@@ -14,8 +14,9 @@
             </div>
         </div>
         <ul class="ul-menu" id="ul-menu">
-            <li id="menu-logo"><img src="../../../assets/imagenes/Logo-ArgPrograma.png" class="logo"
-                    alt="Gaspar Jullier logo"></li>
+            <li id="menu-logo">
+                    <img src="../../../assets/imagenes/Logo-ArgPrograma.png" class="logo" alt="Gaspar Jullier logo">
+          </li>
             <li><a (click)="scrollToProjects()">Projects</a></li>
             <li><a (click)="scrollToContact()">Contact</a></li>
             <li *ngIf="isLogged"><a (click)="onLogout()">Log Out</a></li>

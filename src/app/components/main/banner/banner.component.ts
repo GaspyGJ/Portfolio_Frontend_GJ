@@ -25,7 +25,8 @@ export class BannerComponent implements OnInit {
   particlesOptions = {
     background: {
       color: {
-        value: "#2596be"
+        //value: "#2596be"
+        value:"transparent"
       }
     },
     fpsLimit: 60,

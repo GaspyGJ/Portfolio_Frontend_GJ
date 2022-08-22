@@ -1,8 +1,7 @@
 #Seccion-Contacto {
     border-top: 1px solid white;
-    background-color: #2596be;
+    /* background-color: #2596be; */
     /*background-image: linear-gradient( black,#2596be);*/
-    background-color:#2596be !important;
     padding-top: 5em; 
     padding-bottom: 8em;
 }

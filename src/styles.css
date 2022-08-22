@@ -36,23 +36,23 @@
 }
 */
 /****************Estilos Generales para todos los componentes***************************/
-
 .titulo-de-seccion-Blanco{
   text-align: center;
   font-size: 3.5em;
-  color: black;
   /* animation-name: color-blanco-negro;
   animation-duration: 5s; */
-  text-shadow: 2px 2px 2px rgb(87, 87, 87);
+  color:rgb(255, 255, 255);
+
+  text-shadow: 5px 0 2px #242627;
 }
 
 .titulo-de-seccion-Negro{
   text-align: center;
   font-size: 4em;
-  color: black;
   /* animation-name: color-blanco-negro;
   animation-duration: 5s; */
-  text-shadow: 2px 2px 2px rgb(87, 87, 87);
+  color:rgb(255, 255, 255);
+  text-shadow: 5px 0 2px #242627;
 }
 
 
@@ -74,13 +74,15 @@ mat-dialog-container {
 
 body {
     background-color:#2596be !important;
-    font-family: "Comic Sans MS", "Comic Sans", sans-serif !important;
+    font-family: cursive ,"Comic Sans MS", "Comic Sans", sans-serif !important;
 }
 h5{
-  color:black;
+  color:rgb(255, 255, 255);
   font-size: 2em;
-  text-shadow: 1px 1px rgb(87, 87, 87);
+  text-shadow: 2px 0 1px #242627;
 }
+
+
 
 @media only screen and (max-width: 600px) {
   h3{
