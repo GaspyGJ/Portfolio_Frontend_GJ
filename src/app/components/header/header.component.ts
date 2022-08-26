@@ -12,7 +12,6 @@ import { LoginComponent } from '../login/login.component';
 })
 export class HeaderComponent implements OnInit {
 
-
   isLogged:boolean;
 
   constructor(private router:Router,private matDialog:MatDialog , private tokenService:TokenService) { }
@@ -20,23 +19,28 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void{
     if(this.tokenService.getToken()){
       this.isLogged=true;
-      //console.log("logeado")
+      console.log("Logged succesfully")
     }
     else{
       this.isLogged=false;
-      //console.log("no logeado")
+      console.log("Error: Not Logged")
     }
   }
-
 
   enterLogin(){
     const popup = this.matDialog.open(LoginComponent, {
       enterAnimationDuration:'800ms',
       exitAnimationDuration:'800ms'
     });
+    var btn_login = document.getElementById("btn-log-in")!;
+    btn_login.style.visibility='hidden';
+
+    popup.afterClosed().subscribe(()=>{
+      btn_login.style.visibility='visible';
+    })
+
   }
   
-
   public scrollToContact(){
   var element = document.getElementById("Seccion-Contacto")!;
     element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
@@ -63,11 +67,4 @@ export class HeaderComponent implements OnInit {
     });
     
   }
-
-
-  showOptions(){
-    
-  }
-
-
 }

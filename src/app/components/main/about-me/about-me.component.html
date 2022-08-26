@@ -7,11 +7,11 @@
         <!-- <button class="tagForLogIn" class="btn-edit" id="btn-edit-foto">Edit</button> -->
     </div>
     <div id="about-me">
-        <h3>{{persona.nombre}} {{persona.apellido}}</h3>
-        <h3>{{persona.nombrePuesto}}</h3>
-        <p>{{persona.descripcion}}</p>
-        <p>{{persona.domicilio}}</p>
-        <p>{{persona.edad}} años</p>
+        <h3 id="nombre">{{persona.nombre}} {{persona.apellido}}</h3>
+        <h3 id="puesto">> {{persona.nombrePuesto}}</h3>
+        <p>> {{persona.descripcion}}</p>
+        <p>> {{persona.domicilio}}</p>
+        <p>> {{persona.edad}} años</p>
         <button *ngIf="isLogged" class="tagForLogIn" class="btn-edit" mat-icon-button (click)="editAboutMe()">
             <mat-icon>edit</mat-icon>
         </button>

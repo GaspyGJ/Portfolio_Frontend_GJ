@@ -1,7 +1,6 @@
 <div id="Seccion-Edit" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1200">
-    <a mat-dialog-close >Volver</a>
-    <form  id="form-Seccion-Edit">
-        <h3 >Editar Educacion:</h3>
+    <form id="form-Seccion-Edit">
+        <h3>Editar Educacion:</h3>
         <p>Escribe sobre el/los atributo/s que deseas cambiar - Los atributos que no se editen quedaran como estan</p>
         <div class="div-p-input">
             <p>Titulo :</p>
@@ -23,7 +22,13 @@
             <p>Estado Actual :</p>
             <input type="text" #estadoActual value={{educacion.estadoActual}} placeholder="ingresar estado actual">
         </div>
-        <button type="button" (click)="actualizar_Educacion(titulo.value,descripcion.value,anioStar.value,anioEnd.value,estadoActual.value)">
-            Guardar Educacion</button>
-        </form>
+        <div class="container-a-btn">
+            <div>
+                <a mat-dialog-close>Volver</a>
+            </div>
+            <button type="button"
+                (click)="actualizar_Educacion(titulo.value,descripcion.value,anioStar.value,anioEnd.value,estadoActual.value)">
+                Guardar Educacion</button>
+        </div>
+    </form>
 </div>

@@ -1,14 +1,10 @@
 #Seccion-Habilidades {
-    height: 40%;
-    /* background-color: #2596be; */
-    /*background-image: linear-gradient( black,#2596be);*/
-    border-top: 1px solid white;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    margin-bottom: 15em;
+    margin: 15%;
 }
 #list-hard-skills {
-    margin-left: 1em;
-    margin-right: 1em;
+    margin-left: 4em;
+    margin-right: 4em;
     margin-top: 2em;
     padding: 1em 0 1em 0;
     list-style: none;
@@ -17,19 +13,25 @@
     align-items: center;
     flex-wrap: wrap;
     gap:2em;
+
+    box-shadow: 2px 2px 20px #face30;
+    border-radius: 10px;
 }
 #list-soft-skills {
     margin-top: 2em;
+    margin-left: 4em;
+    margin-right: 4em;
     padding: 1em 0 1em 0;
-
     list-style: none;
-
     display: flex;
     justify-content: space-around;
     align-items: center;
-
     flex-wrap: wrap;
+
+    box-shadow: 2px 2px 20px #face30;
+    border-radius: 10px;
 }
+
 #list-soft-skills p{
     color:white;
 }

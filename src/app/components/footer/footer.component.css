@@ -1,34 +1,33 @@
 footer p{
-    padding-bottom: 4em;
     font-size: 0.8em;
     color: white;
     text-align: center;
-    /* background-color: #2596be; */
+    margin-bottom: 5vh;
 }
-ul {
+.RedesSociales {
+    padding-left: 0;
+    margin: 0;
     position:fixed;
-    bottom: -1em;
-    height: 6vh;
-    background-color: black;
-    border-top: 1px solid white;
+    bottom: 0;
     width: 100%;
-    padding-left: 0 ;
-    animation-name: color-blanco-rosa;
-    animation-duration: 6s;
+    height: max-content;
+    background-color: #0c0c0c;
 }
 .RedesSociales {
     display: flex;
     justify-content: space-around;
     list-style: none;
-    align-items: center;
-}
-
-.RedesSociales li {
-    color: #2596be;
-
 }
 
 .RedesSociales a {
-    color: #2596be;
+    color: #face30;
+}
+
+#container-flechas{
+    margin-bottom: 4vh; 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-around;
+    width: 100%;
 }
 

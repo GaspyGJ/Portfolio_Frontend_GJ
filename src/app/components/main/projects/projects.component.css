@@ -1,10 +1,9 @@
 #Seccion-Proyectos {
+
     line-height: 1.8em;
-    background-color: #2596be;
-    /*background-image: linear-gradient( black,#2596be);*/
-    border-top: 1px solid white;
-    padding-top: 5%;
-    padding-bottom: 5%;
+ 
+    margin-bottom: 15em;
+    margin: 15%;
 }
 
 #list-Proyectos {
@@ -18,9 +17,9 @@
 .card{
     text-align: center;
     color:white;
-    background-color: #2596be;
-    /*background-image: linear-gradient( black,#2596be);*/
-    box-shadow: 2px 2px 5px black;
+    background-color: #0c0c0c;
+    box-shadow: 2px 2px 20px #face30;
+    border-radius: 10px;
     
 }
 .card-body{

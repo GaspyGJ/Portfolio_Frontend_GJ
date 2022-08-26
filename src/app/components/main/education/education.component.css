@@ -1,12 +1,6 @@
 #Seccion-Educacion{
-    /* background-color: #2596be; */
-    /*background-image: linear-gradient( black,#2596be);*/
-    border-top: 1px solid white;
-    padding-top: 5%;
-    padding-bottom: 5%;
-
-    padding-left: 10%;
-    padding-right: 10%;
+    margin-bottom: 15em;
+    margin: 15%;
 }
 
 h3{
@@ -21,6 +15,11 @@ small{
     direction: column;
     justify-content: center;
     align-items: center;
+
+    margin-left: 4em;
+    margin-right: 4em;
+    box-shadow: 2px 2px 20px #face30;
+    border-radius: 10px;
 }
 
 .list-group-item{

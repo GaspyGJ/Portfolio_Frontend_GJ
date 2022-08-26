@@ -19,8 +19,8 @@
           </li>
             <li><a (click)="scrollToProjects()">Projects</a></li>
             <li><a (click)="scrollToContact()">Contact</a></li>
-            <li *ngIf="isLogged"><a (click)="onLogout()">Log Out</a></li>
-            <li *ngIf="!isLogged"><a (click)="enterLogin()">Log In</a></li>
+            <li *ngIf="isLogged" ><a (click)="onLogout()">Log Out</a></li>
+            <li *ngIf="!isLogged" ><a id="btn-log-in" (click)="enterLogin()">Log In</a></li>
         </ul>
     </nav>
 </header>

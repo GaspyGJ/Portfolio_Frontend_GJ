@@ -2,7 +2,7 @@
 /*********** HEADER *****************/
 header{
     /*background-image: linear-gradient(black,#2596be);*/
-    background-color:#2596be;
+    /* background-color:#2596be; */
     height: 15vh;
 }
 .ul-menu {
@@ -34,13 +34,13 @@ nav .logo {
     padding: 10px;
     padding-top:0;
     text-decoration: none;
-    color: white;
+    color:#face30;
     font-size: 1.5em;
     /* animation-name: color-negro-blanco;
     animation-duration: 6s; */
 }
 .ul-menu li a:hover {
-    border-bottom: 4px solid white;
+    border-bottom: 4px solid #face30;
     /* transition: border-bottom 0.15s; */
 }
 

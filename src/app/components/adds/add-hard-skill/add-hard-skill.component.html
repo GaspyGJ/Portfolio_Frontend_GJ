@@ -1,6 +1,5 @@
 
     <div id="Seccion-Edit" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1200">
-        <a mat-dialog-close >Volver</a>
         <form id="form-Seccion-Edit">
             <h3>Agregar Hard Skill:</h3>
             <p>Escribe sobre el/los atributo/s que deseas cambiar - Los atributos que no se editen quedaran como estan</p>
@@ -20,8 +19,13 @@
                 <p>Url Foto :</p>
                 <input type="text" #urlFoto value={{default_hardSkill.urlFoto}} placeholder="ingresar url Foto">
             </div>
+            <div class="container-a-btn">
+                <div>
+                    <a mat-dialog-close>Volver</a>
+                </div>
             <button type="button" 
             (click)="saveHardSkill(porcentaje.value,alto.value,ancho.value,urlFoto.value)">
             Guardar Hard Skill</button>
+            </div>
         </form>
     </div>

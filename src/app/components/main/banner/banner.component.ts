@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MoveDirection, ClickMode, HoverMode, OutMode, Container, Engine } from "tsparticles-engine"; //para las particulas
+import { MoveDirection, ClickMode, HoverMode, OutMode, Container, Engine, Rectangle, Circle } from "tsparticles-engine"; //para las particulas
 import { loadFull } from "tsparticles";
+
 
 @Component({
   selector: 'app-banner',
@@ -10,16 +11,18 @@ import { loadFull } from "tsparticles";
 })
 export class BannerComponent implements OnInit {
 
+  textAuto:string;
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
+
+
   /****************************** Para las Particulas *************************************/
 
   id = "tsparticles";
-
-  /* Starting from 1.19.0 you can use a remote url (AJAX request) to a JSON with the configuration */
-  particlesUrl = "http://foo.bar/particles.json";
 
   /* or the classic JavaScript object */
   particlesOptions = {
@@ -40,6 +43,10 @@ export class BannerComponent implements OnInit {
           enable: true,
           mode: HoverMode.repulse
         },
+        onDiv: {
+          selectors: "#repulse-div",
+          enable: true,
+        },
         resize: true
       },
       modes: {
@@ -54,7 +61,8 @@ export class BannerComponent implements OnInit {
     },
     particles: {
       color: {
-        value: "#000000"
+        value: "#FFFFFF",
+        enable: false
       },
       links: {
         color: "#FFFFFF",
@@ -111,3 +119,6 @@ export class BannerComponent implements OnInit {
 
 
 }
+
+
+

@@ -54,6 +54,8 @@ export class LoginComponent implements OnInit {
           text: "se ingreso correctamente",
           icon: 'success',
           confirmButtonText: "Aceptar",
+
+          
         }).then(()=>{
           window.location.reload();
         })
@@ -68,6 +70,7 @@ export class LoginComponent implements OnInit {
           text: "Error al intentar ingresar",
           icon: 'error',
           confirmButtonText: "Aceptar",
+
         })
       }
 

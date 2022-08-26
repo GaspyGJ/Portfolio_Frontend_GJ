@@ -1,5 +1,4 @@
 <div id="Seccion-Edit" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1200">
-    <a mat-dialog-close>Volver</a>
     <form id="form-Seccion-Edit">
         <div>
             <h3>Editar Experiencia:</h3>
@@ -36,8 +35,14 @@
             <p>Link Proyectos:</p>
             <input type="text" #linkProyectos value={{default_Experiencia.linkProyectos}} placeholder="ingresar url foto">
         </div>
+        <div class="container-a-btn">
+            <div>
+                <a mat-dialog-close>Volver</a>
+            </div>
         <button type="button"
             (click)="saveExperiencia(titulo.value,descripcion.value,anioStar.value,anioEnd.value,tipoExperiencia.value,tegnologiasUtilizadas.value,linkProyectos.value)">
-            Guardar Experiencia</button>
+            Guardar Experiencia
+        </button>
+        </div>
     </form>
 </div>

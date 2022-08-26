@@ -37,7 +37,7 @@ import { AddProyectoComponent } from './components/adds/add-proyecto/add-proyect
 import { EditProyectoComponent } from './components/edits/edit-proyecto/edit-proyecto.component';
 import { AddHardSkillComponent } from './components/adds/add-hard-skill/add-hard-skill.component';
 import { AddSoftSkillComponent } from './components/adds/add-soft-skill/add-soft-skill.component';
-
+import { ParticlesComponent } from './components/particles/particles.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +63,8 @@ import { AddSoftSkillComponent } from './components/adds/add-soft-skill/add-soft
     AddEducacionComponent,
     EditEducacionComponent,
     AddProyectoComponent,
-    EditProyectoComponent
+    EditProyectoComponent,
+    ParticlesComponent
   ],
   entryComponents:[
     EditHardSkillComponent,
