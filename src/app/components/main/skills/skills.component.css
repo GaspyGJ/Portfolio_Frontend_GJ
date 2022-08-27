@@ -2,6 +2,9 @@
     margin-bottom: 15em;
     margin: 15%;
 }
+.list-For-Small-Windows{
+    display: none;
+}
 #list-hard-skills {
     margin-left: 4em;
     margin-right: 4em;
@@ -69,9 +72,22 @@ li:hover {
 
 @media only screen and (max-width: 600px) {
 
-    #list-hard-skills {
-        gap:1em;
+    #Seccion-Habilidades {
+        margin: 0;
+        margin-bottom: 15em;
     }
+
+    #list-hard-skills {
+        display: none;
+    }
+    #list-soft-skills {
+        display: none;
+    }
+
+    .list-For-Small-Windows{
+        display: block;
+    }
+
 
 }
 

@@ -1,104 +1,4 @@
 
-    
-#puesto {
-    position: relative;
-    position: relative;
-    width: max-content;
-  }
-  
-  #puesto::before, #puesto::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-  
-  #puesto::before {
-    background: #0c0c0c;
-    animation: typewriter 6s steps(27) 1s forwards;
-  }
-  
-  #puesto::after {
-    width: 0.125em;
-    background: rgb(255, 255, 255);
-    animation: typewriter 6s
-        steps(27) 1s forwards,
-      blink 750ms steps(25) infinite;
-  }
-  
-  @keyframes typewriter {
-    to {
-      left: 100%;
-    }
-  }
-  
-  @keyframes blink {
-    to {
-      background: transparent;
-    }
-  }
-
-/*FIN Probando
-.main{
-    display:flex;
-}
-.main .text{
-    color:#fff;
-    font-size:60px;
-    font-weight:400;
-    background-color: #0c0c0c;
-    box-shadow: 2px 2px 2px #face30 ;
-}
-.main .option{
-    margin-left:15px;
-    height:90px;
-    Line-height:90px;
-    overflow:hidden;
-}
-.option li {
-    List-style: none;
-    color: #face30;
-    font-size: 2em;
-    font-weight: 500;
-    position: relative;
-    top: 0;
-    animation: slide 12s steps(4) infinite;
-}
-@keyframes slide {
-    100% {
-        top: -360px;
-    }
-}
-.option li span {
-    position: relative;
-    margin: 5px 0;
-    Line-height: 90px;
-}
-
-.option li span:after{
-    content:'';
-    position:absolute;
-    Left:0;
-    width:100%;
-    height:100%;
-    background:#0c0c0c;
-    border-left:2px solid #face30;
-    animation:typing 3s steps(10) infinite;
-}
-@keyframes typing
-{
-    40%,60%{
-        Left:calc(100% + 30px);
-    }
-    100%{ 
-        Left:0;
-    }
-}
-/*FIN Probando*/
-/*********** MAIN-BANNER *****************/
-
 #foto-perfil-about-me {
     display: flex;
     flex-direction: row;
@@ -146,6 +46,7 @@
 }
 
 
+/************************* Pantallas pequenias *****************************************/
 @media only screen and (max-width: 600px) {
 
     #foto-perfil-about-me {
@@ -156,18 +57,59 @@
     }
 
     #Foto-Perfil img {
-        width: 90px;
-        height: 90px;
+        width: 140px;
+        height: 140px;
     }
 
-    #about-me p {
-        color: white;
+    #about-me{
+        margin-left: 10%;
+        margin-right: 10%;
     }
 
     #about-me h3 {
-        font-size: 1.5em;
-        color: white;
+        font-size: 1em !important;
     }
 
+}    
 
-}
+/**********AUTO TYPING************/
+#puesto {
+    position: relative;
+    position: relative;
+    width: max-content;
+  }
+  
+  #puesto::before, #puesto::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  #puesto::before {
+    background: #0c0c0c;
+    animation: typewriter 6s steps(27) 1s forwards;
+  }
+  
+  #puesto::after {
+    width: 0.125em;
+    background: rgb(255, 255, 255);
+    animation: typewriter 6s
+        steps(27) 1s forwards,
+      blink 750ms steps(25) infinite;
+  }
+  
+  @keyframes typewriter {
+    to {
+      left: 100%;
+    }
+  }
+  
+  @keyframes blink {
+    to {
+      background: transparent;
+    }
+  }
+

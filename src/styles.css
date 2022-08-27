@@ -11,6 +11,13 @@
 }
 
 /**** PARA LOS BOTONES DE LOS SWALS ****/
+.carousel-control-prev-icon, .carousel-control-next-icon{
+  display: none !important;
+}
+.carousel-indicators {
+  bottom: -2em !important;
+}
+/**** PARA LOS BOTONES DE LOS SWALS ****/
 
 .swal2-styled{ /*Para los botones*/
   background-color:#0c0c0c !important ;

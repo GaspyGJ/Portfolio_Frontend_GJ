@@ -57,10 +57,18 @@ small{
 }
 @media only screen and (max-width: 600px) {
 
+    #Seccion-Educacion{
+        margin:0;
+        margin-left: 1em;
+        margin-right: 1em;
+        margin-bottom: 15em;
+    }
     .list-group-item{
-        padding-left: 10%;
-        padding-right: 10%;
+        padding-left: 5%;
+        padding-right: 5%;
         width: 100%;
     }
-
+    .list-group{
+        margin:0;
+    }
 }

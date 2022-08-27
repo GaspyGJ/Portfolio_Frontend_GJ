@@ -52,14 +52,19 @@ nav .logo {
     }   
     #menu-Desplegable{
         text-align: center;
-        background-color: white;
+        background-color: #0c0c0c;
         width: 100%;
+        font-size: 2em;
+        border: 1px solid #face30;
+    }
+    #menu-Desplegable li a{
+        color: #face30;
     }
     #menu-sandwich{
     display:block;
     }
     #menu-sandwich svg{
-    fill: black;
+    fill: #face30;
     }
 
 }

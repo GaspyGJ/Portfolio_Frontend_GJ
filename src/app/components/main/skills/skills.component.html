@@ -1,7 +1,7 @@
 <div id="Seccion-Habilidades">
 
     <h3 class="titulo-de-seccion">Hard Skills:</h3>
-    <div class="tagForLogIn btn-container"  *ngIf="isLogged">
+    <div class="tagForLogIn btn-container" *ngIf="isLogged">
         <button class="btn-edit" mat-icon-button (click)="addHardSkill()">
             <mat-icon>add</mat-icon>
         </button>
@@ -29,15 +29,38 @@
         </li>
     </ul>
 
+
+
+
+    <div class="container-fluid list-For-Small-Windows">
+        <ngb-carousel>
+            <ng-template  ngbSlide *ngFor=" let hardSkill of hardSkills" id={{hardSkill.idHardSkill}}>
+                <div class="container-circle-progress" style="text-align: center;">
+                    <circle-progress [percent]="hardSkill.porcentaje" [radius]="60" [innerStrokeWidth]="0"
+                        [outerStrokeWidth]="5" [outerStrokeColor]="'#79f083'" [animation]="true"
+                        [animationDuration]="1500" [imageSrc]="hardSkill.urlFoto" [imageHeight]=hardSkill.alto
+                        [imageWidth]=hardSkill.ancho [showImage]="true">
+                    </circle-progress>
+                </div>
+            </ng-template>
+        </ngb-carousel>
+    </div>
+
+
+
+
     <br><br>
     <h3 class="titulo-de-seccion">Soft Skills:</h3>
-    <div class="tagForLogIn btn-container"  *ngIf="isLogged">
+    <div class="tagForLogIn btn-container" *ngIf="isLogged">
         <button class="btn-edit" mat-icon-button (click)="addSoftSkill()">
             <mat-icon>add</mat-icon>
         </button>
     </div>
+
+
     <ul id="list-soft-skills">
         <li *ngFor=" let softSkill of softSkills" id={{softSkill.idSoftSkill}}>
+
             <circle-progress [percent]="softSkill.porcentaje" [radius]="70" [innerStrokeWidth]="0"
                 [outerStrokeWidth]="5" [outerStrokeColor]="'#79f083'" [animation]="true" [animationDuration]="1500"
                 [title]="softSkill.titulo" [showTitle]="true" [showUnits]="false" [showSubtitle]="false"
@@ -53,9 +76,21 @@
                     <mat-icon>delete</mat-icon>
                 </button>
             </div>
-            
-
         </li>
     </ul>
+
+
+
+
+    <div class="container-fluid list-For-Small-Windows">
+        <ngb-carousel>
+            <ng-template ngbSlide *ngFor=" let softSkill of softSkills" id={{softSkill.idSoftSkill}}>
+                <div class="container-circle-progress" style=" margin-top: 1em; text-align: center; color:white; font-size: 1.5em;">
+                    {{softSkill.titulo}}
+                </div>
+            </ng-template>
+        </ngb-carousel>
+    </div>
+
 
 </div>

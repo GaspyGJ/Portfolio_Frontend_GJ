@@ -1,7 +1,5 @@
 #Seccion-Proyectos {
-
     line-height: 1.8em;
- 
     margin-bottom: 15em;
     margin: 15%;
 }
@@ -9,7 +7,7 @@
 #list-Proyectos {
     display: flex;
     justify-content: space-around;
-    gap:1em;
+    gap:2em;
     flex-wrap: wrap;
 }
 
@@ -50,7 +48,7 @@ img{
 }
 
 a{
-    color:black;
+    color:#69e07d;
 }
 
 /************************* With LogIn *****************************************/
@@ -63,15 +61,6 @@ a{
     background-color: #69e07d;
 }
 
-#Seccion-Experiencia{
-    background-image: linear-gradient( #2596be,black);
-
-    border-top: 1px solid white;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    padding-left: 10%;
-    padding-right: 10%;
-}
 h3{
     padding-bottom: 1em;
 }
@@ -120,6 +109,11 @@ small{
 
 
 @media only screen and (max-width: 600px) {
+
+    #Seccion-Proyectos {
+        margin: 0;
+        margin-bottom: 15em;
+    }
 
     #list-Proyectos{
         margin-left: 1em;
