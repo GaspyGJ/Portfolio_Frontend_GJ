@@ -1,5 +1,5 @@
 <div id="Seccion-Edit" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1200">
-    <form id="form-Seccion-Edit">
+    <form id="form-Seccion-Edit" ngNativeValidate>
         <h3>Editar Soft Skill:</h3>
         <p>Escribe sobre el/los atributo/s que deseas cambiar - Los atributos que no se editen quedaran como estan</p>
         <div class="div-p-input">
@@ -12,7 +12,7 @@
         </div>
         <div class="div-p-input">
             <p>FontSize :</p>
-            <input type="text" #fontSize value={{softSkill.fontSize}} placeholder="ingresar font size">
+            <input type="number"#fontSize value={{softSkill.fontSize}} placeholder="ingresar font size">
         </div>
         <div class="container-a-btn">
             <div>

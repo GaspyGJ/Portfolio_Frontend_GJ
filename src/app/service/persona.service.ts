@@ -17,10 +17,14 @@ export class PersonaService {
 
 
   public getPersona(): Observable<Persona[]>{
+    
     return this.http.get<Persona[]>(this.URL_Base_request_To_Backend+'/get/personas');
   }
 
   public savePersona(persona:Persona): Observable<any>{
+    console.log("Se va a guardar la persona : ");
+    console.log(persona);
+    console.log(JSON.stringify(persona));
     return this.http.post<any>(this.URL_Base_request_To_Backend+'/guardar/persona',persona);
   }
 

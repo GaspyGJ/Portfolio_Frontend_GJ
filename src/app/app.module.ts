@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatButtonModule} from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { interceptorProvider } from './service/JWT/interceptors/interceptor.service';
@@ -38,6 +39,7 @@ import { EditProyectoComponent } from './components/edits/edit-proyecto/edit-pro
 import { AddHardSkillComponent } from './components/adds/add-hard-skill/add-hard-skill.component';
 import { AddSoftSkillComponent } from './components/adds/add-soft-skill/add-soft-skill.component';
 import { ParticlesComponent } from './components/particles/particles.component';
+
 
 @NgModule({
   declarations: [
@@ -90,6 +92,7 @@ import { ParticlesComponent } from './components/particles/particles.component';
     MatDialogModule,
     MatButtonModule,
     MatIconModule,
+    MatListModule,
     NgbModule
   ],
   providers: [interceptorProvider],

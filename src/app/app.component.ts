@@ -16,6 +16,8 @@ export class AppComponent {
     AOS.init();
     window.addEventListener('load', AOS.refresh);
   }
+ 
+   static years = ["2011" , "2012"];
 
   /****************************** Para las Particulas *************************************/
 

@@ -1,6 +1,6 @@
 
     <div id="Seccion-Edit" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1200">
-        <form id="form-Seccion-Edit">
+        <form id="form-Seccion-Edit" ngNativeValidate>
             <h3>Agregar Hard Skill:</h3>
             <p>Escribe sobre el/los atributo/s que deseas cambiar - Los atributos que no se editen quedaran como estan</p>
             <div class="div-p-input">
@@ -9,11 +9,11 @@
             </div>
             <div class="div-p-input">
                 <p>Alto :</p>
-                <input type="text" #alto value={{default_hardSkill.alto}} placeholder="ingresar alto foto">
+                <input type="number"#alto value={{default_hardSkill.alto}} placeholder="ingresar alto foto">
             </div>
             <div class="div-p-input">
                 <p>Ancho :</p>
-                <input type="text" #ancho value={{default_hardSkill.ancho}} placeholder="ingresar ancho foto">
+                <input type="number" #ancho value={{default_hardSkill.ancho}} placeholder="ingresar ancho foto">
             </div>
             <div class="div-p-input">
                 <p>Url Foto :</p>

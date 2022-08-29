@@ -3,6 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Educacion } from 'src/app/entitys/educacion';
 import { EducacionService } from 'src/app/service/educacion.service';
 import Swal from 'sweetalert2';
+import { years } from 'src/app/service/Extra/anios';
 
 @Component({
   selector: 'app-edit-educacion',
@@ -11,12 +12,13 @@ import Swal from 'sweetalert2';
 })
 export class EditEducacionComponent implements OnInit {
 
-
-  constructor(@Inject(MAT_DIALOG_DATA) public params: any, private referencia: MatDialogRef<EditEducacionComponent>, private educacionService: EducacionService) { }
-
   educacion: Educacion;
 
   id: number;
+
+  yearsList =years;
+
+  constructor(@Inject(MAT_DIALOG_DATA) public params: any, private referencia: MatDialogRef<EditEducacionComponent>, private educacionService: EducacionService) { }
 
   ngOnInit(): void {
     this.id = Number(this.params.id)

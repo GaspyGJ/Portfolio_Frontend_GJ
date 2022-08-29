@@ -3,6 +3,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { Experiencia } from 'src/app/entitys/experiencia';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
 import Swal from 'sweetalert2';
+import { years } from 'src/app/service/Extra/anios';
 
 @Component({
   selector: 'app-add-experiencia',
@@ -13,6 +14,8 @@ export class AddExperienciaComponent implements OnInit {
 
   experiencia:Experiencia;
   default_Experiencia:Experiencia;
+
+  yearsList = years;
 
   constructor(private experienciaService:ExperienciaService , private referencia: MatDialogRef<AddExperienciaComponent>) { 
 

@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Experiencia } from 'src/app/entitys/experiencia';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
+import { years } from 'src/app/service/Extra/anios';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -17,7 +18,7 @@ export class EditExperienciaComponent implements OnInit {
 
   id: number;
 
-
+  yearsList =years;
 
   ngOnInit(): void {
     this.id = Number(this.params.id)
