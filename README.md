@@ -2,7 +2,7 @@
 This project was generated with ➡️ [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
 
 
-## 🧐 How does it work?
+## 🔎 How does it work?
 
 It works together with the backend ➡️ https://github.com/GaspyGJ/Portfolio_Backend_GJ 
 
@@ -17,7 +17,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
     * Edit elements
     * Add elements
 
-## 🧐 How to use the login features?
+## 🔎 How to use the login features?
 
 1. Login
 2. Select button to add, edit or delete<br><br>
