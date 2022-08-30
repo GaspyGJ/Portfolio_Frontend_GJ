@@ -21,11 +21,11 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 1. Login
 2. Select button to add, edit or delete<br><br>
-    2.1.1 **Add-Edit**, A modal will open where you can fill in the fields you want to change or add<br>
+    2.1.1 `Add-Edit`, A modal will open where you can fill in the fields you want to change or add<br>
     2.1.2 Complete the fields and press save, the fields that are not completed will remain like this<br>
     2.1.3 A modal accept will open for confirmation
 
-    2.2.1 **Delete**, A modal accept will for confirmation
+    2.2.1 `Delete`, A modal accept will for confirmation
 
 3. The changes will be charged on the database and will reload on the page
 
