@@ -1,14 +1,14 @@
-# My PortFolio 
+# My PortFolio 💙
 This project was generated with ➡️ [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
 
 
-## How does it work?
+## 🧐 How does it work?
 
 It works together with the backend ➡️ https://github.com/GaspyGJ/Portfolio_Backend_GJ 
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## What's can you do?
+## 🔎 What's can you do?
 
 * Navigate for the site
 * Send/Receive email through the page
@@ -17,7 +17,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
     * Edit elements
     * Add elements
 
-## How to use the login features?
+## 🧐 How to use the login features?
 
 1. Login
 2. Select button to add, edit or delete<br><br>
@@ -30,7 +30,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 3. The changes will be charged on the database and will reload on the page
 
 
-## Things to improve
+## 💎 Things to improve
 
 *  The database late so much sometimes what causes that the page late on charge data
 
