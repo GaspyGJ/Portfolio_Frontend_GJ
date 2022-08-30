@@ -1,27 +1,39 @@
-# MiPortFolioTPFinalYoProgramo
+# My PortFolio 
+This project was generated with ➡️ [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
 
-## Development server
+## How does it work?
+
+It works together with the backend ➡️ https://github.com/GaspyGJ/Portfolio_Backend_GJ 
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## What's can you do?
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* Navigate for the site
+* Send/Receive email through the page
+* Login (required username and password)
+    * Delete elements
+    * Edit elements
+    * Add elements
 
-## Build
+## How to use the login features?
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Login
+2. Select button to add, edit or delete<br>
+    2.1.1 **Add-Edit**, A modal will open where you can fill in the fields you want to change or add<br>
+    2.1.2 Complete the fields and press save, the fields that are not completed will remain like this<br>
+    2.1.3 A modal accept will open for confirmation
 
-## Running unit tests
+    2.2.1 **Delete**, A modal accept will for confirmation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. The changes will be charged on the database and will reload on the page
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Things to improve
 
-## Further help
+*  The database late so much sometimes what causes that the page late on charge data
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* The error messages are not very informative about the error. They only say "Error"
+
+* The images in the Projects section may not be displayed in their entirety on mobile phones
