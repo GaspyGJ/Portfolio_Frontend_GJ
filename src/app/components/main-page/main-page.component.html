@@ -1,7 +1,6 @@
 <!-- <ng-particles [id]="id" [options]="particlesOptions" [particlesInit]="particlesInit"
 (particlesLoaded)="particlesLoaded($event)"></ng-particles> -->
- 
- <div id="app-header" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
+<div id="app-header" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1000">
     <app-header></app-header>
 </div>
 
@@ -9,31 +8,40 @@
     <app-banner></app-banner>
 </div>
 
-<div data-aos="zoom-in-up" data-aos-easing="linear" data-aos-duration="1200" >
-    <app-about-me></app-about-me>
+<div id="after-load">
+
+    <div data-aos="zoom-in-up" data-aos-easing="linear" data-aos-duration="1200">
+        <app-about-me></app-about-me>
+    </div>
+
+    <div data-aos="zoom-in-up" data-aos-easing="linear" data-aos-duration="1000">
+        <app-skills></app-skills>
+    </div>
+
+    <div data-aos="zoom-in-up" data-aos-easing="linear" data-aos-duration="1000">
+        <app-education></app-education>
+    </div>
+
+    <div data-aos="zoom-in-up" data-aos-easing="linear" data-aos-duration="1000">
+        <app-experiencia></app-experiencia>
+    </div>
+
+    <div>
+        <app-projects></app-projects>
+    </div>
+
 </div>
 
-<div data-aos="zoom-in-up" data-aos-easing="linear" data-aos-duration="1000">
-    <app-skills></app-skills>
+<div id="preload">
+
+    <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
+        <app-main-preload></app-main-preload>
+    </div>
+
 </div>
 
-<div  data-aos="zoom-in-up" data-aos-easing="linear" data-aos-duration="1000">
-    <app-education></app-education>
-</div>
-
-<div data-aos="zoom-in-up" data-aos-easing="linear" data-aos-duration="1000" >
-    <app-experiencia></app-experiencia>
-</div>
-
-<div >
-    <app-projects></app-projects>
-</div>
- 
 <div data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000">
     <app-contact></app-contact>
-</div> 
-
-
-
+</div>
 
 <app-footer></app-footer>

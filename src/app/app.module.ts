@@ -39,6 +39,7 @@ import { EditProyectoComponent } from './components/edits/edit-proyecto/edit-pro
 import { AddHardSkillComponent } from './components/adds/add-hard-skill/add-hard-skill.component';
 import { AddSoftSkillComponent } from './components/adds/add-soft-skill/add-soft-skill.component';
 import { ParticlesComponent } from './components/particles/particles.component';
+import { MainPreloadComponent } from './components/preload/main-preload/main-preload.component'
 
 
 @NgModule({
@@ -66,7 +67,8 @@ import { ParticlesComponent } from './components/particles/particles.component';
     EditEducacionComponent,
     AddProyectoComponent,
     EditProyectoComponent,
-    ParticlesComponent
+    ParticlesComponent,
+    MainPreloadComponent
   ],
   entryComponents:[
     EditHardSkillComponent,

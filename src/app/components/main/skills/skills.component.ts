@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { HardSkill } from 'src/app/entitys/hard_skill';
 import { SoftSkill } from 'src/app/entitys/soft_skills';
 import { HardSkillService } from 'src/app/service/hard-skill.service';
+import { isLoadDB } from 'src/app/service/isLoadDB';
 import { TokenService } from 'src/app/service/JWT/token-service.service';
 import { SoftSkillService } from 'src/app/service/soft-skill.service';
 import Swal from 'sweetalert2';
@@ -39,16 +40,19 @@ export class SkillsComponent implements OnInit {
   public obtenerHardSkills() {
     this.hardSkillService.getHardSkill().subscribe(dato => {
       this.hardSkills = dato;
+      //aviso que cargo Hard
+      isLoadDB.elementoCargado("HardSkill");
     })
   }
   protected obtenerSoftSkills() {
     this.softSkillService.getHardSkill().subscribe(dato => {
       this.softSkills = dato;
+      //aviso que cargo Soft
+      isLoadDB.elementoCargado("SoftSkill");
     })
   }
 
   protected addHardSkill() {
-
     const popup = this.matDialog.open(AddHardSkillComponent, {
       enterAnimationDuration: '1000ms',
       exitAnimationDuration: '1000ms',
@@ -93,65 +97,65 @@ export class SkillsComponent implements OnInit {
         });
       }
     });
-}
+  }
 
-protected dropSoftSkill(id: number){
-  Swal.fire({
-    title: 'Seguro que desea eliminar?',
-    text: "",
-    icon: 'question',
-    confirmButtonText: "Aceptar",
-  }).then((resultado) => {
-    if (resultado.isConfirmed) {
-      this.softSkillService.deleteSoftSkill(id).subscribe(dato => {
-        let index_for_deleting = this.softSkills.findIndex(element => element.idSoftSkill === id);
-        this.softSkills.splice(index_for_deleting, 1);
-        Swal.fire({
-          title: 'Eliminado',
-          text: "Eliminado correctamente",
-          icon: 'success',
-          confirmButtonText: "Aceptar",
+  protected dropSoftSkill(id: number) {
+    Swal.fire({
+      title: 'Seguro que desea eliminar?',
+      text: "",
+      icon: 'question',
+      confirmButtonText: "Aceptar",
+    }).then((resultado) => {
+      if (resultado.isConfirmed) {
+        this.softSkillService.deleteSoftSkill(id).subscribe(dato => {
+          let index_for_deleting = this.softSkills.findIndex(element => element.idSoftSkill === id);
+          this.softSkills.splice(index_for_deleting, 1);
+          Swal.fire({
+            title: 'Eliminado',
+            text: "Eliminado correctamente",
+            icon: 'success',
+            confirmButtonText: "Aceptar",
+          });
         });
-      });
-    }
-  });
-}
+      }
+    });
+  }
 
-protected editHardSkill(id: number){
+  protected editHardSkill(id: number) {
 
-  const popup = this.matDialog.open(EditHardSkillComponent, {
-    data: {
-      'id': id,
+    const popup = this.matDialog.open(EditHardSkillComponent, {
+      data: {
+        'id': id,
 
-    },
-    enterAnimationDuration: '1000ms',
-    exitAnimationDuration: '1000ms',
-  });
+      },
+      enterAnimationDuration: '1000ms',
+      exitAnimationDuration: '1000ms',
+    });
 
-  popup.afterClosed().subscribe(i => {
-    this.obtenerHardSkills();
-  })
-  //this.router.navigate([`edit/hard/skills/${id}`]);
-  // ir a ruta (pasarle el id por parametro)para editar la skill, 
-  // indicarle el ID que debe utilizar 
-  //{ path: 'edit/hard/skills/:id', component: EditHardSkillComponent}
-}
+    popup.afterClosed().subscribe(i => {
+      this.obtenerHardSkills();
+    })
+    //this.router.navigate([`edit/hard/skills/${id}`]);
+    // ir a ruta (pasarle el id por parametro)para editar la skill, 
+    // indicarle el ID que debe utilizar 
+    //{ path: 'edit/hard/skills/:id', component: EditHardSkillComponent}
+  }
 
-protected editSoftSkill(id: number){
-  const popup = this.matDialog.open(EditSoftSkillComponent, {
-    data: {
-      'id': id,
-    },
-    enterAnimationDuration: '1000ms',
-    exitAnimationDuration: '1000ms',
-  });
+  protected editSoftSkill(id: number) {
+    const popup = this.matDialog.open(EditSoftSkillComponent, {
+      data: {
+        'id': id,
+      },
+      enterAnimationDuration: '1000ms',
+      exitAnimationDuration: '1000ms',
+    });
 
-  popup.afterClosed().subscribe(i => {
-    this.obtenerSoftSkills();
-  })
+    popup.afterClosed().subscribe(i => {
+      this.obtenerSoftSkills();
+    })
 
-  //para el otro metodo de nueva URL
-  //this.router.navigate([`edit/soft/skills/${id}`]);
-}
+    //para el otro metodo de nueva URL
+    //this.router.navigate([`edit/soft/skills/${id}`]);
+  }
 
 }

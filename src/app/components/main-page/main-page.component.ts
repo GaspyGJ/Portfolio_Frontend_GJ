@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginUsuario } from 'src/app/entitys/JWT/login-usuario';
+import { isLoadDB } from 'src/app/service/isLoadDB';
 import { AuthServiceService } from 'src/app/service/JWT/auth-service.service';
 import { TokenService } from 'src/app/service/JWT/token-service.service';
 
@@ -22,26 +23,24 @@ export class MainPageComponent implements OnInit {
     private authService: AuthServiceService) { }
 
   ngOnInit(): void {
-    /*
-    this.loginUsuario = new LoginUsuario('user','user');
-    this.authService.login(this.loginUsuario).subscribe({
-      next: (dato) => {
-        this.isLogged = true;
-        this.isLoginFails = false;
 
-        this.tokenService.setToken(dato.token);
-        this.tokenService.setUserName(dato.nombreUsuario);
-        this.tokenService.setAuthorities(dato.authorities);
-        this.roles = dato.authorities;
-      },
-      error: (e) => {
-        this.isLogged = false;
-        this.isLoginFails = true;
-        this.mjsError = e.message;
-        console.log(e.message);
+    let elemento = document.getElementById("after-load")
+    elemento!.style.display = "none";
+
+    this.verificarLoad()
+  }
+
+  async verificarLoad() {
+    let load = false;
+    while (load == false) {
+      if (isLoadDB.isLoadDB() == true) {
+        load = true;
+        let elemento = document.getElementById("before-load")
+        elemento!.style.display = "block";
+        let elemento1 = document.getElementById("preload")
+        elemento1!.style.display = "none";
       }
-
-    });*/
+    }
   }
 
 }

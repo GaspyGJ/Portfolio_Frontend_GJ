@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Educacion } from 'src/app/entitys/educacion';
 import { EducacionService } from 'src/app/service/educacion.service';
+import { isLoadDB } from 'src/app/service/isLoadDB';
 import { TokenService } from 'src/app/service/JWT/token-service.service';
 import Swal from 'sweetalert2';
 import { AddEducacionComponent } from '../../adds/add-educacion/add-educacion.component';
@@ -37,7 +38,11 @@ export class EducationComponent implements OnInit {
         if(element.anioEnd==""){
           element.anioEnd='Actualidad';
         }
+      
       });
+      
+      //aviso que cargo Educacion
+      isLoadDB.elementoCargado("Educacion");
     })
 
     

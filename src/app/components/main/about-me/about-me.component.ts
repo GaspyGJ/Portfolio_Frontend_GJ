@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Persona } from 'src/app/entitys/persona';
+import { isLoadDB } from 'src/app/service/isLoadDB';
 import { TokenService } from 'src/app/service/JWT/token-service.service';
 import { PersonaService } from 'src/app/service/persona.service';
 import { EditAboutMeComponent } from '../../edits/edit-about-me/edit-about-me.component';
@@ -14,7 +15,7 @@ export class AboutMeComponent implements OnInit {
 
   isLogged = false;
 
-  constructor(private tokenService: TokenService, private matDialog:MatDialog  ,private personaService:PersonaService) { }
+  constructor(private tokenService:TokenService,private matDialog:MatDialog ,private personaService:PersonaService) { }
   
   personas:Persona[];
 
@@ -29,6 +30,9 @@ export class AboutMeComponent implements OnInit {
   private obtenerPersona(){
     this.personaService.getPersona().subscribe(dato=>{
       this.personas = dato;
+      
+      //aviso que cargo persona
+      isLoadDB.elementoCargado("Persona");
     })
   }
 
