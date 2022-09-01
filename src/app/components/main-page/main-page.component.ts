@@ -20,27 +20,8 @@ export class MainPageComponent implements OnInit {
   mjsError: string;
 
   constructor(private tokenService: TokenService,
-    private authService: AuthServiceService) { }
+    private authService: AuthServiceService, private isLoadDB: isLoadDB) { }
 
-  ngOnInit(): void {
-
-    let elemento = document.getElementById("after-load")
-    elemento!.style.display = "none";
-
-    this.verificarLoad()
-  }
-
-  async verificarLoad() {
-    let load:boolean = false;
-    while (load == false) {
-      if ( isLoadDB.isLoadDB() == true) {
-        load = true;
-        let elemento = document.getElementById("after-load")
-        elemento!.style.display = "block";
-        let elemento1 = document.getElementById("preload")
-        elemento1!.style.display = "none";
-      }
-    }
-  }
+  ngOnInit(): void {}
 
 }

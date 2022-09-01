@@ -4,7 +4,6 @@ import { Router } from '@angular/router';
 import { HardSkill } from 'src/app/entitys/hard_skill';
 import { SoftSkill } from 'src/app/entitys/soft_skills';
 import { HardSkillService } from 'src/app/service/hard-skill.service';
-import { isLoadDB } from 'src/app/service/isLoadDB';
 import { TokenService } from 'src/app/service/JWT/token-service.service';
 import { SoftSkillService } from 'src/app/service/soft-skill.service';
 import Swal from 'sweetalert2';
@@ -28,6 +27,17 @@ export class SkillsComponent implements OnInit {
   softSkills: SoftSkill[];
 
   ngOnInit(): void {
+
+    let elemento = document.getElementById("after-load")
+    elemento!.style.display = "none";
+    let elemento2 = document.getElementById("after-load2")
+    elemento2!.style.display = "none";
+
+    let elemento1 = document.getElementById("preloadHard")
+    elemento1!.style.display = "block";
+    let elemento3 = document.getElementById("preloadSoft")
+    elemento3!.style.display = "block";
+
     this.obtenerHardSkills();
     this.obtenerSoftSkills();
 
@@ -40,15 +50,25 @@ export class SkillsComponent implements OnInit {
   public obtenerHardSkills() {
     this.hardSkillService.getHardSkill().subscribe(dato => {
       this.hardSkills = dato;
-      //aviso que cargo Hard
-      isLoadDB.elementoCargado("HardSkill");
+
+      let elemento = document.getElementById("after-load")
+      elemento!.style.display = "block";
+
+      let elemento1 = document.getElementById("preloadHard")
+      elemento1!.style.display = "none";
+
     })
   }
   protected obtenerSoftSkills() {
     this.softSkillService.getHardSkill().subscribe(dato => {
       this.softSkills = dato;
-      //aviso que cargo Soft
-      isLoadDB.elementoCargado("SoftSkill");
+
+      let elemento = document.getElementById("after-load2")
+      elemento!.style.display = "block";
+
+      let elemento2 = document.getElementById("preloadSoft")
+      elemento2!.style.display = "none";
+
     })
   }
 

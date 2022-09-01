@@ -1,32 +1,38 @@
 <div id="Seccion-Experiencia">
   <h3 class="titulo-de-seccion"> Experience:</h3>
 
-  <div class="tagForLogIn btn-container"  *ngIf="isLogged">
-    <button class="btn-edit" mat-icon-button (click)="addExperiencia()">
-      <mat-icon>add</mat-icon>
-    </button>
-  </div>
-  <!--lista usando bootstrap-->
-  <div class="list-group">
-
-    <div *ngFor=" let experiencia of experiencias" id={{experiencia.idExperiencia}} class="list-group-item">
-      <hr>
-      <h5>{{experiencia.titulo}}</h5>
-      <p>{{experiencia.descripcion}}</p>
-      <p>Tipo de Experiencia :  {{experiencia.tipoExperiencia}}</p>
-      <p >Tecnologias Utilizadas : <span style="color: #2be271;">{{experiencia.tegnologiasUtilizadas}}</span> </p>
-      <small>{{experiencia.anioStart}} - {{experiencia.anioEnd}}</small>
-      <p *ngIf="experiencia.linkProyectos!=''"><a href={{experiencia.linkProyectos}}>Ver Proyecto</a></p>
-
-      <div class="tagForLogIn btn-container"  *ngIf="isLogged">
-        <button mat-icon-button class="btn-edit" (click)="editExperiencia(experiencia.idExperiencia)">
-          <mat-icon color="red">edit</mat-icon>
-        </button>
-
-        <button mat-icon-button class="btn-drop" (click)="dropExperiencia(experiencia.idExperiencia)">
-          <mat-icon>delete</mat-icon>
-        </button>
+  <div id="after-load">
+    <div class="tagForLogIn btn-container" *ngIf="isLogged">
+      <button class="btn-edit" mat-icon-button (click)="addExperiencia()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+    <!--lista usando bootstrap-->
+    <div class="list-group">
+  
+      <div *ngFor=" let experiencia of experiencias" id={{experiencia.idExperiencia}} class="list-group-item">
+        <hr>
+        <h5>{{experiencia.titulo}}</h5>
+        <p>{{experiencia.descripcion}}</p>
+        <p>Tipo de Experiencia : {{experiencia.tipoExperiencia}}</p>
+        <p>Tecnologias Utilizadas : <span style="color: #2be271;">{{experiencia.tegnologiasUtilizadas}}</span> </p>
+        <small>{{experiencia.anioStart}} - {{experiencia.anioEnd}}</small>
+        <p *ngIf="experiencia.linkProyectos!=''"><a href={{experiencia.linkProyectos}}>Ver Proyecto</a></p>
+  
+        <div class="tagForLogIn btn-container" *ngIf="isLogged">
+          <button mat-icon-button class="btn-edit" (click)="editExperiencia(experiencia.idExperiencia)">
+            <mat-icon color="red">edit</mat-icon>
+          </button>
+  
+          <button mat-icon-button class="btn-drop" (click)="dropExperiencia(experiencia.idExperiencia)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+        <hr>
       </div>
-      <hr>
     </div>
   </div>
+
+<div id="preloadExperiencia">
+  <app-main-preload></app-main-preload>
+</div>

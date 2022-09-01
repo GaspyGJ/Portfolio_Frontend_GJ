@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Experiencia } from 'src/app/entitys/experiencia';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
-import { isLoadDB } from 'src/app/service/isLoadDB';
 import { TokenService } from 'src/app/service/JWT/token-service.service';
 import Swal from 'sweetalert2';
 import { AddExperienciaComponent } from '../../adds/add-experiencia/add-experiencia.component';
@@ -22,7 +21,13 @@ export class ExperienciaComponent implements OnInit {
   experiencias: Experiencia[]
 
   ngOnInit(): void {
+    let elemento = document.getElementById("after-load")
+    elemento!.style.display = "none";
+    let elemento1 = document.getElementById("preloadExperiencia")
+    elemento1!.style.display = "block";
+
     this.obtenerExperiencias();
+    
     if (this.tokenService.getToken()) {
       //esta logeado
       this.isLogged = true;
@@ -37,8 +42,10 @@ export class ExperienciaComponent implements OnInit {
           element.anioEnd = 'Actualidad';
         }
       });
-      //aviso que cargo Experiencia
-      isLoadDB.elementoCargado("Experiencia");
+      let elemento = document.getElementById("after-load")
+      elemento!.style.display = "block";
+      let elemento1 = document.getElementById("preloadExperiencia")
+      elemento1!.style.display = "none";
     })
   }
 

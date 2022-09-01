@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Proyecto } from 'src/app/entitys/proyecto';
-import { isLoadDB } from 'src/app/service/isLoadDB';
 import { TokenService } from 'src/app/service/JWT/token-service.service';
 import { ProyectoService } from 'src/app/service/proyecto.service';
 import Swal from 'sweetalert2';
@@ -22,7 +21,13 @@ export class ProjectsComponent implements OnInit {
   proyectos: Proyecto[]
 
   ngOnInit(): void {
+    let elemento = document.getElementById("after-load")
+    elemento!.style.display = "none";
+    let elemento1 = document.getElementById("preloadProyectos")
+    elemento1!.style.display = "block";
+
     this.obtenerProyectos();
+
     if (this.tokenService.getToken()) {
       //esta logeado
       this.isLogged = true;
@@ -33,8 +38,10 @@ export class ProjectsComponent implements OnInit {
     this.proyectoService.getProyecto().subscribe(dato => {
       this.proyectos = dato;
       
-      //aviso que cargo Proyectos
-      isLoadDB.elementoCargado("Proyecto");
+      let elemento = document.getElementById("after-load")
+      elemento!.style.display = "block";
+      let elemento1 = document.getElementById("preloadProyectos")
+      elemento1!.style.display = "none";    
     });
   }
 
