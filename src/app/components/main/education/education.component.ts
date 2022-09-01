@@ -46,10 +46,10 @@ export class EducationComponent implements OnInit {
         }
       });
 
-      let elemento1 = document.getElementById("preloadEducation")
-      elemento1!.style.display = "none";
       let elemento = document.getElementById("after-load")
       elemento!.style.display = "block";
+      let elemento1 = document.getElementById("preloadEducation")
+      elemento1!.setAttribute( 'style', 'display: none !important' );
 
     })
 

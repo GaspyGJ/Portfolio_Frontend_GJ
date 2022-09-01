@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginUsuario } from 'src/app/entitys/JWT/login-usuario';
-import { isLoadDB } from 'src/app/service/isLoadDB';
 import { AuthServiceService } from 'src/app/service/JWT/auth-service.service';
 import { TokenService } from 'src/app/service/JWT/token-service.service';
 
@@ -20,7 +19,7 @@ export class MainPageComponent implements OnInit {
   mjsError: string;
 
   constructor(private tokenService: TokenService,
-    private authService: AuthServiceService, private isLoadDB: isLoadDB) { }
+    private authService: AuthServiceService) { }
 
   ngOnInit(): void {}
 

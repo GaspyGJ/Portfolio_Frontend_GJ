@@ -55,7 +55,7 @@ export class SkillsComponent implements OnInit {
       elemento!.style.display = "block";
 
       let elemento1 = document.getElementById("preloadHard")
-      elemento1!.style.display = "none";
+      elemento1!.setAttribute( 'style', 'display: none !important' );
 
     })
   }
@@ -67,7 +67,7 @@ export class SkillsComponent implements OnInit {
       elemento!.style.display = "block";
 
       let elemento2 = document.getElementById("preloadSoft")
-      elemento2!.style.display = "none";
+      elemento2!.setAttribute( 'style', 'display: none !important' );
 
     })
   }

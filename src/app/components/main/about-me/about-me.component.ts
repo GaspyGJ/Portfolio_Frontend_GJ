@@ -40,7 +40,7 @@ export class AboutMeComponent implements OnInit {
       let elemento = document.getElementById("after-load")
       elemento!.style.display = "block";
       let elemento1 = document.getElementById("preloadAboutMe")
-      elemento1!.style.display = "none";
+      elemento1!.setAttribute( 'style', 'display: none !important' );
 
     })
   }
