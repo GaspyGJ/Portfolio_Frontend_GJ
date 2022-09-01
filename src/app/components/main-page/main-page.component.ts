@@ -31,11 +31,11 @@ export class MainPageComponent implements OnInit {
   }
 
   async verificarLoad() {
-    let load = false;
+    let load:boolean = false;
     while (load == false) {
-      if (isLoadDB.isLoadDB() == true) {
+      if ( isLoadDB.isLoadDB() == true) {
         load = true;
-        let elemento = document.getElementById("before-load")
+        let elemento = document.getElementById("after-load")
         elemento!.style.display = "block";
         let elemento1 = document.getElementById("preload")
         elemento1!.style.display = "none";

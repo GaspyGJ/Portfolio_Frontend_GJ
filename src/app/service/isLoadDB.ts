@@ -13,8 +13,9 @@ export class isLoadDB {
             isLoadDB.elementos_Cargados+=1;
             console.log("Cargo el elemento : " + elemento );
         }
-        static isLoadDB(){
+        static isLoadDB():boolean{
                 if(this.cantidad_elementos_a_cargar == isLoadDB.elementos_Cargados){
+                        console.log("Cargaron todos los elementos");
                         return true;
                 }
                 return false;
