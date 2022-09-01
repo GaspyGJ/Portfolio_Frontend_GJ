@@ -113,3 +113,33 @@
     }
   }
 
+  
+  /**** AUTOTYPIG PARA LOS P *****/
+  #p-3 {
+    position: relative;
+    position: relative;
+    width: max-content;
+  }
+
+  #p-3::before, #p-3::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  #p-3::before {
+    background: #0c0c0c;
+    animation: typewriter 7s steps(75) 23s forwards;
+  }
+  
+  #p-3::after {
+    width: 0.125em;
+    background: rgb(255, 255, 255);
+    animation: typewriter 7s
+        steps(75) 23s forwards,
+      blink 750ms steps(75) ;
+  }
+

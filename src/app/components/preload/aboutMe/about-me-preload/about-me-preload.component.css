@@ -1,0 +1,268 @@
+
+#foto-perfil-about-me {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+
+    /* margin-bottom: 15em; */
+    margin-bottom: 5%;
+}
+
+#Foto-Perfil img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 20px #face30;
+}
+
+#about-me {
+    box-shadow: 2px 2px 20px #face30;
+    border-radius: 10px;
+    padding: 1em;
+}
+
+#about-me p {
+    color: white;
+}
+
+#about-me h3 {
+    color: #face30;
+}
+
+#nombre {
+    font-size: 2em;
+}
+
+#puesto {
+    font-size: 2.5em;
+}
+
+/************************* With LogIn *****************************************/
+.btn-edit {
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgb(36, 170, 36);
+}
+
+
+/************************* Pantallas pequenias *****************************************/
+@media only screen and (max-width: 1000px) {
+
+    #foto-perfil-about-me {
+        text-align: center;
+        flex-direction: column-reverse;
+        margin-left: 1em;
+        margin-right: 1em;
+        margin-top:5em ;
+    }
+
+    #Foto-Perfil img {
+        width: 140px;
+        height: 140px;
+    }
+
+    #about-me{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    #about-me h3 {
+        font-size: 1em !important;
+    }
+
+}
+@media only screen and (max-width: 770px) {
+
+  #foto-perfil-about-me {
+      text-align: center;
+      flex-direction: column-reverse;
+      margin-left: 5em;
+      margin-right: 5em;
+      margin-top:5em ;
+  }
+
+  #Foto-Perfil img {
+      width: 140px;
+      height: 140px;
+  }
+
+  #about-me{
+      margin-left: 50%;
+      margin-right: 50%;
+  }
+
+  #about-me h3 {
+      font-size: 1em !important;
+  }
+
+  #p-1 , #p-2 , #p-3{
+    display: none;
+  }
+
+}    
+
+
+/**********AUTO TYPING PUESTO************/
+#puesto {
+    position: relative;
+    position: relative;
+    width: max-content;
+  }
+  
+  #puesto::before, #puesto::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  #puesto::before {
+    background: #0c0c0c;
+    animation: typewriter 3s steps(27) 1s forwards;
+    display: block;
+  }
+  
+  #puesto::after {
+    width: 0.125em;
+    background: rgb(255, 255, 255);
+    animation: typewriter 3s
+        steps(27) 1s forwards,
+      blink 750ms steps(25) ;
+  }
+  
+  @keyframes typewriter {
+    to {
+      left: 100%;
+    }
+  }
+  
+  @keyframes blink {
+    to {
+      background: transparent;
+    }
+  }
+
+  /**** AUTOTYPIG PARA LOS P *****/
+  #p-1 {
+    position: relative;
+    position: relative;
+    width: max-content;
+  }
+  #p-2 {
+    position: relative;
+    position: relative;
+    width: max-content;
+  }
+  #p-3 {
+    position: relative;
+    position: relative;
+    width: max-content;
+  }
+  
+  #p-1::before, #p-1::after, #p-2::before, #p-2::after, #p-3::before, #p-3::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  #p-1::before {
+    background: #0c0c0c;
+    animation: typewriter 2s steps(64) 4s forwards;
+  }
+  
+  #p-1::after {
+    width: 0.125em;
+    background: rgb(255, 255, 255);
+    animation: typewriter 2s
+        steps(64) 4s forwards,
+      blink 750ms steps(64) ;
+  }
+  
+  #p-2::before {
+    background: #0c0c0c;
+    animation: typewriter 2s steps(42) 7s forwards;
+  }
+  
+  #p-2::after {
+    width: 0.125em;
+    background: rgb(255, 255, 255);
+    animation: typewriter 2s
+        steps(42) 7s forwards,
+      blink 750ms steps(42) ;
+  }
+
+  #p-3::before {
+    background: #0c0c0c;
+    animation: typewriter 3s steps(75) 10s forwards;
+  }
+  
+  #p-3::after {
+    width: 0.125em;
+    background: rgb(255, 255, 255);
+    animation: typewriter 3s
+        steps(75) 10s forwards,
+      blink 750ms steps(75) ;
+  }
+
+/***** LOAD ANIMATION ******/
+
+.loader {
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  perspective: 500px;
+}
+
+.inner {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;  
+}
+
+.inner.one {
+  left: 0%;
+  top: 0%;
+  animation: rotate-one 1s linear infinite;
+  border-bottom: 3px solid #EFEFFA;
+}
+
+.inner.two {
+  right: 0%;
+  top: 0%;
+  animation: rotate-two 1s linear infinite;
+  border-right: 3px solid #EFEFFA;
+}
+
+.inner.three {
+  right: 0%;
+  bottom: 0%;
+  animation: rotate-three 1s linear infinite;
+  border-top: 3px solid #EFEFFA;
+}
+
+@keyframes rotate-one {
+  0% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg);
+  }
+}
+
+@keyframes rotate-two {
+  0% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg);
+  }
+}
