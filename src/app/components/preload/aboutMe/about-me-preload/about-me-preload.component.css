@@ -21,6 +21,9 @@
     box-shadow: 2px 2px 20px #face30;
     border-radius: 10px;
     padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 }
 
 #about-me p {
@@ -31,12 +34,20 @@
     color: #face30;
 }
 
+#about-me #titulo{
+  display: none;
+}
+
 #nombre {
     font-size: 2em;
 }
 
 #puesto {
     font-size: 2.5em;
+}
+
+#p-4 , #p-5 , #p-6{
+   display: none;
 }
 
 /************************* With LogIn *****************************************/
@@ -92,20 +103,23 @@
       margin-right: 50%;
   }
 
+
   #about-me h3 {
       font-size: 1em !important;
+  }
+  #about-me #titulo{
+    display: block;
+    color:#EFEFFA;
   }
 
   #p-1 , #p-2 , #p-3{
     display: none;
   }
-
 }    
 
 
 /**********AUTO TYPING PUESTO************/
 #puesto {
-    position: relative;
     position: relative;
     width: max-content;
   }
@@ -148,16 +162,13 @@
   /**** AUTOTYPIG PARA LOS P *****/
   #p-1 {
     position: relative;
-    position: relative;
     width: max-content;
   }
   #p-2 {
     position: relative;
-    position: relative;
     width: max-content;
   }
   #p-3 {
-    position: relative;
     position: relative;
     width: max-content;
   }
@@ -209,6 +220,7 @@
         steps(75) 10s forwards,
       blink 750ms steps(75) ;
   }
+
 
 /***** LOAD ANIMATION ******/
 
