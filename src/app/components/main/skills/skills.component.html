@@ -67,11 +67,16 @@
         <ul id="list-soft-skills">
             <li *ngFor=" let softSkill of softSkills" id={{softSkill.idSoftSkill}}>
 
-                <circle-progress [percent]="softSkill.porcentaje" [radius]="70" [innerStrokeWidth]="0"
+                <!-- <circle-progress [percent]="softSkill.porcentaje" [radius]="70" [innerStrokeWidth]="0"
                     [outerStrokeWidth]="5" [outerStrokeColor]="'#79f083'" [animation]="true" [animationDuration]="1500"
                     [title]="softSkill.titulo" [showTitle]="true" [showUnits]="false" [showSubtitle]="false"
                     [titleFontSize]="softSkill.fontSize" [titleColor]="'#FFFFFF'">
-                </circle-progress>
+                </circle-progress>-->
+
+                <div class="container-circle-progress"
+                        style=" margin-top: 1em; text-align: center; color:white; font-size: 1.5em;">
+                        {{softSkill.titulo}}
+                </div>
 
                 <div class="tagForLogIn btn-container" *ngIf="isLogged">
                     <button mat-icon-button class="btn-edit" (click)="editSoftSkill(softSkill.idSoftSkill)">
