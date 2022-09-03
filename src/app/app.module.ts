@@ -41,7 +41,7 @@ import { AddSoftSkillComponent } from './components/adds/add-soft-skill/add-soft
 import { ParticlesComponent } from './components/particles/particles.component';
 import { MainPreloadComponent } from './components/preload/main-preload/main-preload.component';
 import { AboutMePreloadComponent } from './components/preload/aboutMe/about-me-preload/about-me-preload.component'
-
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -97,7 +97,8 @@ import { AboutMePreloadComponent } from './components/preload/aboutMe/about-me-p
     MatButtonModule,
     MatIconModule,
     MatListModule,
-    NgbModule
+    NgbModule,
+    MatProgressBarModule
   ],
   providers: [interceptorProvider],
   bootstrap: [AppComponent]

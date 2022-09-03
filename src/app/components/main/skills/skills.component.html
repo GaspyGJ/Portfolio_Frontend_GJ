@@ -14,7 +14,7 @@
             <li *ngFor=" let hardSkill of hardSkills" id={{hardSkill.idHardSkill}}>
 
                 <circle-progress [percent]="hardSkill.porcentaje" [radius]="60" [innerStrokeWidth]="0"
-                    [outerStrokeWidth]="5" [outerStrokeColor]="'#79f083'" [animation]="true" [animationDuration]="1500"
+                    [outerStrokeWidth]="5" [outerStrokeColor]="'#3f51b5'" [animation]="true" [animationDuration]="1500"
                     [imageSrc]="hardSkill.urlFoto" [imageHeight]=hardSkill.alto [imageWidth]=hardSkill.ancho
                     [showImage]="true"></circle-progress>
                 <div class="tagForLogIn btn-container" *ngIf="isLogged">
@@ -54,7 +54,6 @@
 
 
     <br><br>
-
     <h3 class="titulo-de-seccion">Soft Skills:</h3>
 
     <div id="after-load2">
@@ -71,12 +70,15 @@
                     [outerStrokeWidth]="5" [outerStrokeColor]="'#79f083'" [animation]="true" [animationDuration]="1500"
                     [title]="softSkill.titulo" [showTitle]="true" [showUnits]="false" [showSubtitle]="false"
                     [titleFontSize]="softSkill.fontSize" [titleColor]="'#FFFFFF'">
-                </circle-progress>-->
+                </circle-progress> -->
 
-                <div class="container-circle-progress"
-                        style=" margin-top: 1em; text-align: center; color:white; font-size: 1.5em;">
+                <div>
+                    <p style=" margin-top: 1em; text-align: center; color:white; font-size: 1.5em;">
                         {{softSkill.titulo}}
+                    </p>
+                    <mat-progress-bar mode="determinate" value={{softSkill.porcentaje}}></mat-progress-bar>
                 </div>
+
 
                 <div class="tagForLogIn btn-container" *ngIf="isLogged">
                     <button mat-icon-button class="btn-edit" (click)="editSoftSkill(softSkill.idSoftSkill)">
@@ -93,10 +95,10 @@
         <div class="container-fluid list-For-Small-Windows">
             <ngb-carousel>
                 <ng-template ngbSlide *ngFor=" let softSkill of softSkills" id={{softSkill.idSoftSkill}}>
-                    <div class="container-circle-progress"
-                        style=" margin-top: 1em; text-align: center; color:white; font-size: 1.5em;">
+                    <p style=" margin-top: 1em; text-align: center; color:white; font-size: 1.5em;">
                         {{softSkill.titulo}}
-                    </div>
+                    </p>
+                    <mat-progress-bar mode="determinate" color="#79f083" value={{softSkill.porcentaje}}></mat-progress-bar>
                 </ng-template>
             </ngb-carousel>
         </div>

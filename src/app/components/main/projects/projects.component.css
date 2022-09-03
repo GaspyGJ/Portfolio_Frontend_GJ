@@ -20,6 +20,9 @@
     border-radius: 10px;
     
 }
+.card-title{
+    margin-top: 1em;
+}
 .card-body{
     display: flex;
     flex-direction: column;

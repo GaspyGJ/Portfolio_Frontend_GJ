@@ -29,7 +29,11 @@ export class SkillsComponent implements OnInit {
   ngOnInit(): void {
 
     let elemento = document.getElementById("after-load")
-    elemento!.style.display = "none";
+    elemento!.setAttribute( 'style', 'display: none' );
+
+//    let elementoListHS = document.getElementById("list-hard-skills");
+//    elementoListHS!.setAttribute( 'style', 'display: none' );
+
     let elemento2 = document.getElementById("after-load2")
     elemento2!.style.display = "none";
 
@@ -52,7 +56,10 @@ export class SkillsComponent implements OnInit {
       this.hardSkills = dato;
 
       let elemento = document.getElementById("after-load")
-      elemento!.style.display = "block";
+      elemento!.setAttribute( 'style', 'display: block');
+
+//      let elementoListHS = document.getElementById("list-hard-skills");
+//     elementoListHS!.setAttribute( 'style', 'display: block');
 
       let elemento1 = document.getElementById("preloadHard")
       elemento1!.setAttribute( 'style', 'display: none !important' );

@@ -30,6 +30,7 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    gap:2em;
 
     box-shadow: 2px 2px 20px #face30;
     border-radius: 10px;
