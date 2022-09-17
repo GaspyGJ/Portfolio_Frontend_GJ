@@ -1,11 +1,13 @@
 # My PortFolio 💙
 Proyecto generado con ➡️ [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
 
-## 🔎 Cómo funcina?
+Portfolio personal desarrollado en Angular con conexión a base de datos MySQL con api's Spring
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🔎 Cómo funciona?
 
-Funciona en conjunto con el backend ➡️ https://github.com/GaspyGJ/Portfolio_Backend_GJ 
+Funciona como SPA (simple page aplication) en la Web con conexión a internet
+
+Trabaja en conjunto con el backend `Java` `Spring` ➡️ https://github.com/GaspyGJ/Portfolio_Backend_GJ 
 
 
 ## 🔎 Qué puedes hacer?
@@ -55,7 +57,7 @@ Funciona en conjunto con el backend ➡️ https://github.com/GaspyGJ/Portfolio_
 <img src="src\assets\imagenes\EsteProyecto\7.png" height=350 width=400>
 <img src="src\assets\imagenes\EsteProyecto\8.png" height=350 width=400>
 <br><br>
-2. Aparecerán los botones de ` Add, Edit, Delete ` elementos en las diferentes secciones <br><br>
+2. Aparecerán los botones de 'Add, Edit, Delete' elementos en las diferentes secciones <br><br>
 <img src="src\assets\imagenes\EsteProyecto\9.png" height=450 width=700>
 <br><br>
 
