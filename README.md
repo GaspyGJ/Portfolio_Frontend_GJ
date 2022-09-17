@@ -55,7 +55,7 @@ Funciona en conjunto con el backend ➡️ https://github.com/GaspyGJ/Portfolio_
 <img src="src\assets\imagenes\EsteProyecto\7.png" height=350 width=400>
 <img src="src\assets\imagenes\EsteProyecto\8.png" height=350 width=400>
 <br><br>
-2. Aparecerán los botones de `Add`,`Edit`,`Delete` elementos en las diferentes secciones <br><br>
+2. Aparecerán los botones de `Add` , `Edit` , `Delete` elementos en las diferentes secciones <br><br>
 <img src="src\assets\imagenes\EsteProyecto\9.png" height=450 width=700>
 <br><br>
 
