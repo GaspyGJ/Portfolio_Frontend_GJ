@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/mi-port-folio-tp-final-yo-programo",
+    "public": "./dist/mi-port-folio-tp-final-yo-programo",
     "ignore": [
       "firebase.json",
       "**/.*",

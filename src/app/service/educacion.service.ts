@@ -8,8 +8,6 @@ import { PathServie } from './path/path-servie.service';
   providedIn: 'root'
 })
 export class EducacionService {
- //URL_Base_request_To_Backend = 'http://localhost:8080';
-
 
   constructor(private http: HttpClient , private URL_Base_request_To_Backend:PathServie){
           this.URL_Base_request_To_Backend=PathServie.PATH_backend;
