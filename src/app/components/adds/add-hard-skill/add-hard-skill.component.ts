@@ -12,7 +12,10 @@ import Swal from 'sweetalert2';
 export class AddHardSkillComponent implements OnInit {
 
   hardSkill:HardSkill;
+
   default_hardSkill:HardSkill;
+
+  archivo: string;
 
   constructor(private hardSkillService:HardSkillService , private referencia: MatDialogRef<AddHardSkillComponent>) { 
 
@@ -23,9 +26,20 @@ export class AddHardSkillComponent implements OnInit {
     
   }
 
-  protected saveHardSkill(porcentaje: string, alto: string, ancho: string, urlFoto: string){
+
+  obtenerArchivo(event:any):any{
+    const archivoCapturado = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(archivoCapturado);
+    reader.onload = () => {
+      this.archivo=<string>reader.result
+    }
+  }
+
+
+  protected saveHardSkill(porcentaje: string, alto: string, ancho: string){
    
-    this.hardSkill = new HardSkill(Number(porcentaje),Number(alto),Number(ancho),urlFoto);
+    this.hardSkill = new HardSkill(Number(porcentaje),Number(alto),Number(ancho),this.archivo);
 
     this.hardSkillService.saveHardSkill(this.hardSkill).subscribe({
       next:(dato)=>{

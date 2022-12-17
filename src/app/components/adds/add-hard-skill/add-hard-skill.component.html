@@ -17,14 +17,17 @@
             </div>
             <div class="div-p-input">
                 <p>Url Foto :</p>
-                <input type="text" #urlFoto value={{default_hardSkill.urlFoto}} placeholder="ingresar url Foto">
+                <input type="file" #imagen (change)="obtenerArchivo($event)" accept="image/*" placeholder="ingresar imagen">
+            </div>
+            <div *ngIf="archivo">
+                <img width="100em" height="100em" [src]="archivo" alt="">
             </div>
             <div class="container-a-btn">
                 <div>
                     <a mat-dialog-close>Volver</a>
                 </div>
             <button type="button" 
-            (click)="saveHardSkill(porcentaje.value,alto.value,ancho.value,urlFoto.value)">
+            (click)="saveHardSkill(porcentaje.value,alto.value,ancho.value)">
             Guardar Hard Skill</button>
             </div>
         </form>

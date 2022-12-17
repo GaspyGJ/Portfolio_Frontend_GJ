@@ -25,15 +25,22 @@
             </div>
 
             <div class="div-p-input">
-                <p>Url Fotos :</p>
-                <input type="text" #urlFoto value={{default_proyecto.urlAppWeb}}
-                    placeholder="ingresar url de app Web">
-                <button type="button" style="margin-top: 1em;" (click)="addFoto(urlFoto.value)"> Agregar Url Foto</button>
+                <p>Imagenes :</p>
+                <input type="file" #imagen (change)="obtenerArchivo($event)" accept="image/*" placeholder="ingresar url de app Web">
 
-                <ul *ngFor="let urlFoto of urlFotos">
-                    <li>{{urlFoto}}</li>
+                <button type="button" class="btn" (click)="addFoto()"> Agregar Imagen</button>
+
+                <ul *ngFor="let archivo of lista_archivos">
+                    <li>
+                        <img width="100em" height="100em" [src]="archivo" alt="">
+                        <button id="btn-drop" type="button" (click)="dropFoto(archivo)">
+                            <mat-icon style="color:red">delete</mat-icon>
+                        </button>
+
+                    </li>
                 </ul>
             </div>
+            
             <div class="container-a-btn">
                 <div>
                     <a mat-dialog-close>Volver</a>
