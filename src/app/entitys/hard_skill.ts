@@ -5,7 +5,7 @@ export class HardSkill{
 
     porcentaje:number;
     
-    urlFoto:string;
+    urlFoto: string;
 
     alto:number;
 
@@ -15,7 +15,10 @@ export class HardSkill{
             this.porcentaje=porcentaje;
             this.alto=alto;
             this.ancho=ancho;
-            this.urlFoto=urlFoto;
+
+            if(urlFoto != null){
+                this.urlFoto=urlFoto;
+            }
     }
 
 }

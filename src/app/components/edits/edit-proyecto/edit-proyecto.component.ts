@@ -18,21 +18,33 @@ export class EditProyectoComponent implements OnInit {
 
   id: number;
 
-  urlFotos:string[]=[];
+  lista_archivos: string[] = [] ;
+  archivo_seleccionado : string | null;
 
   ngOnInit(): void {
       this.id= Number(this.params.id);
 
       this.proyectoService.getProyecto_byID(this.id).subscribe(dato => {
         this.proyecto = dato;
-        this.urlFotos=this.proyecto.urlFotos;
+        this.lista_archivos=this.proyecto.urlFotos;
       })
     //})
   }
 
+  obtenerArchivo(event:any):any{
+    const archivoCapturado:Blob = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(archivoCapturado);
+    reader.onload = () => {
+      let archivo = <string>reader.result
+      this.archivo_seleccionado = archivo;
+    }
+  }
+
+
   protected actualizar_Proyecto(titulo:string,descripcion:string,urlGitHub:string,urlAppWeb:string) {
 
-    let proyecto_Updated = new Proyecto(titulo,descripcion,urlGitHub,urlAppWeb,this.urlFotos);
+    let proyecto_Updated = new Proyecto(titulo,descripcion,urlGitHub,urlAppWeb,this.lista_archivos);
   
     proyecto_Updated.idProyecto = this.proyecto.idProyecto;
 
@@ -58,12 +70,15 @@ export class EditProyectoComponent implements OnInit {
     });
 
   }
-  protected addFoto(urlFoto:string){
-    this.urlFotos.push(urlFoto);
+  protected addFoto(){
+    if(this.archivo_seleccionado!=null){
+      this.lista_archivos?.push(this.archivo_seleccionado);
+    }
+    this.archivo_seleccionado=null;
   }
   protected dropFoto(urlFoto:string){
-    let index_urlFotosDroped = this.urlFotos.findIndex(element=> element === urlFoto);
-    this.urlFotos.splice(index_urlFotosDroped,1);
+    let index_urlFotosDroped = this.lista_archivos.findIndex(element=> element === urlFoto);
+    this.lista_archivos.splice(index_urlFotosDroped,1);
   }
 
 }

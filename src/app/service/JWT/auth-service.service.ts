@@ -12,10 +12,7 @@ import { PathServie } from '../path/path-servie.service';
   providedIn: 'root'
 })
 export class AuthServiceService {
-  /* Se conceta con el backend me diantes consultas HTTP POST para el servicio de logeo  y creacion de usuario*/
-
-  //URL_Base_request_To_Backend = 'http://localhost:8080/auth';
-  //URL_Base_request_To_Backend = 'https://gjbackend.herokuapp.com/auth';
+  /* Se conceta con el backend mediantes consultas HTTP POST para el servicio de logeo  y creacion de usuario*/
  
   constructor(private httpClient: HttpClient, private URL_Base_request_To_Backend:PathServie){
     this.URL_Base_request_To_Backend=PathServie.PATH_backend;

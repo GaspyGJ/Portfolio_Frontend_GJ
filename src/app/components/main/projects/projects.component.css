@@ -18,7 +18,8 @@
     background-color: #0c0c0c;
     box-shadow: 2px 2px 20px #face30;
     border-radius: 10px;
-    
+    width: 90%;
+    margin-bottom: 5em;
 }
 .card-title{
     margin-top: 1em;

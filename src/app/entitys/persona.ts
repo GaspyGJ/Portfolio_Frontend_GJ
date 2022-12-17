@@ -13,20 +13,23 @@ export class Persona{
     
     nombrePuesto: String;
     
-    urlFoto: String;
+    urlFoto: string ;
 
     descripcion:String;
     
     constructor(id:number ,nombre:String ,apellido:String ,edad:number ,
-        domicilio:String ,nombrePuesto:String,urlFoto:String,descripcion:String){
+        domicilio:String ,nombrePuesto:String,descripcion:String,imagen:string){
             this.id_Persona=id;
             this.nombre=nombre
             this.apellido=apellido;
             this.edad=edad;
             this.domicilio=domicilio;
             this.nombrePuesto=nombrePuesto;
-            this.urlFoto=urlFoto;
             this.descripcion=descripcion;
+            if(imagen.length != 0){
+                this.urlFoto=imagen;
+            }
+            
     }
 
 }

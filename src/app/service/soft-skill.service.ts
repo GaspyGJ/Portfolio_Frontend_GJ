@@ -1,4 +1,4 @@
-import { HttpClient, HttpRequest, HttpResponse } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { SoftSkill } from '../entitys/soft_skills';
@@ -11,10 +11,10 @@ export class SoftSkillService {
 
   constructor(private http: HttpClient, private URL_Base_request_To_Backend:PathServie){
     this.URL_Base_request_To_Backend=PathServie.PATH_backend;
-}
+  }
 
 
-  public getHardSkill(): Observable<SoftSkill[]>{
+  public getSoftSkill(): Observable<SoftSkill[]>{
     return this.http.get<SoftSkill[]>(this.URL_Base_request_To_Backend+'/get/soft/skills');
   }
 
@@ -29,4 +29,5 @@ export class SoftSkillService {
   public getSoftSkill_byID(id:number): Observable<SoftSkill>{
     return this.http.get<any>(this.URL_Base_request_To_Backend+`/get/soft/skill/${id}`);
   }
+
 }

@@ -4,7 +4,7 @@ import { MainPageComponent } from './components/main-page/main-page.component';
 
 const routes: Routes = [
   {path:"", component:MainPageComponent},
-  // {path:'**', component: NombreComponentePaginaError} 
+  //{path:'**', component: NombreComponentePaginaError} 
 ];
 
 @NgModule({

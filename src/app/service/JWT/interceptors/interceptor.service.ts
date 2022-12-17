@@ -18,12 +18,11 @@ export class InterceptorService implements HttpInterceptor {
     let interceptRequest = request;
     const token = this.tokenService.getToken();
     if (token != '') {//si es vacio significa que el usuario no tiene token
-      //incrusto el token en la request
+      //introdusco el token en la request
       interceptRequest = request.clone({ headers: request.headers.set('Authorization', 'Bearer ' + token)});
     }
     return next.handle(interceptRequest);
   }
-
 
 }
 

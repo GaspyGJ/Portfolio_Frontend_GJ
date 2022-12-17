@@ -15,6 +15,8 @@ export class EditAboutMeComponent implements OnInit {
 
   personas: Persona[];
 
+  archivo: string;
+
   ngOnInit(): void {
     this.obtenerPersona();
   }
@@ -23,23 +25,26 @@ export class EditAboutMeComponent implements OnInit {
     this.personaService.getPersona().subscribe(dato => {
       this.personas = dato;
 
+      this.archivo = this.personas[0].urlFoto;
     })
   }
 
   public actualizarPersona(nombre: String, apellido: String, edad: String,
-    domicilio: String, nombrePuesto: String, urlFoto: String, descripcion: String) {
+    domicilio: String, nombrePuesto: String, descripcion: String) {
 
     let ok: boolean;
 
-    if (nombre != "" && apellido != "" && edad != "" && Number(edad) > 18 && Number(edad) < 99 && domicilio != "" && nombrePuesto != "" && urlFoto != "" && descripcion != "") {
+    if (nombre != "" && apellido != "" && edad != "" && Number(edad) > 18 && Number(edad) < 99 && domicilio != "" && nombrePuesto != "" && descripcion != "") {
       ok = true;
     }
     else {
       ok = false;
     }
     if (ok) {
+
+
       this.personas[0] = new Persona(this.personas[0].id_Persona, nombre, apellido, Number(edad),
-        domicilio, nombrePuesto, urlFoto, descripcion);
+       domicilio, nombrePuesto, descripcion, this.archivo);
 
       this.personaService.savePersona(this.personas[0]).subscribe({
         next: (dato) => {
@@ -74,5 +79,16 @@ export class EditAboutMeComponent implements OnInit {
 
 
   }
+
+  obtenerArchivo(event: any): any {
+    const archivoCapturado: Blob = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(archivoCapturado);
+    reader.onload = () => {
+      this.archivo = <string>reader.result
+    }
+  }
+
+
 
 }

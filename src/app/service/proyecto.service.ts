@@ -11,7 +11,7 @@ export class ProyectoService {
 
   constructor(private http: HttpClient, private URL_Base_request_To_Backend:PathServie){
     this.URL_Base_request_To_Backend=PathServie.PATH_backend;
-}
+  }
 
 
   public getProyecto(): Observable<Proyecto[]>{

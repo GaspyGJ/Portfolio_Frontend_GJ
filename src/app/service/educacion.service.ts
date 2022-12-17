@@ -1,4 +1,4 @@
-import { HttpClient, HttpRequest, HttpResponse } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Educacion } from '../entitys/educacion';
@@ -11,7 +11,7 @@ export class EducacionService {
 
   constructor(private http: HttpClient , private URL_Base_request_To_Backend:PathServie){
           this.URL_Base_request_To_Backend=PathServie.PATH_backend;
-   }
+  }
 
   public getEducaciones(): Observable<Educacion[]>{
     return this.http.get<Educacion[]>(this.URL_Base_request_To_Backend+'/get/educaciones');

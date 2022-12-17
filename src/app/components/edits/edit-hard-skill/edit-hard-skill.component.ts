@@ -20,7 +20,7 @@ export class EditHardSkillComponent implements OnInit {
 
   id: number;
 
-
+  archivo: string;
 
   ngOnInit(): void {
 
@@ -30,17 +30,30 @@ export class EditHardSkillComponent implements OnInit {
 
     this.id = Number(this.params.id)
 
+    //el id lo saco como un parametro q se le manda a la ventana emergente antes de abrirse.
     this.hardSkillService.getHardSkill_byID(this.id).subscribe(dato => {
       this.hardSkill = dato;
+      this.archivo = this.hardSkill.urlFoto;
     })
 
 
     //})
   }
 
-  protected actualizar_hard_skill(porcentaje: string, alto: string, ancho: string, urlFoto: string) {
 
-    let hardSkill_Updated = new HardSkill(Number(porcentaje), Number(alto), Number(ancho), urlFoto);
+  obtenerArchivo(event:any):any{
+    const archivoCapturado = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(archivoCapturado);
+    reader.onload = () => {
+      this.archivo=<string>reader.result
+    }
+  }
+
+
+  protected actualizar_hard_skill(porcentaje: string, alto: string, ancho: string) {
+
+    let hardSkill_Updated = new HardSkill(Number(porcentaje), Number(alto), Number(ancho), this.archivo);
 
     hardSkill_Updated.idHardSkill = this.hardSkill.idHardSkill;
 

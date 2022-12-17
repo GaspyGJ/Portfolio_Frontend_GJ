@@ -67,7 +67,7 @@ export class SkillsComponent implements OnInit {
     })
   }
   protected obtenerSoftSkills() {
-    this.softSkillService.getHardSkill().subscribe(dato => {
+    this.softSkillService.getSoftSkill().subscribe(dato => {
       this.softSkills = dato;
 
       let elemento = document.getElementById("after-load2")
