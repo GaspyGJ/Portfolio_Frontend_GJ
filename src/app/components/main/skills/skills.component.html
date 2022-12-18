@@ -8,6 +8,9 @@
             <button class="btn-edit" mat-icon-button (click)="addHardSkill()">
                 <mat-icon>add</mat-icon>
             </button>
+            <button class="btn-edit" mat-icon-button (click)="editOrdenHardSkill()">
+                <mat-icon>edit orden</mat-icon>
+            </button>
         </div>
 
         <ul id="list-hard-skills">
@@ -32,7 +35,7 @@
             </li>
         </ul>
 
-        <div class="container-fluid list-For-Small-Windows">
+        <div class="container-fluid list-For-Small-Windows" id="list-For-Small-Windows-hard_skill">
             <ngb-carousel>
                 <ng-template ngbSlide *ngFor=" let hardSkill of hardSkills" id={{hardSkill.idHardSkill}}>
                     <div class="container-circle-progress" style="text-align: center;">
@@ -61,18 +64,15 @@
             <button class="btn-edit" mat-icon-button (click)="addSoftSkill()">
                 <mat-icon>add</mat-icon>
             </button>
+            <button class="btn-edit" mat-icon-button (click)="editOrdenSoftSkill()">
+                <mat-icon>edit orden</mat-icon>
+            </button>
         </div>
 
         <ul id="list-soft-skills">
             <li *ngFor=" let softSkill of softSkills" id={{softSkill.idSoftSkill}}>
 
-                <!-- <circle-progress [percent]="softSkill.porcentaje" [radius]="70" [innerStrokeWidth]="0"
-                    [outerStrokeWidth]="5" [outerStrokeColor]="'#79f083'" [animation]="true" [animationDuration]="1500"
-                    [title]="softSkill.titulo" [showTitle]="true" [showUnits]="false" [showSubtitle]="false"
-                    [titleFontSize]="softSkill.fontSize" [titleColor]="'#FFFFFF'">
-                </circle-progress> -->
-
-                <div>
+                <div class="div-soft-skill">
                     <p style=" margin-top: 1em; text-align: center; color:white; font-size: 1.5em;">
                         {{softSkill.titulo}}
                     </p>
@@ -92,13 +92,22 @@
             </li>
         </ul>
 
+
+
         <div class="container-fluid list-For-Small-Windows">
             <ngb-carousel>
                 <ng-template ngbSlide *ngFor=" let softSkill of softSkills" id={{softSkill.idSoftSkill}}>
-                    <p style=" margin-top: 1em; text-align: center; color:white; font-size: 1.5em;">
-                        {{softSkill.titulo}}
-                    </p>
-                    <mat-progress-bar mode="determinate" color="#79f083" value={{softSkill.porcentaje}}></mat-progress-bar>
+                    <div>
+                        <div style="margin-left: 15%; margin-right: 15%;">
+                            <div>
+                                <p style=" margin-top: 1em; text-align: center; color:white; font-size: 1.5em;">
+                                    {{softSkill.titulo}}
+                                </p>
+                                <mat-progress-bar mode="determinate" color="#79f083"
+                                    value={{softSkill.porcentaje}}></mat-progress-bar>
+                            </div>
+                        </div>
+                    </div>
                 </ng-template>
             </ngb-carousel>
         </div>

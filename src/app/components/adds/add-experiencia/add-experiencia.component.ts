@@ -18,9 +18,8 @@ export class AddExperienciaComponent implements OnInit {
   yearsList = years;
 
   constructor(private experienciaService:ExperienciaService , private referencia: MatDialogRef<AddExperienciaComponent>) { 
-
-    this.default_Experiencia = new Experiencia("Titulo Ejemplo 1","Descripcion Ejemplo 1","2022","2022",
-      "Contrato","C++ , JS , HTML , CSS","Link a Proyecto 1");
+      this.default_Experiencia = new Experiencia("Titulo Ejemplo 1","Descripcion Ejemplo 1","2022","2022",
+      "Contrato","C++ , JS , HTML , CSS","Link a Proyecto 1",-1);
   }
 
   ngOnInit(): void {
@@ -29,7 +28,7 @@ export class AddExperienciaComponent implements OnInit {
 
   protected saveExperiencia(titulo:string,descripcion:string,anioStart:string,anioEnd:string,tipoExperiencia:string,tegnologiasUtilizadas:string,linkProyectos:string){
    
-    this.experiencia = new Experiencia(titulo,descripcion,anioStart,anioEnd,tipoExperiencia,tegnologiasUtilizadas,linkProyectos);
+    this.experiencia = new Experiencia(titulo,descripcion,anioStart,anioEnd,tipoExperiencia,tegnologiasUtilizadas,linkProyectos,-1);
 
     this.experienciaService.saveExperiencia(this.experiencia).subscribe({
       next:(dato)=>{

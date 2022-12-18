@@ -16,7 +16,7 @@ export class AddSoftSkillComponent implements OnInit {
 
   constructor(private softSkillService:SoftSkillService,private referencia: MatDialogRef<AddSoftSkillComponent>) { 
 
-    this.default_softSkill= new SoftSkill(100,'15','Responsabilidad');
+    this.default_softSkill= new SoftSkill(100,'15','Responsabilidad',-1);
   }
 
   ngOnInit(): void {
@@ -25,7 +25,7 @@ export class AddSoftSkillComponent implements OnInit {
 
   protected saveSoftSkill(porcentaje:string, fontSize:string , titulo:string ){
    
-    this.softSkill = new SoftSkill(Number(porcentaje),fontSize,titulo);
+    this.softSkill = new SoftSkill(Number(porcentaje),fontSize,titulo,-1);
 
     this.softSkillService.saveSoftSkill(this.softSkill).subscribe({
       next:(dato)=>{

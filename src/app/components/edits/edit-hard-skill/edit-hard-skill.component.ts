@@ -53,7 +53,7 @@ export class EditHardSkillComponent implements OnInit {
 
   protected actualizar_hard_skill(porcentaje: string, alto: string, ancho: string) {
 
-    let hardSkill_Updated = new HardSkill(Number(porcentaje), Number(alto), Number(ancho), this.archivo);
+    let hardSkill_Updated = new HardSkill(Number(porcentaje), Number(alto), Number(ancho), this.archivo, this.hardSkill.numero_orden);
 
     hardSkill_Updated.idHardSkill = this.hardSkill.idHardSkill;
 

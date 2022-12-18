@@ -40,6 +40,9 @@ export class EducationComponent implements OnInit {
     
     this.educacionService.getEducaciones().subscribe(dato => {
       this.educaciones = dato;
+
+      this.educaciones.sort( (e1, e2) => e1.numero_orden - e2.numero_orden );
+
       this.educaciones.forEach(element => {
         if(element.anioEnd==""){
           element.anioEnd='Actualidad';

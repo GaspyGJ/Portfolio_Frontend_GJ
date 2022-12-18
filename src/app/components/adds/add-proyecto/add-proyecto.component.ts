@@ -21,7 +21,7 @@ export class AddProyectoComponent implements OnInit {
 
   constructor(private proyectoService:ProyectoService,private referencia: MatDialogRef<AddProyectoComponent>) { 
 
-    this.default_proyecto= new Proyecto('Titulo1','Descripcion1','urlGitHub1','urlAppWeb1',['UrlFoto1','UrlFoto2']);
+    this.default_proyecto= new Proyecto('Titulo1','Descripcion1','urlGitHub1','urlAppWeb1',['UrlFoto1','UrlFoto2'],-1);
   }
 
   ngOnInit(): void {
@@ -53,7 +53,7 @@ export class AddProyectoComponent implements OnInit {
 
   protected saveProyecto(titulo:string,descripcion:string,urlGitHub:string,urlAppWeb:string){
    
-    this.proyecto = new Proyecto(titulo,descripcion,urlGitHub,urlAppWeb,this.lista_archivos);
+    this.proyecto = new Proyecto(titulo,descripcion,urlGitHub,urlAppWeb,this.lista_archivos,-1);
 
     this.proyectoService.saveProyecto(this.proyecto).subscribe({
       next:(dato)=>{

@@ -37,6 +37,9 @@ export class ExperienciaComponent implements OnInit {
   public obtenerExperiencias() {
     this.experienciaService.getExperiencias().subscribe(dato => {
       this.experiencias = dato;
+
+      this.experiencias.sort( (e1, e2) => e1.numero_orden - e2.numero_orden );
+
       this.experiencias.forEach(element => {
         if (element.anioEnd == "") {
           element.anioEnd = 'Actualidad';

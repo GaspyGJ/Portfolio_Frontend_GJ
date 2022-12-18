@@ -1,0 +1,37 @@
+
+
+<div id="Seccion-Edit">
+
+    <div id="form-Seccion-Edit">
+
+        <h3 class="titulo-de-seccion" style="display: block; font-size: 2em;">Editar Orden Skills:</h3>
+
+        <div id="after-load2">
+
+            <ul id="list-hard-skills" cdkDropList (cdkDropListDropped)="DropeoHardSkill($event)" >
+
+                <li class="li_hs" *ngFor="let hardSkill of hardSkills" id={{hardSkill.idHardSkill}}  cdkDrag>
+            
+                    <circle-progress [percent]="hardSkill.porcentaje" [radius]="60" [innerStrokeWidth]="0"
+                        [outerStrokeWidth]="5" [outerStrokeColor]="'#3f51b5'" [animation]="true" [animationDuration]="1500"
+                        [imageSrc]="hardSkill.urlFoto" [imageHeight]=hardSkill.alto [imageWidth]=hardSkill.ancho
+                        [showImage]="true">
+                    </circle-progress>
+            
+                </li>
+
+            </ul>
+
+            <div class="container-a-btn">
+                <div>
+                    <a mat-dialog-close>Volver</a>
+                </div>
+                <button type="button" (click)="aceptar()">
+                    Guardar orden
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+</div>

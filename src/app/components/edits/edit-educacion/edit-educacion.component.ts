@@ -30,7 +30,7 @@ export class EditEducacionComponent implements OnInit {
 
   protected actualizar_Educacion(titulo:string,descripcion:string,anioStart:string,anioEnd:string,estadoActual:string) {
 
-    let educacion_Updated = new Educacion(titulo,descripcion,anioStart,anioEnd,estadoActual);
+    let educacion_Updated = new Educacion(titulo,descripcion,anioStart,anioEnd,estadoActual,this.educacion.numero_orden);
 
     educacion_Updated.idEducacion= this.educacion.idEducacion;
 

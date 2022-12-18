@@ -12,6 +12,7 @@
     padding: 1em 0 1em 0;
     list-style: none;
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
@@ -27,6 +28,7 @@
     padding: 1em 0 1em 0;
     list-style: none;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
@@ -36,11 +38,15 @@
     border-radius: 10px;
 }
 
+.div-soft-skill{
+    width:25em;
+}
+
 #list-soft-skills p{
     color:white;
 }
 
- li {
+li {
     transition: transform 1s;
 }
 
@@ -49,9 +55,11 @@ li p{
     text-align: center;
 }
 
-li:hover {
+
+.notLogged:hover{
     transform: scale(1.2);
 }
+
 
 /************************* With LogIn *****************************************/
 .btn-container{
@@ -71,6 +79,12 @@ li:hover {
     background-color: rgb(194, 72, 72);
 }
 
+@media only screen and (max-width: 755px) {
+    .div-soft-skill{
+        width:15em;
+    }
+}
+
 @media only screen and (max-width: 600px) {
 
     #Seccion-Habilidades {
@@ -87,6 +101,11 @@ li:hover {
 
     .list-For-Small-Windows{
         display: block;
+        margin-top: 5em;
+    }
+
+    #list-For-Small-Windows-hard_skill{
+        margin-bottom: 10em;
     }
 
 

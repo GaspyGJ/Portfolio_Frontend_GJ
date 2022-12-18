@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { HardSkill } from 'src/app/entitys/hard_skill';
 import { SoftSkill } from 'src/app/entitys/soft_skills';
@@ -11,6 +11,9 @@ import { AddHardSkillComponent } from '../../adds/add-hard-skill/add-hard-skill.
 import { AddSoftSkillComponent } from '../../adds/add-soft-skill/add-soft-skill.component';
 import { EditHardSkillComponent } from '../../edits/edit-hard-skill/edit-hard-skill.component';
 import { EditSoftSkillComponent } from '../../edits/edit-soft-skill/edit-soft-skill.component';
+import { EditSoftSillOrderComponent } from '../../edits/order/edit-soft-sill-order/edit-soft-sill-order.component';
+import { EditHardSkillOrderComponent } from '../../edits/order/edit-hard-skill-order/edit-hard-skill-order.component';
+
 
 @Component({
   selector: 'app-skills',
@@ -55,6 +58,8 @@ export class SkillsComponent implements OnInit {
     this.hardSkillService.getHardSkill().subscribe(dato => {
       this.hardSkills = dato;
 
+      this.hardSkills.sort( (hs1, hs2) => hs1.numero_orden - hs2.numero_orden );
+
       let elemento = document.getElementById("after-load")
       elemento!.setAttribute( 'style', 'display: block');
 
@@ -70,6 +75,8 @@ export class SkillsComponent implements OnInit {
     this.softSkillService.getSoftSkill().subscribe(dato => {
       this.softSkills = dato;
 
+      this.softSkills.sort( (ss1, ss2) => ss1.numero_orden - ss2.numero_orden );
+
       let elemento = document.getElementById("after-load2")
       elemento!.style.display = "block";
 
@@ -78,6 +85,76 @@ export class SkillsComponent implements OnInit {
 
     })
   }
+
+
+  protected addSoftSkill() {
+
+    const popup = this.matDialog.open(AddSoftSkillComponent, {
+      enterAnimationDuration: '1000ms',
+      exitAnimationDuration: '1000ms',
+    });
+    popup.afterClosed().subscribe(i => {
+      this.obtenerSoftSkills();
+    })
+
+  }
+
+  protected dropSoftSkill(id: number) {
+    Swal.fire({
+      title: 'Seguro que desea eliminar?',
+      text: "",
+      icon: 'question',
+      confirmButtonText: "Aceptar",
+    }).then((resultado) => {
+      if (resultado.isConfirmed) {
+        this.softSkillService.deleteSoftSkill(id).subscribe(dato => {
+          let index_for_deleting = this.softSkills.findIndex(element => element.idSoftSkill === id);
+          this.softSkills.splice(index_for_deleting, 1);
+          Swal.fire({
+            title: 'Eliminado',
+            text: "Eliminado correctamente",
+            icon: 'success',
+            confirmButtonText: "Aceptar",
+          });
+        });
+      }
+    });
+  }
+
+  protected editSoftSkill(id: number) {
+    const popup = this.matDialog.open(EditSoftSkillComponent, {
+      data: {
+        'id': id,
+      },
+      enterAnimationDuration: '1000ms',
+      exitAnimationDuration: '1000ms',
+    });
+
+    popup.afterClosed().subscribe(i => {
+      this.obtenerSoftSkills();
+    })
+
+    //para el otro metodo de nueva URL
+    //this.router.navigate([`edit/soft/skills/${id}`]);
+  }
+
+
+  protected editOrdenSoftSkill(){
+
+    const popup = this.matDialog.open(EditSoftSillOrderComponent, {
+      data: {
+        'softSkills': this.softSkills,
+      },
+      enterAnimationDuration: '1000ms',
+      exitAnimationDuration: '1000ms',
+    });
+
+    popup.afterClosed().subscribe(i => {
+      this.obtenerSoftSkills();
+    })
+
+  }
+
 
   protected addHardSkill() {
     const popup = this.matDialog.open(AddHardSkillComponent, {
@@ -88,19 +165,6 @@ export class SkillsComponent implements OnInit {
     popup.afterClosed().subscribe(i => {
       this.obtenerHardSkills();
     })
-  }
-
-  protected addSoftSkill() {
-
-    const popup = this.matDialog.open(AddSoftSkillComponent, {
-      enterAnimationDuration: '1000ms',
-      exitAnimationDuration: '1000ms',
-    });
-
-    popup.afterClosed().subscribe(i => {
-      this.obtenerSoftSkills();
-    })
-
   }
 
   protected dropHardSkill(id: number) {
@@ -115,28 +179,6 @@ export class SkillsComponent implements OnInit {
         this.hardSkillService.deleteHardSkill(id).subscribe(dato => {
           let index_for_deleting = this.hardSkills.findIndex(element => element.idHardSkill === id);
           this.hardSkills.splice(index_for_deleting, 1);
-          Swal.fire({
-            title: 'Eliminado',
-            text: "Eliminado correctamente",
-            icon: 'success',
-            confirmButtonText: "Aceptar",
-          });
-        });
-      }
-    });
-  }
-
-  protected dropSoftSkill(id: number) {
-    Swal.fire({
-      title: 'Seguro que desea eliminar?',
-      text: "",
-      icon: 'question',
-      confirmButtonText: "Aceptar",
-    }).then((resultado) => {
-      if (resultado.isConfirmed) {
-        this.softSkillService.deleteSoftSkill(id).subscribe(dato => {
-          let index_for_deleting = this.softSkills.findIndex(element => element.idSoftSkill === id);
-          this.softSkills.splice(index_for_deleting, 1);
           Swal.fire({
             title: 'Eliminado',
             text: "Eliminado correctamente",
@@ -168,10 +210,11 @@ export class SkillsComponent implements OnInit {
     //{ path: 'edit/hard/skills/:id', component: EditHardSkillComponent}
   }
 
-  protected editSoftSkill(id: number) {
-    const popup = this.matDialog.open(EditSoftSkillComponent, {
+  protected editOrdenHardSkill(){
+
+    const popup = this.matDialog.open(EditHardSkillOrderComponent, {
       data: {
-        'id': id,
+        'hardSkills': this.hardSkills,
       },
       enterAnimationDuration: '1000ms',
       exitAnimationDuration: '1000ms',
@@ -181,8 +224,7 @@ export class SkillsComponent implements OnInit {
       this.obtenerSoftSkills();
     })
 
-    //para el otro metodo de nueva URL
-    //this.router.navigate([`edit/soft/skills/${id}`]);
   }
+
 
 }

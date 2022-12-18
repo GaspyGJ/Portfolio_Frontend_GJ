@@ -34,7 +34,7 @@ export class EditExperienciaComponent implements OnInit {
     tipoExperiencia:string,tegnologiasUtilizadas:string,linkProyectos:string) {
 
     let experiencia_Updated = new Experiencia(titulo,descripcion,anioStart,anioEnd,
-      tipoExperiencia,tegnologiasUtilizadas,linkProyectos);
+      tipoExperiencia,tegnologiasUtilizadas,linkProyectos , this.experiencia.numero_orden);
 
     experiencia_Updated.idExperiencia= this.experiencia.idExperiencia;
 

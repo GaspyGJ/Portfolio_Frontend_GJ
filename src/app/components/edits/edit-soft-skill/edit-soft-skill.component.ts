@@ -1,9 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute} from '@angular/router';
 import { SoftSkill } from 'src/app/entitys/soft_skills';
 import { SoftSkillService } from 'src/app/service/soft-skill.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { EditHardSkillComponent } from '../edit-hard-skill/edit-hard-skill.component';
 import Swal from 'sweetalert2';
 
 
@@ -35,7 +34,7 @@ export class EditSoftSkillComponent implements OnInit {
 
   protected actualizar_soft_skill(porcentaje:string,titulo:string,fontSize:string) {
 
-    let softSkill_Updated = new SoftSkill(Number(porcentaje), fontSize,titulo);
+    let softSkill_Updated = new SoftSkill(Number(porcentaje),fontSize,titulo,this.softSkill.numero_orden);
 
     softSkill_Updated.idSoftSkill = this.softSkill.idSoftSkill;
 
@@ -59,7 +58,7 @@ export class EditSoftSkillComponent implements OnInit {
         })
       }
     });
-
+    
   }
 
 }

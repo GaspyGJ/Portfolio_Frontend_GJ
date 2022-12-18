@@ -28,8 +28,7 @@ export class Persona{
             this.descripcion=descripcion;
             if(imagen.length != 0){
                 this.urlFoto=imagen;
-            }
-            
+            }      
     }
 
 }

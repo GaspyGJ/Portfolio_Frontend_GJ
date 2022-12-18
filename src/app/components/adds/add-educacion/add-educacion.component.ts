@@ -18,14 +18,14 @@ export class AddEducacionComponent implements OnInit {
   yearsList = years;
 
   constructor(private educacionService:EducacionService , private referencia: MatDialogRef<AddEducacionComponent>) {
-    this.default_Educacion = new Educacion("Titulo Ejemplo 1","Descripcion Ejemplo 1","2022","","Cursando");
+    this.default_Educacion = new Educacion("Titulo Ejemplo 1","Descripcion Ejemplo 1","2022","","Cursando",-1);
    }
 
   ngOnInit(): void { }
 
   protected saveEducacion(titulo:string,descripcion:string,anioStart:string,anioEnd:string,estadoActual:string){
  
-    this.educacion = new Educacion(titulo,descripcion,anioStart,anioEnd,estadoActual);
+    this.educacion = new Educacion(titulo,descripcion,anioStart,anioEnd,estadoActual, -1);
   
     this.educacionService.saveEducacion(this.educacion).subscribe({
       next:(dato)=>{

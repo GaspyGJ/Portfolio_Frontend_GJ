@@ -41,6 +41,9 @@ import { ParticlesComponent } from './components/particles/particles.component';
 import { MainPreloadComponent } from './components/preload/main-preload/main-preload.component';
 import { AboutMePreloadComponent } from './components/preload/aboutMe/about-me-preload/about-me-preload.component'
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import { EditSoftSillOrderComponent } from './components/edits/order/edit-soft-sill-order/edit-soft-sill-order.component';
+import { EditHardSkillOrderComponent } from './components/edits/order/edit-hard-skill-order/edit-hard-skill-order.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +72,9 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     EditProyectoComponent,
     ParticlesComponent,
     MainPreloadComponent,
-    AboutMePreloadComponent
+    AboutMePreloadComponent,
+    EditSoftSillOrderComponent,
+    EditHardSkillOrderComponent
   ],
   entryComponents:[
     EditHardSkillComponent,
@@ -80,7 +85,9 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     EditExperienciaComponent,
     EditEducacionComponent,
     AddProyectoComponent,
-    EditProyectoComponent
+    EditProyectoComponent,
+    EditSoftSillOrderComponent,
+    EditHardSkillOrderComponent
   ],
   imports: [
     BrowserModule,
@@ -97,7 +104,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatIconModule,
     MatListModule,
     NgbModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    DragDropModule
   ],
   providers: [interceptorProvider],
   bootstrap: [AppComponent]

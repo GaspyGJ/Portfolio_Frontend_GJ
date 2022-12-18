@@ -44,7 +44,7 @@ export class EditProyectoComponent implements OnInit {
 
   protected actualizar_Proyecto(titulo:string,descripcion:string,urlGitHub:string,urlAppWeb:string) {
 
-    let proyecto_Updated = new Proyecto(titulo,descripcion,urlGitHub,urlAppWeb,this.lista_archivos);
+    let proyecto_Updated = new Proyecto(titulo,descripcion,urlGitHub,urlAppWeb,this.lista_archivos,this.proyecto.numero_orden);
   
     proyecto_Updated.idProyecto = this.proyecto.idProyecto;
 

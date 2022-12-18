@@ -37,6 +37,8 @@ export class ProjectsComponent implements OnInit {
   public obtenerProyectos() {
     this.proyectoService.getProyecto().subscribe(dato => {
       this.proyectos = dato;
+
+      this.proyectos.sort( (p1, p2) => p1.numero_orden - p2.numero_orden );
       
       let elemento = document.getElementById("after-load")
       elemento!.style.display = "block";
