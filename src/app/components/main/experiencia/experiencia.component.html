@@ -1,7 +1,12 @@
 <div id="Seccion-Experiencia">
+  
   <h3 class="titulo-de-seccion"> Experience:</h3>
 
-  <div id="after-load">
+  <div *ngIf="!isLoad">
+    <app-main-preload></app-main-preload>
+  </div>
+
+  <div *ngIf="isLoad">
     <div class="tagForLogIn btn-container" *ngIf="isLogged">
       <button class="btn-edit" mat-icon-button (click)="addExperiencia()">
         <mat-icon>add</mat-icon>
@@ -32,7 +37,3 @@
       </div>
     </div>
   </div>
-
-<div id="preloadExperiencia">
-  <app-main-preload></app-main-preload>
-</div>

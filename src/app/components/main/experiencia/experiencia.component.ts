@@ -15,16 +15,13 @@ import { EditExperienciaComponent } from '../../edits/edit-experiencia/edit-expe
 export class ExperienciaComponent implements OnInit {
 
   isLogged = false;
+  isLoad = false;
 
   constructor(private tokenService: TokenService, private matDialog: MatDialog, private experienciaService: ExperienciaService) { }
 
   experiencias: Experiencia[]
 
   ngOnInit(): void {
-    let elemento = document.getElementById("after-load")
-    elemento!.style.display = "none";
-    let elemento1 = document.getElementById("preloadExperiencia")
-    elemento1!.style.display = "block";
 
     this.obtenerExperiencias();
     
@@ -45,10 +42,9 @@ export class ExperienciaComponent implements OnInit {
           element.anioEnd = 'Actualidad';
         }
       });
-      let elemento = document.getElementById("after-load")
-      elemento!.style.display = "block";
-      let elemento1 = document.getElementById("preloadExperiencia")
-      elemento1!.style.display = "none";
+
+      this.isLoad = true;
+      
     })
   }
 

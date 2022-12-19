@@ -30,31 +30,24 @@ export class EditSoftSillOrderComponent implements OnInit {
 
     for (let i=0; i<listaP.length; i++) {
       for(let j=0; j<this.softSkills.length;j++){
-        if( listaP[i].innerHTML.includes( this.softSkills[j].titulo) ){
+        //if( listaP[i].innerHTML.includes( this.softSkills[j].titulo) ){
+        if( listaP[i].id == this.softSkills[j].titulo ){
           this.softSkills[j].numero_orden=i;
         }
       }
     }
-    this.softSkills.sort((ss1, ss2) => ss1.numero_orden - ss2.numero_orden);
+    
+
+    //this.softSkills.sort((ss1, ss2) => ss1.numero_orden - ss2.numero_orden);
 
     
     this.softSkills.forEach(softSkill => {
       
-      let softSkill_Updated = new SoftSkill(Number(softSkill.porcentaje),softSkill.fontSize,softSkill.titulo,softSkill.numero_orden);
+      let softSkill_Updated = new SoftSkill(softSkill.porcentaje,softSkill.titulo,softSkill.numero_orden,softSkill.urlFoto,softSkill.alto,softSkill.ancho);
 
       softSkill_Updated.idSoftSkill = softSkill.idSoftSkill;
   
       this.softSkillService.saveSoftSkill(softSkill_Updated).subscribe({
-        next:(dato)=>{
-          Swal.fire({
-            title: 'Actualizado',
-            text: "se actualizo correctamente",
-            icon: 'success',
-            confirmButtonText: "Aceptar",
-          }).then(()=>{
-            this.referencia.close("Cerrando");
-          })
-        },
         error:(error)=>{
           Swal.fire({
             title: 'Error',
@@ -66,6 +59,15 @@ export class EditSoftSillOrderComponent implements OnInit {
       });
 
     });
+
+    Swal.fire({
+      title: 'Actualizado',
+      text: "se actualizo correctamente",
+      icon: 'success',
+      confirmButtonText: "Aceptar",
+    }).then(()=>{
+      this.referencia.close("Cerrando");
+    })
 
   }
 

@@ -19,12 +19,10 @@ export class AddHardSkillComponent implements OnInit {
 
   constructor(private hardSkillService:HardSkillService , private referencia: MatDialogRef<AddHardSkillComponent>) { 
 
-    this.default_hardSkill = new HardSkill(100,15,15,'../../../../assets/imagenes/Skills/c++.png',-1);
+    this.default_hardSkill = new HardSkill(100,'Titulo',15,15,'',-1);
   }
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
 
   obtenerArchivo(event:any):any{
@@ -37,9 +35,9 @@ export class AddHardSkillComponent implements OnInit {
   }
 
 
-  protected saveHardSkill(porcentaje: string, alto: string, ancho: string){
+  protected saveHardSkill(porcentaje: string,titulo:string, alto: string, ancho: string){
    
-    this.hardSkill = new HardSkill(Number(porcentaje),Number(alto),Number(ancho),this.archivo,-1);
+    this.hardSkill = new HardSkill(Number(porcentaje),titulo,Number(alto),Number(ancho),this.archivo,-1);
 
     this.hardSkillService.saveHardSkill(this.hardSkill).subscribe({
       next:(dato)=>{

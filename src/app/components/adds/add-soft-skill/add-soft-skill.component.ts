@@ -12,20 +12,30 @@ import Swal from 'sweetalert2';
 export class AddSoftSkillComponent implements OnInit {
 
   softSkill:SoftSkill;
+
   default_softSkill:SoftSkill;
 
-  constructor(private softSkillService:SoftSkillService,private referencia: MatDialogRef<AddSoftSkillComponent>) { 
+  archivo: string;
 
-    this.default_softSkill= new SoftSkill(100,'15','Responsabilidad',-1);
-  }
+  constructor(private softSkillService:SoftSkillService,private referencia: MatDialogRef<AddSoftSkillComponent>) { }
 
   ngOnInit(): void {
-    
+    this.default_softSkill= new SoftSkill(100,'Titulo',-1,'',120,110);
   }
 
-  protected saveSoftSkill(porcentaje:string, fontSize:string , titulo:string ){
+
+  obtenerArchivo(event:any):any{
+    const archivoCapturado = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(archivoCapturado);
+    reader.onload = () => {
+      this.archivo=<string>reader.result
+    }
+  }
+
+  protected saveSoftSkill(porcentaje:string,titulo:string,alto:string,ancho:string){
    
-    this.softSkill = new SoftSkill(Number(porcentaje),fontSize,titulo,-1);
+    this.softSkill = new SoftSkill(Number(porcentaje),titulo,this.default_softSkill.numero_orden,this.archivo,Number(alto),Number(ancho));
 
     this.softSkillService.saveSoftSkill(this.softSkill).subscribe({
       next:(dato)=>{

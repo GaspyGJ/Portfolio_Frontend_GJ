@@ -14,16 +14,13 @@ export class AboutMeComponent implements OnInit {
 
   isLogged = false;
 
+  isLoad = false;
+
   constructor(private tokenService: TokenService, private matDialog: MatDialog, private personaService: PersonaService) { }
 
   personas: Persona[];
 
   ngOnInit(): void {
-
-    let elemento = document.getElementById("after-load")
-    elemento!.style.display = "none";
-    let elemento1 = document.getElementById("preloadAboutMe")
-    elemento1!.style.display = "block";
 
     this.obtenerPersona();
 
@@ -37,10 +34,7 @@ export class AboutMeComponent implements OnInit {
     this.personaService.getPersona().subscribe(dato => {
       this.personas = dato;
 
-      let elemento = document.getElementById("after-load")
-      elemento!.style.display = "block";
-      let elemento1 = document.getElementById("preloadAboutMe")
-      elemento1!.setAttribute( 'style', 'display: none !important' );
+      this.isLoad=true;
 
     })
   }

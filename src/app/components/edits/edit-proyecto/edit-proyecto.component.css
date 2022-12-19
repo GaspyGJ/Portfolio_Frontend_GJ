@@ -16,3 +16,6 @@ li p {
   background-color: rgb(194, 72, 72);
   border-radius: 50%;
 }
+#Seccion-Edit{
+  max-height: 90vh;
+}

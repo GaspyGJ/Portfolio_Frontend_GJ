@@ -11,14 +11,25 @@
             <input type="text" #titulo value={{softSkill.titulo}} placeholder="ingresar titulo">
         </div>
         <div class="div-p-input">
-            <p>FontSize :</p>
-            <input type="number"#fontSize value={{softSkill.fontSize}} placeholder="ingresar font size">
+            <p>Ancho :</p>
+            <input type="number"#ancho value={{softSkill.ancho}} placeholder="ingresar font size">
+        </div>
+        <div class="div-p-input">
+            <p>Alto :</p>
+            <input type="number"#alto value={{softSkill.alto}} placeholder="ingresar font size">
+        </div>
+        <div class="div-p-input">
+            <p>Url Foto :</p>
+            <input type="file" #imagen (change)="obtenerArchivo($event)" accept="image/*" placeholder="ingresar imagen">
+        </div>
+        <div >
+            <img width="100em" height="100em" [src]="archivo" alt="">
         </div>
         <div class="container-a-btn">
             <div>
                 <a mat-dialog-close>Volver</a>
             </div>
-            <button type="button" (click)="actualizar_soft_skill(porcentaje.value,titulo.value,fontSize.value)">
+            <button type="button" (click)="actualizar_soft_skill(porcentaje.value,titulo.value,alto.value,ancho.value)">
             Guardar Soft Skill
             </button>
         </div>

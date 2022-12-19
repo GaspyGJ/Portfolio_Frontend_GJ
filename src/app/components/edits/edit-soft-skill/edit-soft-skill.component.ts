@@ -14,11 +14,14 @@ import Swal from 'sweetalert2';
 })
 export class EditSoftSkillComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public params:any, private referencia:MatDialogRef<EditSoftSkillComponent>, private softSkillService: SoftSkillService, private rutaActiva: ActivatedRoute) { }
-
   softSkill: SoftSkill;
 
   id: number;
+
+  archivo: string;
+  
+  constructor(@Inject(MAT_DIALOG_DATA) public params:any, private referencia:MatDialogRef<EditSoftSkillComponent>, private softSkillService: SoftSkillService, private rutaActiva: ActivatedRoute) { }
+
 
   ngOnInit(): void {
     /*let id_softSkill = this.rutaActiva.paramMap.subscribe(params => {
@@ -28,13 +31,14 @@ export class EditSoftSkillComponent implements OnInit {
 
       this.softSkillService.getSoftSkill_byID(this.id).subscribe(dato => {
         this.softSkill = dato;
+        this.archivo = this.softSkill.urlFoto;
       })
     //})
   }
 
-  protected actualizar_soft_skill(porcentaje:string,titulo:string,fontSize:string) {
+  protected actualizar_soft_skill(porcentaje:string,titulo:string,alto:string,ancho:string) {
 
-    let softSkill_Updated = new SoftSkill(Number(porcentaje),fontSize,titulo,this.softSkill.numero_orden);
+    let softSkill_Updated = new SoftSkill(Number(porcentaje),titulo,this.softSkill.numero_orden,this.archivo,Number(alto),Number(ancho));
 
     softSkill_Updated.idSoftSkill = this.softSkill.idSoftSkill;
 
@@ -59,6 +63,16 @@ export class EditSoftSkillComponent implements OnInit {
       }
     });
     
+  }
+
+
+  obtenerArchivo(event:any):any{
+    const archivoCapturado = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(archivoCapturado);
+    reader.onload = () => {
+      this.archivo=<string>reader.result
+    }
   }
 
 }

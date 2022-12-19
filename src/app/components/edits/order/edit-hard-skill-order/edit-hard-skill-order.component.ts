@@ -28,30 +28,22 @@ export class EditHardSkillOrderComponent implements OnInit {
 
     for (let i=0; i<listaLI.length; i++) {
       for(let j=0; j<this.hardSkills.length;j++){
-        if( listaLI[i].id.includes( (this.hardSkills[j].idHardSkill).toString() ) ){
+        if( listaLI[i].id == this.hardSkills[j].idHardSkill.toString() ){
+          console.log("Entro");
           this.hardSkills[j].numero_orden=i;
         }
       }
     }
+    
     this.hardSkills.sort( (ss1, ss2) => ss1.numero_orden - ss2.numero_orden);
 
     this.hardSkills.forEach(hardSkill => {
       
-      let hardSkill_Updated = new HardSkill(Number(hardSkill.porcentaje),Number(hardSkill.alto),Number(hardSkill.ancho),hardSkill.urlFoto,hardSkill.numero_orden);
+      let hardSkill_Updated = new HardSkill(Number(hardSkill.porcentaje),hardSkill.titulo,Number(hardSkill.alto),Number(hardSkill.ancho),hardSkill.urlFoto,hardSkill.numero_orden);
 
       hardSkill_Updated.idHardSkill = hardSkill.idHardSkill;
   
       this.hardSkillService.saveHardSkill(hardSkill_Updated).subscribe({
-        next:(dato)=>{
-          Swal.fire({
-            title: 'Actualizado',
-            text: "se actualizo correctamente",
-            icon: 'success',
-            confirmButtonText: "Aceptar",
-          }).then(()=>{
-            this.referencia.close("Cerrando");
-          })
-        },
         error:(error)=>{
           Swal.fire({
             title: 'Error',
@@ -64,12 +56,24 @@ export class EditHardSkillOrderComponent implements OnInit {
 
     });
 
+    Swal.fire({
+      title: 'Actualizado',
+      text: "se actualizo correctamente",
+      icon: 'success',
+      confirmButtonText: "Aceptar",
+    }).then(()=>{
+      this.referencia.close("Cerrando");
+    })
+
+
   }
 
   DropeoHardSkill(event: CdkDragDrop<any>) {
     const anterior: number = event.previousIndex;
     const actual: number = event.currentIndex;
+
     moveItemInArray(this.hardSkills, anterior, actual);
+  
   }
 
 }

@@ -2,6 +2,114 @@
 
     <h3 class="titulo-de-seccion">Hard Skills:</h3>
 
+    <div id="preloadHard"  *ngIf="!isLoadHardSkill">
+        <app-main-preload></app-main-preload>
+    </div>
+
+    <div id="after-load2" *ngIf="isLoadHardSkill">
+
+        <div class="tagForLogIn btn-container" *ngIf="isLogged">
+            <button class="btn-edit" mat-icon-button (click)="addHardSkill()">
+                <mat-icon>add</mat-icon>
+            </button>
+            <button class="btn-edit" mat-icon-button (click)="editOrdenHardSkill()">
+                <mat-icon>edit orden</mat-icon>
+            </button>
+        </div>
+
+        <ul id="list-hard-skills">
+            <li *ngFor=" let hardSkill of hardSkills" id={{hardSkill.idHardSkill}}>
+
+                <div class="tarjeta">
+                    <img src={{hardSkill.urlFoto}} width={{hardSkill.ancho}} height={{hardSkill.alto}}>
+                    <mat-progress-bar class="barra-progreso" mode="determinate" value={{hardSkill.porcentaje}}></mat-progress-bar>
+                </div>
+
+
+                <div class="tagForLogIn btn-container" *ngIf="isLogged">
+                    <button mat-icon-button class="btn-edit" (click)="editHardSkill(hardSkill.idHardSkill)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+
+                    <button mat-icon-button class="btn-drop" (click)="dropHardSkill(hardSkill.idHardSkill)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+
+    <br><br>
+
+    <h3 class="titulo-de-seccion">Soft Skills:</h3>
+
+    <div id="preloadSoft" *ngIf="!isLoadSoftSkill">
+        <app-main-preload></app-main-preload>
+    </div>    
+
+    <div id="after-load2" *ngIf="isLoadSoftSkill">
+
+        <div class="tagForLogIn btn-container" *ngIf="isLogged">
+            <button class="btn-edit" mat-icon-button (click)="addSoftSkill()">
+                <mat-icon>add</mat-icon>
+            </button>
+            <button class="btn-edit" mat-icon-button (click)="editOrdenSoftSkill()">
+                <mat-icon>edit orden</mat-icon>
+            </button>
+        </div>
+
+        <ul id="list-soft-skills">
+            <li *ngFor=" let softSkill of softSkills" id={{softSkill.idSoftSkill}}>
+
+                <div class="tarjeta">
+                    <img src={{softSkill.urlFoto}} width={{softSkill.ancho}} height={{softSkill.alto}}>
+                    <mat-progress-bar class="barra-progreso" mode="determinate" value={{softSkill.porcentaje}}></mat-progress-bar>
+                </div>
+
+
+                <div class="tagForLogIn btn-container" *ngIf="isLogged">
+                    <button mat-icon-button class="btn-edit" (click)="editSoftSkill(softSkill.idSoftSkill)">
+                        <mat-icon color="red">edit</mat-icon>
+                    </button>
+
+                    <button mat-icon-button class="btn-drop" (click)="dropSoftSkill(softSkill.idSoftSkill)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </li>
+        </ul>
+
+
+
+        <div class="container-fluid list-For-Small-Windows">
+            <ngb-carousel>
+                <ng-template ngbSlide *ngFor=" let softSkill of softSkills" id={{softSkill.idSoftSkill}}>
+                    <div>
+                        <div style="margin-left: 15%; margin-right: 15%;">
+                            <div>
+                                <p style=" margin-top: 1em; text-align: center; color:white; font-size: 1.5em;">
+                                    {{softSkill.titulo}}
+                                </p>
+                                <mat-progress-bar mode="determinate" color="#79f083"
+                                    value={{softSkill.porcentaje}}></mat-progress-bar>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<!-- SECCION HARD SKILL PERO CON CIRCULOS
     <div id="after-load">
 
         <div class="tagForLogIn btn-container" *ngIf="isLogged">
@@ -50,75 +158,17 @@
         </div>
 
     </div>
-
-    <div id="preloadHard">
-        <app-main-preload></app-main-preload>
-    </div>
+    -->
 
 
-    <br><br>
-    <h3 class="titulo-de-seccion">Soft Skills:</h3>
-
-    <div id="after-load2">
-        <div class="tagForLogIn btn-container" *ngIf="isLogged">
-            <button class="btn-edit" mat-icon-button (click)="addSoftSkill()">
-                <mat-icon>add</mat-icon>
-            </button>
-            <button class="btn-edit" mat-icon-button (click)="editOrdenSoftSkill()">
-                <mat-icon>edit orden</mat-icon>
-            </button>
-        </div>
-
-        <ul id="list-soft-skills">
-            <li *ngFor=" let softSkill of softSkills" id={{softSkill.idSoftSkill}}>
-
-                <div class="div-soft-skill">
-                    <p style=" margin-top: 1em; text-align: center; color:white; font-size: 1.5em;">
-                        {{softSkill.titulo}}
-                    </p>
-                    <mat-progress-bar mode="determinate" value={{softSkill.porcentaje}}></mat-progress-bar>
-                </div>
-
-
-                <div class="tagForLogIn btn-container" *ngIf="isLogged">
-                    <button mat-icon-button class="btn-edit" (click)="editSoftSkill(softSkill.idSoftSkill)">
-                        <mat-icon color="red">edit</mat-icon>
-                    </button>
-
-                    <button mat-icon-button class="btn-drop" (click)="dropSoftSkill(softSkill.idSoftSkill)">
-                        <mat-icon>delete</mat-icon>
-                    </button>
-                </div>
-            </li>
-        </ul>
-
-
-
-        <div class="container-fluid list-For-Small-Windows">
+<!-- SECCION PARA PANTALLAS PEQUENIAS CUANDO SE UTILIZAN IMAGENES CON CIRCULOS
+        <div class="container-fluid list-For-Small-Windows" id="list-For-Small-Windows-hard_skill">
             <ngb-carousel>
-                <ng-template ngbSlide *ngFor=" let softSkill of softSkills" id={{softSkill.idSoftSkill}}>
-                    <div>
-                        <div style="margin-left: 15%; margin-right: 15%;">
-                            <div>
-                                <p style=" margin-top: 1em; text-align: center; color:white; font-size: 1.5em;">
-                                    {{softSkill.titulo}}
-                                </p>
-                                <mat-progress-bar mode="determinate" color="#79f083"
-                                    value={{softSkill.porcentaje}}></mat-progress-bar>
-                            </div>
-                        </div>
+                <ng-template ngbSlide *ngFor=" let hardSkill of hardSkills" id={{hardSkill.idHardSkill}}>
+                    <div class="container-circle-progress" style="text-align: center;">
+                        <img src={{hardSkill.urlFoto}} width={{hardSkill.ancho}} height={{hardSkill.alto}}>
                     </div>
                 </ng-template>
             </ngb-carousel>
         </div>
-
-    </div>
-
-
-    <div id="preloadSoft">
-        <app-main-preload></app-main-preload>
-    </div>
-
-
-
-</div>
+        -->

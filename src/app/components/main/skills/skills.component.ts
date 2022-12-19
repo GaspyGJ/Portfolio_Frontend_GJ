@@ -22,7 +22,9 @@ import { EditHardSkillOrderComponent } from '../../edits/order/edit-hard-skill-o
 })
 export class SkillsComponent implements OnInit {
 
-  isLogged = false;
+  isLogged:boolean = false;
+  isLoadHardSkill:boolean = false;
+  isLoadSoftSkill:boolean = false;
 
   constructor(private tokenService: TokenService, private matDialog: MatDialog, private router: Router, private hardSkillService: HardSkillService, private softSkillService: SoftSkillService) { }
 
@@ -30,20 +32,6 @@ export class SkillsComponent implements OnInit {
   softSkills: SoftSkill[];
 
   ngOnInit(): void {
-
-    let elemento = document.getElementById("after-load")
-    elemento!.setAttribute( 'style', 'display: none' );
-
-//    let elementoListHS = document.getElementById("list-hard-skills");
-//    elementoListHS!.setAttribute( 'style', 'display: none' );
-
-    let elemento2 = document.getElementById("after-load2")
-    elemento2!.style.display = "none";
-
-    let elemento1 = document.getElementById("preloadHard")
-    elemento1!.style.display = "block";
-    let elemento3 = document.getElementById("preloadSoft")
-    elemento3!.style.display = "block";
 
     this.obtenerHardSkills();
     this.obtenerSoftSkills();
@@ -60,14 +48,7 @@ export class SkillsComponent implements OnInit {
 
       this.hardSkills.sort( (hs1, hs2) => hs1.numero_orden - hs2.numero_orden );
 
-      let elemento = document.getElementById("after-load")
-      elemento!.setAttribute( 'style', 'display: block');
-
-//      let elementoListHS = document.getElementById("list-hard-skills");
-//     elementoListHS!.setAttribute( 'style', 'display: block');
-
-      let elemento1 = document.getElementById("preloadHard")
-      elemento1!.setAttribute( 'style', 'display: none !important' );
+      this.isLoadHardSkill=true;
 
     })
   }
@@ -77,11 +58,7 @@ export class SkillsComponent implements OnInit {
 
       this.softSkills.sort( (ss1, ss2) => ss1.numero_orden - ss2.numero_orden );
 
-      let elemento = document.getElementById("after-load2")
-      elemento!.style.display = "block";
-
-      let elemento2 = document.getElementById("preloadSoft")
-      elemento2!.setAttribute( 'style', 'display: none !important' );
+      this.isLoadSoftSkill=true;
 
     })
   }

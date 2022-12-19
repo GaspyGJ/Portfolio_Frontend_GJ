@@ -1,37 +1,38 @@
-<div>
-
-    <div id="Seccion-Edit" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1200">
-        <form id="form-Seccion-Edit" ngNativeValidate>
-            <h3>Agregar Hard Skill:</h3>
-            <p>Escribe sobre el/los atributo/s que deseas cambiar - Los atributos que no se editen quedaran como estan
-            </p>
-            <div class="div-p-input">
-                <p>Porcentaje :</p>
-                <input type="number" #porcentaje value={{default_softSkill.porcentaje}}
-                    placeholder="ingresar Porcentaje">
+<div id="Seccion-Edit" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1200">
+    <form id="form-Seccion-Edit" ngNativeValidate>
+        <h3>Agregar Hard Skill:</h3>
+        <p>Escribe sobre el/los atributo/s que deseas cambiar - Los atributos que no se editen quedaran como estan
+        </p>
+        <div class="div-p-input">
+            <p>Porcentaje :</p>
+            <input type="number" #porcentaje value={{default_softSkill.porcentaje}} placeholder="ingresar Porcentaje">
+        </div>
+        <div class="div-p-input">
+            <p>Titulo:</p>
+            <input type="text" #titulo value={{default_softSkill.titulo}} placeholder="ingresar titulo">
+        </div>
+        <div class="div-p-input">
+            <p>Ancho :</p>
+            <input type="number" #ancho value={{default_softSkill.ancho}} placeholder="ingresar font size">
+        </div>
+        <div class="div-p-input">
+            <p>Alto :</p>
+            <input type="number" #alto value={{default_softSkill.alto}} placeholder="ingresar font size">
+        </div>
+        <div class="div-p-input">
+            <p>Url Foto :</p>
+            <input type="file" #imagen (change)="obtenerArchivo($event)" accept="image/*" placeholder="ingresar imagen">
+        </div>
+        <div *ngIf="archivo">
+            <img width="100em" height="100em" [src]="archivo" alt="">
+        </div>
+        <div class="container-a-btn">
+            <div>
+                <a mat-dialog-close>Volver</a>
             </div>
-            <div class="div-p-input">
-                <p>Tamaño de Fuente :</p>
-                <input type="number" #fontSize value={{default_softSkill.fontSize}}
-                    placeholder="ingresar tamanio de Fuente">
-            </div>
-            <div class="div-p-input">
-                <p>Titulo:</p>
-                <input type="text" #titulo value={{default_softSkill.titulo}} placeholder="ingresar titulo">
-            </div>
-            <div class="container-a-btn">
-                <div>
-                    <a mat-dialog-close>Volver</a>
-                </div>
-                <button type="button" (click)="saveSoftSkill(porcentaje.value, fontSize.value , titulo.value)">
-                    Guardar Soft Skill
-                </button>
-            </div>
-        </form>
-    </div>
-
-    <form>
-
+            <button type="button" (click)="saveSoftSkill(porcentaje.value,titulo.value,alto.value,ancho.value)">
+                Guardar Soft Skill
+            </button>
+        </div>
     </form>
-
 </div>

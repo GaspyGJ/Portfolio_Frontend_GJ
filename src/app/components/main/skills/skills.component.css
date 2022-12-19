@@ -21,6 +21,13 @@
     box-shadow: 2px 2px 20px #face30;
     border-radius: 10px;
 }
+
+.tarjeta{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
 #list-soft-skills {
     margin-top: 2em;
     margin-left: 4em;
@@ -28,7 +35,7 @@
     padding: 1em 0 1em 0;
     list-style: none;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
@@ -92,9 +99,6 @@ li p{
         margin-bottom: 15em;
     }
 
-    #list-hard-skills {
-        display: none;
-    }
     #list-soft-skills {
         display: none;
     }

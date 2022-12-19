@@ -1,6 +1,12 @@
 <div id="Seccion-Educacion">
+
   <h3 class="titulo-de-seccion"> Education:</h3>
-  <div id="after-load">
+
+  <div *ngIf="!isLoad">
+    <app-main-preload></app-main-preload>
+  </div>
+
+  <div *ngIf="isLoad">
     <div class="tagForLogIn btn-container" *ngIf="isLogged">
       <button class="btn-edit" mat-icon-button (click)="addEducacion()">
         <mat-icon>add</mat-icon>
@@ -29,6 +35,5 @@
       </div>
     </div>
   </div>
-  <div id="preloadEducation">
-    <app-main-preload></app-main-preload>
-  </div>
+
+</div>

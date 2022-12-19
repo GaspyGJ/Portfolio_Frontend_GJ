@@ -14,18 +14,14 @@ import { EditEducacionComponent } from '../../edits/edit-educacion/edit-educacio
 })
 export class EducationComponent implements OnInit {
 
-  isLogged=false;
+  isLogged = false;
+  isLoad = false;
 
   constructor(private tokenService: TokenService, private matDialog: MatDialog, private educacionService: EducacionService) { }
 
   educaciones: Educacion[]
 
   ngOnInit(): void {
-
-    let elemento = document.getElementById("after-load")
-    elemento!.style.display = "none";
-    let elemento1 = document.getElementById("preloadEducation")
-    elemento1!.style.display = "block";
 
     this.obtenerEducaciones();
 
@@ -49,10 +45,7 @@ export class EducationComponent implements OnInit {
         }
       });
 
-      let elemento = document.getElementById("after-load")
-      elemento!.style.display = "block";
-      let elemento1 = document.getElementById("preloadEducation")
-      elemento1!.setAttribute( 'style', 'display: none !important' );
+      this.isLoad = true;
 
     })
 

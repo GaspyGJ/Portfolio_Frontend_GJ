@@ -15,16 +15,13 @@ import { EditProyectoComponent } from '../../edits/edit-proyecto/edit-proyecto.c
 export class ProjectsComponent implements OnInit {
 
   isLogged = false;
+  isLoad = false;
 
   constructor(private tokenService: TokenService, private matDialog: MatDialog, private proyectoService: ProyectoService) { }
 
   proyectos: Proyecto[]
 
   ngOnInit(): void {
-    let elemento = document.getElementById("after-load")
-    elemento!.style.display = "none";
-    let elemento1 = document.getElementById("preloadProyectos")
-    elemento1!.style.display = "block";
 
     this.obtenerProyectos();
 
@@ -40,10 +37,7 @@ export class ProjectsComponent implements OnInit {
 
       this.proyectos.sort( (p1, p2) => p1.numero_orden - p2.numero_orden );
       
-      let elemento = document.getElementById("after-load")
-      elemento!.style.display = "block";
-      let elemento1 = document.getElementById("preloadProyectos")
-      elemento1!.setAttribute( 'style', 'display: none !important' ); 
+      this.isLoad=true;
     });
   }
 

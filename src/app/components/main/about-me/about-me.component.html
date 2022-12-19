@@ -1,4 +1,8 @@
-<div id="after-load">
+<div *ngIf="!isLoad">
+    <app-about-me-preload></app-about-me-preload>
+</div>
+
+<div *ngIf="isLoad">
     <div id="foto-perfil-about-me" *ngFor="let persona of personas">
         <div id="Foto-Perfil">
 
@@ -17,8 +21,4 @@
             </button>
         </div>
     </div>
-</div>
-
-<div id="preloadAboutMe">
-    <app-about-me-preload></app-about-me-preload>
 </div>

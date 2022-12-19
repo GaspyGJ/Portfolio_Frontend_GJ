@@ -11,12 +11,16 @@
             <ul id="list-hard-skills" cdkDropList (cdkDropListDropped)="DropeoHardSkill($event)" >
 
                 <li class="li_hs" *ngFor="let hardSkill of hardSkills" id={{hardSkill.idHardSkill}}  cdkDrag>
-            
+
+                    <p>{{hardSkill.titulo}}</p>
+                    
+                    <!-- Con los Circulos
                     <circle-progress [percent]="hardSkill.porcentaje" [radius]="60" [innerStrokeWidth]="0"
                         [outerStrokeWidth]="5" [outerStrokeColor]="'#3f51b5'" [animation]="true" [animationDuration]="1500"
                         [imageSrc]="hardSkill.urlFoto" [imageHeight]=hardSkill.alto [imageWidth]=hardSkill.ancho
                         [showImage]="true">
                     </circle-progress>
+                    -->
             
                 </li>
 

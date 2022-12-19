@@ -7,6 +7,10 @@
             <input type="number" #porcentaje value={{hardSkill.porcentaje}} placeholder="ingresar Porcentaje">
         </div>
         <div class="div-p-input">
+            <p>Titulo:</p>
+            <input type="text" #titulo value={{hardSkill.titulo}} placeholder="ingresar Titulo">
+        </div>
+        <div class="div-p-input">
             <p>Alto :</p>
             <input type="number" #alto value={{hardSkill.alto}} placeholder="ingresar alto foto">
         </div>
@@ -25,7 +29,7 @@
             <div>
                 <a mat-dialog-close>Volver</a>
             </div>
-        <button type="button" (click)="actualizar_hard_skill(porcentaje.value,alto.value,ancho.value)">
+        <button type="button" (click)="actualizar_hard_skill(porcentaje.value,titulo.value,alto.value,ancho.value)">
             Guardar Skill</button>
         </div>
         </form>
