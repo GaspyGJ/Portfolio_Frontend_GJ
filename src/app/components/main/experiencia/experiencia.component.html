@@ -25,7 +25,7 @@
         <p>Tipo de Experiencia : {{experiencia.tipoExperiencia}}</p>
         <p>Tecnologias Utilizadas : <span style="color: #2be271;">{{experiencia.tegnologiasUtilizadas}}</span> </p>
         <small>{{experiencia.anioStart}} - {{experiencia.anioEnd}}</small>
-        <p *ngIf="experiencia.linkProyectos!=''"><a href={{experiencia.linkProyectos}}>Ver Proyecto</a></p>
+        <p *ngIf="experiencia.linkProyectos!=''"><a target="_blank" href={{experiencia.linkProyectos}}>GitHub del proyecto</a></p>
   
         <div class="tagForLogIn btn-container" *ngIf="isLogged">
           <button mat-icon-button class="btn-edit" (click)="editExperiencia(experiencia.idExperiencia)">

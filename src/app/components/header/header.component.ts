@@ -45,10 +45,11 @@ export class HeaderComponent implements OnInit {
   var element = document.getElementById("Seccion-Contacto")!;
     element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   }
+  
   public scrollToProjects(){
     var element = document.getElementById("Seccion-Proyectos")!;
       element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-    }
+  }
 
   onLogout(): void {
     Swal.fire({

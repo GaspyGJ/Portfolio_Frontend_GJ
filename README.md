@@ -24,6 +24,8 @@ Trabaja en conjunto con el backend `Java` `Spring` ➡️ https://github.com/Gas
 
 <img src="src\assets\imagenes\EsteProyecto\1.png" height=450 width=700>
 <br><hr>
+<img src="src\assets\imagenes\EsteProyecto\2.1.png" height=450 width=700>
+<br><hr>
 <img src="src\assets\imagenes\EsteProyecto\2.png" height=450 width=700>
 <br><hr>
 <img src="src\assets\imagenes\EsteProyecto\3.png" height=450 width=700>
@@ -61,21 +63,26 @@ Trabaja en conjunto con el backend `Java` `Spring` ➡️ https://github.com/Gas
 <img src="src\assets\imagenes\EsteProyecto\9.png" height=450 width=700>
 <br><br>
 
-3. Seleccione el botón para agregar, editar o eliminar <br>
-     3.1.1 Precionamos en `Add-Edit`, se abrirá un modal donde puede completar los campos que desea cambiar o agregar<br>
+3. Seleccione el botón para agregar, editar, editar orden o eliminar <br>
+     3.1.1 Si precionamos en `Add-Edit`, se abrirá un modal donde puede completar los campos que desea cambiar o agregar<br>
      3.1.2 Complete los campos y presione guardar, los campos que no se completen quedarán como están<br>
-     3.1.3 Se abrirá una aceptación modal para confirmación
+     3.1.3 Se abrirá una aceptación modal para confirmación<br>
 
     <img src="src\assets\imagenes\EsteProyecto\10.png" height=440 width=700>
-    <br>
+    <br><br><br>
 
+    3.2.1 Si precionamos `Editar orden`, se abrirá un modal donde puede hacer drag and drop para elegir el orden de los elementos <br>
+     <img src="src\assets\imagenes\EsteProyecto\10.1.png" height=500 width=320>
 
-     3.2.1 Precionamos `Eliminar`, una ventana emergente de aceptación aparecerá para confirmación
+    
+     3.3.1 Si precionamos `Eliminar`, una ventana emergente de aceptación aparecerá para confirmación<br>
      <img src="src\assets\imagenes\EsteProyecto\11.png" height=200 width=300>
-    <br>
+    <br><br>
 
 4. Los cambios se cargarán en la base de datos y se recargarán en la página
 
+
+<br><hr><br>
 
 ## 💎 Cosas para mejorar
 
@@ -84,7 +91,3 @@ Trabaja en conjunto con el backend `Java` `Spring` ➡️ https://github.com/Gas
 * Los mensajes de error no son muy informativos sobre el error. Solo dicen "Error"
 
 * Es posible que las imágenes de la sección Proyectos no se muestren en su totalidad en teléfonos móviles
-
-* Ingresar imagenes desde la PC y no solo un link
-
-* Poder modificar el orden de los elementos de cada sección (con algún mecanismo como "drag and drop")
