@@ -29,7 +29,6 @@ export class EditHardSkillOrderComponent implements OnInit {
     for (let i=0; i<listaLI.length; i++) {
       for(let j=0; j<this.hardSkills.length;j++){
         if( listaLI[i].id == this.hardSkills[j].idHardSkill.toString() ){
-          console.log("Entro");
           this.hardSkills[j].numero_orden=i;
         }
       }

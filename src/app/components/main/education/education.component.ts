@@ -3,9 +3,10 @@ import { MatDialog } from '@angular/material/dialog';
 import { Educacion } from 'src/app/entitys/educacion';
 import { EducacionService } from 'src/app/service/educacion.service';
 import { TokenService } from 'src/app/service/JWT/token-service.service';
-import Swal from 'sweetalert2';
 import { AddEducacionComponent } from '../../adds/add-educacion/add-educacion.component';
 import { EditEducacionComponent } from '../../edits/edit-educacion/edit-educacion.component';
+import { EditEducacionOrderComponent } from '../../edits/order/edit-educacion-order/edit-educacion-order.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-education',
@@ -26,7 +27,6 @@ export class EducationComponent implements OnInit {
     this.obtenerEducaciones();
 
     if(this.tokenService.getToken()){
-      //esta logeado
       this.isLogged=true;
     }
 
@@ -78,6 +78,23 @@ export class EducationComponent implements OnInit {
       this.obtenerEducaciones();
     })
   
+  }
+
+  
+  protected editOrdenEducation(){
+
+    const popup = this.matDialog.open(EditEducacionOrderComponent, {
+      data: {
+        'educaciones': this.educaciones,
+      },
+      enterAnimationDuration: '1000ms',
+      exitAnimationDuration: '1000ms',
+    });
+
+    popup.afterClosed().subscribe(i => {
+      this.obtenerEducaciones();
+    })
+
   }
 
   protected dropEducacion(id:number){

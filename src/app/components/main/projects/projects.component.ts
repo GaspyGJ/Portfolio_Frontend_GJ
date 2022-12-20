@@ -6,6 +6,7 @@ import { ProyectoService } from 'src/app/service/proyecto.service';
 import Swal from 'sweetalert2';
 import { AddProyectoComponent } from '../../adds/add-proyecto/add-proyecto.component';
 import { EditProyectoComponent } from '../../edits/edit-proyecto/edit-proyecto.component';
+import { EditProyectosOrderComponent } from '../../edits/order/edit-proyectos-order/edit-proyectos-order.component';
 
 @Component({
   selector: 'app-projects',
@@ -17,9 +18,9 @@ export class ProjectsComponent implements OnInit {
   isLogged = false;
   isLoad = false;
 
-  constructor(private tokenService: TokenService, private matDialog: MatDialog, private proyectoService: ProyectoService) { }
-
   proyectos: Proyecto[]
+
+  constructor(private tokenService: TokenService, private matDialog: MatDialog, private proyectoService: ProyectoService) { }
 
   ngOnInit(): void {
 
@@ -62,6 +63,22 @@ export class ProjectsComponent implements OnInit {
       enterAnimationDuration: '1000ms',
       exitAnimationDuration: '1000ms',
       height: '75%'
+    });
+
+    popup.afterClosed().subscribe(i => {
+      this.obtenerProyectos();
+    })
+
+  }
+
+  protected editOrdenProyectos(){
+
+    const popup = this.matDialog.open(EditProyectosOrderComponent, {
+      data: {
+        'proyectos': this.proyectos,
+      },
+      enterAnimationDuration: '1000ms',
+      exitAnimationDuration: '1000ms',
     });
 
     popup.afterClosed().subscribe(i => {

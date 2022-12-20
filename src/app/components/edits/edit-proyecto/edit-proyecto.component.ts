@@ -28,7 +28,6 @@ export class EditProyectoComponent implements OnInit {
         this.proyecto = dato;
         this.lista_archivos=this.proyecto.urlFotos;
       })
-    //})
   }
 
   obtenerArchivo(event:any):any{

@@ -39,11 +39,17 @@ import { AddHardSkillComponent } from './components/adds/add-hard-skill/add-hard
 import { AddSoftSkillComponent } from './components/adds/add-soft-skill/add-soft-skill.component';
 import { ParticlesComponent } from './components/particles/particles.component';
 import { MainPreloadComponent } from './components/preload/main-preload/main-preload.component';
-import { AboutMePreloadComponent } from './components/preload/aboutMe/about-me-preload/about-me-preload.component'
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {DragDropModule} from '@angular/cdk/drag-drop';
 import { EditSoftSillOrderComponent } from './components/edits/order/edit-soft-sill-order/edit-soft-sill-order.component';
 import { EditHardSkillOrderComponent } from './components/edits/order/edit-hard-skill-order/edit-hard-skill-order.component';
+import { EditEducacionOrderComponent } from './components/edits/order/edit-educacion-order/edit-educacion-order.component';
+import { AboutMePreloadComponent } from './components/preload/aboutMe/about-me-preload/about-me-preload.component'
+import { EditExperienciaOrderComponent } from './components/edits/order/edit-experiencia-order/edit-experiencia-order.component';
+import { EditProyectosOrderComponent } from './components/edits/order/edit-proyectos-order/edit-proyectos-order.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+
+
+
 
 @NgModule({
   declarations: [
@@ -74,7 +80,10 @@ import { EditHardSkillOrderComponent } from './components/edits/order/edit-hard-
     MainPreloadComponent,
     AboutMePreloadComponent,
     EditSoftSillOrderComponent,
-    EditHardSkillOrderComponent
+    EditHardSkillOrderComponent,
+    EditEducacionOrderComponent,
+    EditExperienciaOrderComponent,
+    EditProyectosOrderComponent
   ],
   entryComponents:[
     EditHardSkillComponent,
@@ -87,7 +96,10 @@ import { EditHardSkillOrderComponent } from './components/edits/order/edit-hard-
     AddProyectoComponent,
     EditProyectoComponent,
     EditSoftSillOrderComponent,
-    EditHardSkillOrderComponent
+    EditHardSkillOrderComponent,
+    EditEducacionOrderComponent,
+    EditExperienciaOrderComponent,
+    EditProyectosOrderComponent
   ],
   imports: [
     BrowserModule,

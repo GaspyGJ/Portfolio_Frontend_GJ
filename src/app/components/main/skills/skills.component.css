@@ -2,9 +2,7 @@
     margin-bottom: 15em;
     margin: 15%;
 }
-.list-For-Small-Windows{
-    display: none;
-}
+
 #list-hard-skills {
     margin-left: 4em;
     margin-right: 4em;
@@ -101,20 +99,6 @@ li p{
         margin: 0;
         margin-bottom: 15em;
     }
-
-    #list-soft-skills {
-        display: none;
-    }
-
-    .list-For-Small-Windows{
-        display: block;
-        margin-top: 5em;
-    }
-
-    #list-For-Small-Windows-hard_skill{
-        margin-bottom: 10em;
-    }
-
 
 }
 

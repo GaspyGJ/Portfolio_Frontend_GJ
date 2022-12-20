@@ -11,7 +11,11 @@
       <button class="btn-edit" mat-icon-button (click)="addEducacion()">
         <mat-icon>add</mat-icon>
       </button>
+      <button class="btn-edit" mat-icon-button (click)="editOrdenEducation()">
+        <mat-icon>edit orden</mat-icon>
+    </button>
     </div>
+    
     <!--lista usando bootstrap-->
     <div class="list-group">
       <div *ngFor=" let educacion of educaciones" id={{educacion.idEducacion}} class="list-group-item">

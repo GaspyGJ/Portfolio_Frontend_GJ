@@ -6,6 +6,7 @@ import { TokenService } from 'src/app/service/JWT/token-service.service';
 import Swal from 'sweetalert2';
 import { AddExperienciaComponent } from '../../adds/add-experiencia/add-experiencia.component';
 import { EditExperienciaComponent } from '../../edits/edit-experiencia/edit-experiencia.component';
+import { EditExperienciaOrderComponent } from '../../edits/order/edit-experiencia-order/edit-experiencia-order.component';
 
 @Component({
   selector: 'app-experiencia',
@@ -73,8 +74,24 @@ export class ExperienciaComponent implements OnInit {
     popup.afterClosed().subscribe(i => {
       this.obtenerExperiencias();
     })
+  }
+
+  protected editOrdenExperiencia(){
+
+    const popup = this.matDialog.open(EditExperienciaOrderComponent, {
+      data: {
+        'experiencias': this.experiencias,
+      },
+      enterAnimationDuration: '1000ms',
+      exitAnimationDuration: '1000ms',
+    });
+
+    popup.afterClosed().subscribe(i => {
+      this.obtenerExperiencias();
+    })
 
   }
+
 
   protected dropExperiencia(id: number) {
     Swal.fire({

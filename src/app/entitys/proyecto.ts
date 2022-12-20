@@ -27,7 +27,7 @@ export class Proyecto{
         this.descripcion=descripcion;
         this.urlGitHub=urlGitHub;
         this.urlAppWeb=urlAppWeb;
-        if(urlFotos.length!=0){
+        if(urlFotos != null){
             this.urlFotos=urlFotos;
         }
         this.numero_orden=numero_orden;
