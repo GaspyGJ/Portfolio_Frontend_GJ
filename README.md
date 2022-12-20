@@ -24,7 +24,7 @@ Trabaja en conjunto con el backend `Java` `Spring` ➡️ https://github.com/Gas
 
 <img src="src\assets\imagenes\EsteProyecto\1.png" height=450 width=700>
 <br><hr>
-<img src="src\assets\imagenes\EsteProyecto\2.1.png" height=450 width=700>
+<img src="src\assets\imagenes\EsteProyecto\2.1.png" height=500 width=700>
 <br><hr>
 <img src="src\assets\imagenes\EsteProyecto\2.png" height=450 width=700>
 <br><hr>
