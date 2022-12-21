@@ -35,7 +35,7 @@
                         <p class="card-text">{{proyecto.descripcion}}</p>
                     </div>
 
-                    <a target="_blanck" href={{proyecto.urlGitHub}}>GitHub del Proyecto</a>
+                    <a target="_blanck"  *ngIf=" proyecto.urlGitHub!='' " href={{proyecto.urlGitHub}}>GitHub del Proyecto</a>
                     <a target="_blanck" *ngIf=" proyecto.urlAppWeb!='' " href={{proyecto.urlAppWeb}}>Probar App Web</a>
                 </div>
 
