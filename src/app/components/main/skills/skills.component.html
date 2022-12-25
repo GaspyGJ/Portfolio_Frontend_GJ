@@ -21,7 +21,7 @@
             <li *ngFor=" let hardSkill of hardSkills" id={{hardSkill.idHardSkill}}>
 
                 <div class="tarjeta">
-                    <img src={{hardSkill.urlFoto}} width={{hardSkill.ancho}} height={{hardSkill.alto}}>
+                    <img src={{hardSkill.urlFoto}} width={{hardSkill.ancho}} height={{hardSkill.alto}} alt={{hardSkill.titulo}}>
                     <mat-progress-bar class="barra-progreso" mode="determinate" value={{hardSkill.porcentaje}}></mat-progress-bar>
                 </div>
 
@@ -63,7 +63,7 @@
             <li *ngFor=" let softSkill of softSkills" id={{softSkill.idSoftSkill}}>
 
                 <div class="tarjeta">
-                    <img src={{softSkill.urlFoto}} width={{softSkill.ancho}} height={{softSkill.alto}}>
+                    <img src={{softSkill.urlFoto}} width={{softSkill.ancho}} height={{softSkill.alto}} alt={{softSkill.titulo}}>
                     <mat-progress-bar class="barra-progreso" mode="determinate" value={{softSkill.porcentaje}}></mat-progress-bar>
                 </div>
 

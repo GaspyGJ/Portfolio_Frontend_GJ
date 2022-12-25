@@ -1,16 +1,17 @@
-#Seccion-Educacion{
+#Seccion-Educacion {
     margin-bottom: 15em;
     margin: 15%;
 }
 
-h3{
+h3 {
     padding-bottom: 1em;
 }
 
-small{
+small {
     color: rgb(197, 197, 197) !important;
 }
-.list-group{
+
+.list-group {
     display: flex;
     direction: column;
     justify-content: center;
@@ -22,53 +23,57 @@ small{
     border-radius: 10px;
 }
 
-.list-group-item{
+.list-group-item {
     padding-left: 10%;
     padding-right: 10%;
     background-color: transparent;
-    color:white;
+    color: white;
     text-align: center;
     width: 70%;
-    border:none;
+    border: none;
 }
 
-small{
-    color:rgb(173, 173, 173);
+small {
+    color: rgb(173, 173, 173);
 }
 
 /************************* With LogIn *****************************************/
 
-.btn-container{
+.btn-container {
     text-align: center;
     display: flex;
-    gap:0.5em;
+    gap: 0.5em;
     justify-content: center;
     margin-top: 1em;
 }
-.btn-edit{
+
+.btn-edit {
     border: 1px solid rgb(0, 0, 0);
 
     background-color: rgb(36, 170, 36);
 }
-.btn-drop{
+
+.btn-drop {
     border: 1px solid rgb(0, 0, 0);
 
     background-color: rgb(194, 72, 72);
 }
-@media only screen and (max-width: 600px) {
 
-    #Seccion-Educacion{
-        margin:0;
-        margin-left: 1em;
-        margin-right: 1em;
+@media only screen and (max-width: 900px) {
+
+    #Seccion-Educacion {
+        margin: 0;
         margin-bottom: 15em;
     }
-    .list-group-item{
+
+    .list-group-item {
         padding-left: 5%;
         padding-right: 5%;
         width: 100%;
     }
-    .list-group{
-        margin:0;
+
+    .list-group {
+        margin-left: 1em;
+        margin-right: 1em;
     }
 }

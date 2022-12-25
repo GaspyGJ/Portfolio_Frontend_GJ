@@ -23,7 +23,7 @@
             <input type="file" #imagen (change)="obtenerArchivo($event)" accept="image/*" placeholder="ingresar imagen">
         </div>
         <div >
-            <img width="100em" height="100em" [src]="archivo" alt="">
+            <img width="100em" height="100em" [src]="archivo" alt={{hardSkill.titulo}}>
         </div>
         <div class="container-a-btn">
             <div>

@@ -32,7 +32,7 @@
 
                 <ul *ngFor="let archivo of lista_archivos">
                     <li>
-                        <img width="100em" height="100em" [src]="archivo" alt="">
+                        <img width="100em" height="100em" [src]="archivo" alt={{proyecto.titulo}}>
                         <button id="btn-drop" type="button" (click)="dropFoto(archivo)">
                             <mat-icon style="color:red">delete</mat-icon>
                         </button>
