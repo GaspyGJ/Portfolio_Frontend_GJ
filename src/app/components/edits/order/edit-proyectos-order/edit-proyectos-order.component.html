@@ -1,6 +1,6 @@
 <div id="Seccion-Edit">
     <div id="form-Seccion-Edit">
-        <h3 class="titulo-de-seccion" style="display: block; font-size: 2em;"> Education:</h3>
+        <h3 class="titulo-de-seccion" style="display: block; font-size: 2em;"> Editar orden Proyectos:</h3>
             <ul id="list-educaciones" cdkDropList (cdkDropListDropped)="DropeoProyecto($event)">
                 <li class="li_e" *ngFor=" let proyecto of proyectos" id={{proyecto.idProyecto}} cdkDrag>
                     <p>{{proyecto.titulo}}</p>
